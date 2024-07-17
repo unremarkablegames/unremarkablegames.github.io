@@ -1,0 +1,72 @@
+body {
+    background: #101010;
+    color: #ccc;
+}
+
+header {
+    padding-inline: 1em;
+}
+
+main {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.nav-container {
+
+}
+
+.nav {
+
+}
+
+.nav-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-item {
+    padding-inline: 3em;
+}
+
+.nav-item:hover {
+    background: #303030;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding-top: 1em;
+}
+
+.logo-img {
+    padding-right: 0.5em;
+}
+
+.logo-text {
+    margin: 0;
+    font-weight: bolder;
+    font-size: 48px;
+}
+
+
+.font-kode-mono {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.content {
+    max-width: 64em; 
+    min-width: 64em; 
+    margin: auto; 
+    background: #181818;
+}
