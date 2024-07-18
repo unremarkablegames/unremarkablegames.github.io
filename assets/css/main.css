@@ -1,5 +1,5 @@
 body {
-    background: #101010;
+    background: #080808;
     color: #ccc;
 }
 
@@ -8,8 +8,7 @@ header {
 }
 
 main {
-    padding-left: 4em;
-    padding-right: 4em;
+    padding-inline: 3em;
 }
 
 .nav-container {
@@ -29,10 +28,13 @@ main {
 
 .nav-item {
     padding-inline: 3em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    font-weight: bolder;
 }
 
 .nav-item:hover {
-    background: #303030;
+    background: #222222;
 }
 
 .nav-link {
@@ -68,5 +70,21 @@ main {
     max-width: 64em; 
     min-width: 64em; 
     margin: auto; 
-    background: #181818;
+    background: #121212;
+}
+
+hr {
+    border: none;
+    height: 6px;
+    background-color: #333
+}
+
+.footer-text {
+    margin-inline: 4em;
+    font-size: x-small;
+    color: #555;
+}
+
+a {
+    color: #bbf;
 }
