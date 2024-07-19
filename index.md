@@ -8,7 +8,10 @@ in our own way. We like things unremarkable. We hope you do too.
 ---
 
 ## Current Project: Neon Labyrinth
+**Neon Labyrinth** is a single-player arcade puzzle game with a dark twist, featuring a stylized synthwave aesthetic and movement mechanics reminiscent of Tomb of the Mask.
+
 ![Neon Labyrinth Title Tile](/assets/img/neon_labyrinth_title.png)
+
 - **Phase**: Pre-production
 - **Next Phase**: Entering production in late Q4 of 2024
 - **Launch**:
