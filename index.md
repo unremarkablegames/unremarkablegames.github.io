@@ -19,11 +19,14 @@ Right now, Unremarkable Games is a solo crew (just me) with my wife helping out 
   - **Q2 2025**: Steam and Itch.io for PC, Mac, and Linux.
   - **Q4 2025**: Nintendo Switch.
 
-Sign up for our weekly update on [Substack](https://substack.com), then head over to [Itch.io](https://itch.io) to play 
-our most recent build. Join the conversation and tell us what you think on [Discord](https://discord.com), 
-[Facebook](https://facebook.com), or [Twitter](https://twitter.com). If you like the game, help fund it! Head over to 
-the store and buy some merch. You can also send us a couple of bucks on [Ko-fi](https://ko-fi.com). Don't forget to 
-follow us on your favorite social media platform and spread the word.
+Sign up for our weekly update on [Substack](https://unremarkablegames.substack.com), then head over to 
+[Itch.io](https://unremarkablegames.itch.io/neon-labyrinth) to play our most recent build. Join the conversation and 
+tell us what you think on Facebook. 
+
+If you like the game, help fund it! You can head over to the store and buy some merch (coming soon) or you can send us a 
+couple of bucks on Ko-fi (coming soon). Don't forget to follow us on your favorite social platform and spread the word. 
+If we aren't on your preferred platform, email us (coming soon) and let us know where the cool kids are hanging out 
+these days.
 
 If you want to see behind the curtain, we publish most of our design documents and plans in our [dev](/dev.md) section.
-Give them a read, then head over to the dev topic on our Discord server and drop a comment, insight, or idea.
+Give them a read, then head over to Facebook and drop a comment, insight, or idea.
