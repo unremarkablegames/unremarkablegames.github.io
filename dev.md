@@ -60,14 +60,14 @@ The Quality Assurance Plan outlines testing processes and methodologies for Neon
 ---
 
 ### [Project Management Plan](/dev/pmp)
-- **State**: Not started.
+- **State**: Started. 5% complete.
 
 The Project Management Plan outlines Neon Labyrinth’s development roadmap, including timelines, milestones, and deliverables. It covers risk management strategies and uses project management tools to track progress and adapt to changes effectively.
 
 ---
 
 ### [Business and Marketing Plan](/dev/bmp)
-- **State**: Not started.
+- **State**: Started. 5% complete.
 
 The Business and Marketing Plan details the financial aspects of Unremarkable Games, including financial projections, funding requirements, market analysis, and revenue models for Neon Labyrinth. It outlines monetization strategies, market opportunities, competition, business goals, marketing strategies, and operational plans.
 
