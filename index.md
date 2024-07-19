@@ -2,31 +2,31 @@
 title: "Home"
 ---
 
-Unremarkable Games is a 100% independent game studio based in the United States. We develop and publish our own games in our own way.
-
-## The Crew
-Right now, Unremarkable Games is a solo crew (just me) with my wife helping out with some management and community tasks.
-
-- **Karl**: An old-school programmer who got tired of working in big tech, so he quit and started a game company.
-- **Mary**: The wife of the old-school programmer. She ensures we actually ship a game. She also likes people, so you will see her a lot on social media.
+Unremarkable Games is a 100% independent game studio based in the United States. We develop and publish our own games 
+in our own way. We like things unremarkable. We hope you do too.
 
 ---
 
 ## Current Project: Neon Labyrinth
 ![Neon Labyrinth Title Tile](/assets/img/neon_labyrinth_title.png)
-- **Status**: Pre-production
+- **Phase**: Pre-production.
+- **Next Phase**: Entering production in late Q4 of 2024.
 - **Launch**:
-  - **Q2 2025**: Steam and Itch.io for PC, Mac, and Linux.
+  - **Q3 2025**: Itch.io and Steam. For Window, Mac, and Linux.
   - **Q4 2025**: Nintendo Switch.
 
-Sign up for our weekly update on [Substack](https://unremarkablegames.substack.com), then head over to 
-[Itch.io](https://unremarkablegames.itch.io/neon-labyrinth) to play our most recent build. Join the conversation and 
-tell us what you think on Facebook. 
+Interested? Sign up for our weekly update on the [Unremarkable Games](https://unremarkablegames.substack.com) Substack, 
+then head over to [Itch.io](https://unremarkablegames.itch.io/neon-labyrinth) to play our most recent web build. Join 
+the conversation on the [neon-labyrinth channel](https://discord.com/channels/1263683765406924943/1263689160842285116) 
+of our Discord server.
 
-If you like the game, help fund it! You can head over to the store and buy some merch (coming soon) or you can send us a 
-couple of bucks on Ko-fi (coming soon). Don't forget to follow us on your favorite social platform and spread the word. 
-If we aren't on your preferred platform, email us (coming soon) and let us know where the cool kids are hanging out 
-these days.
+If you like the game, help fund it! You can head over to the [shop](/shop) and buy some merch, or you can send us a 
+couple of bucks on Ko-fi (coming soon). Don't forget to follow us on your favorite social network and spread the word. 
+If we aren't on your preferred network or platform, drop a hint in our inbox (coming soon) on where the cool kids are 
+hanging out these days.
 
-If you want to see behind the curtain, we publish most of our design documents and plans in our [dev](/dev.md) section.
-Give them a read, then head over to Facebook and drop a comment, insight, or idea.
+Want to take a peek behind the curtain? This title will be technically interesting to fellow game dev nerds. Not only 
+are we are building the game in a custom engine, but we are publishing our design documents and plans in our [dev](/dev)
+section. Give them a read, then geek out with us in the 
+[dev channel](https://discord.com/channels/1263683765406924943/1263683837196505201) of our Discord server. Feel free to 
+drop a comment, insight, or idea.
