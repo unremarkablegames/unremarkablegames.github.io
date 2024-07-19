@@ -13,11 +13,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- For Safari on iOS -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#080808">
 
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "36c80ed11ef143dea63f228915f8ea1e"}'></script>
+    {% if jekyll.environment != 'development' %}<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "36c80ed11ef143dea63f228915f8ea1e"}'></script>{% endif %}
 
     <title>Unremarkable Games</title>
 </head>
