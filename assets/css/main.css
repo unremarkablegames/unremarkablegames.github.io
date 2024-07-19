@@ -1,6 +1,12 @@
 body {
     background: #080808;
     color: #ccc;
+    font-size: small;
+}
+@media screen and (min-width: 40em) {
+    body {
+        font-size: medium;
+    }
 }
 
 header {
@@ -27,7 +33,7 @@ main {
 }
 
 .nav-item {
-    padding-inline: 3em;
+    padding-inline: 2em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
     font-weight: bolder;
@@ -55,7 +61,12 @@ main {
 .logo-text {
     margin: 0;
     font-weight: bolder;
-    font-size: 48px;
+    font-size: x-large;
+}
+@media screen and (min-width: 40em) {
+    .logo-text {
+        font-size: xxx-large;
+    }
 }
 
 
@@ -67,16 +78,21 @@ main {
 }
 
 .content {
-    max-width: 64em; 
-    min-width: 64em; 
+    max-width: 64em;
+    min-width: 28em;
     margin: auto; 
     background: #121212;
 }
 
 hr {
     border: none;
-    height: 6px;
+    height: 3px;
     background-color: #333
+}
+@media screen and (min-width: 36em) {
+    hr {
+        height: 6px;
+    }
 }
 
 .footer-text {
