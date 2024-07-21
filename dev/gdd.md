@@ -10,7 +10,10 @@ A retro-futuristic arcade puzzler, gameplay based on Tomb of the Mask, styled wi
 ### Game Concept
 - **Brief Description:** The gameplay elements of Tomb of the Mask meets the stylistic elements of Tron (1982) and Synthwave.
 - **Genre:** Arcade puzzler
-- **Platform(s):** Itch.io and Steam on Windows, Mac, and Linux as well as Nintendo Switch.
+- **Platform(s):** 
+  - Itch.io and Steam on Windows, Mac, and Linux. 
+  - iOS.
+  - Nintendo Switch.
 - **Engine:** Custom engine and editor. Described in the Engine Design Document.
 - **Target Audience:** 12+
 
