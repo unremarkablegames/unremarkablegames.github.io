@@ -84,6 +84,24 @@ a:hover {background: #34495e;}
     hr {height: 2px;}
 }
 
+.game_tile {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    vertical-align: middle;
+}
+
+.screenshot-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+ .game-screenshot {
+    max-width: 32%;
+    height: auto;
+    border-radius: 64px;
+ }
 
 /* padding */
 .padding-inline-1em {padding-inline: 1em;}
@@ -590,3 +608,61 @@ a:hover {background: #34495e;}
 .bg-asbestos-700 { background-color: #616a6b; }
 .bg-asbestos-800 { background-color: #515a5a; }
 .bg-asbestos-900 { background-color: #424949; }
+
+/*******************************************************************************
+ * IMAGE OVERLAY
+ ******************************************************************************/
+.game-screenshot {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.game-screenshot:hover {
+  transform: scale(1.03);
+}
+
+.image-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 38, 49, 0.9); /* wet-asphalt-900 with opacity */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-overlay.active {
+  display: flex;
+}
+
+.overlay-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.overlay-image {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #d6dbdf; /* wet-asphalt-100 */
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.overlay-close:hover {
+  color: #ffffff;
+}

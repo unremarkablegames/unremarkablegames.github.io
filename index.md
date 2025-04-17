@@ -2,11 +2,13 @@
 title: "Home"
 ---
 
-Unremarkable Games is a 100% independent game studio based in the United States. We develop and publish our own games 
-in our own way. We like things unremarkable.
+Unremarkable Games is a 100% independent game studio based in Minnesota, United States. Right now, it is a solo shop.
+I develop and publish my own games in my own way. I like things unremarkable and I hope you do to.
 
----
+One of the things that makes my games unremarkable is that there will never be any adds or microtransactions. Ever.
+I don't like that monetization model. If the game is free, then it's free. If you pay for one of my games, then
+you get the game.
 
-## Released Project: Neon Labyrinth
-**Neon Labyrinth** is a single-player arcade puzzle game with a neon twist, featuring a stylized synthwave aesthetic and movement mechanics reminiscent of Tomb of the Mask. Get it on the iOS app store or head over to [Itch.io](https://unremarkablegames.itch.io/neon-labyrinth) to play the first few levels for free.
-
+We also don't track you. Some of our games use Unity and that engine has a lot of tracking features that are on by
+default. I try to turn it all off, but if some tracking slips though, it isn't my intent. Let me know. I will delete
+the dataset and fix the game. I don't need to spy on you to make a fun game.

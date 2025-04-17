@@ -2,5 +2,6 @@
 title: "Games"
 ---
 
-# Neon Labyrinth
-An arcade puzzler with a neon synthwave asethetic. The game is avaliable on the iOS App Store for iPhone and iPad. You can also sneak a peek of the first few levels on [Itch.io](https://unremarkablegames.itch.io/neon-labyrinth).
+This is a list of our released games! There's just one in there, so... I'm making more.
+
+* <img class="game_tile" src="/assets/img/neon_labyrinth_icon.png" alt="Neon Labyrinth Icon"> [Neon Labyrinth](/games/neon_labyrinth)
