@@ -183,3 +183,20 @@ Subject to heavy change. I am only fleshing out four ahead of where I am.
 ### Milestone 40: Final sfx
 ### Milestone 41: Final music
 ### Milestone 42: Final dialog
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="unremarkablegames/unremarkablegames.github.io"
+        data-repo-id="R_kgDOMWyDPA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMWyDPM4CpTEZ"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
