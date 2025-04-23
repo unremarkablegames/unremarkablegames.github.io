@@ -120,30 +120,25 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 
 ## Development Milestones
 Subject to heavy change. I am only fleshing out four ahead of where I am.
-### Milestone 0: Dev setup
-    * Dev build setup.
-    * Platform abstraction system in place.
-    * Can export for web and runs on itch.io.
-    * Can export for mac.
+### ☒ Milestone 0: Dev setup
+### ⏲ Milestone 1: Walking simulator
+* ☐ Blocked UI mock in game.
+* ☐ Viewport shows world.
+* ☐ Blob can walk around, on the grid, in an unshaded and unlit hardcoded environment.
+  * ☐ Wall collisions work.
+  * ☐ Turns and moves are animated.
 
-### Milestone 1: Walking simulator
-    * Blocked UI mock in game.
-    * Viewport shows world.
-    * Blob can walk around, on the grid, in an unshaded and unlit hardcoded environment.
-        * Wall collisions work.
-        * Turns and moves are animated.
+### ☐ Milestone 2: Input system based movement
+* Can move using a gamepad and keyboard.
 
-### Milestone 2: Input system based movement
-    * Can move using a gamepad and keyboard.
+### ☐ Milestone 3: UI based movement
+* Mock out UI movement buttons.
+* Movement buttons in UI respond to hover, press, and release from both the mouse and touch.
 
-### Milestone 3: UI based movement
-    * Mock out UI movement buttons.
-    * Movement buttons in UI respond to hover, press, and release from both the mouse and touch.
-
-### Milestone 4: Load a level
-    * Game data structures defined.
-    * Draft first test level.
-    * Test level loads.
+### ☐ Milestone 4: Load a level
+* Game data structures defined.
+* Draft first test level.
+* Test level loads.
 
 ### Milestone 5: Localization system
 ### Milestone 6: Font system
