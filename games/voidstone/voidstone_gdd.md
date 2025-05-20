@@ -4,8 +4,8 @@ title: "Voidstone GDD"
 
 # Voidstone GDD
 Title:      Voidstone
-Concept:    Assemble a party of six adventurers to reclaim a subterranean metropolis. Uncover hidden quests, artifacts, and confront the force behind the Voidstone in a turn‑based, first‑person fantasy RPG.
-Genre:      Blobber with roguelike elements.
+Concept:    Control a solo hero to reclaim a subterranean metropolis. Uncover hidden quests, artifacts, and confront the force behind the Voidstone in a turn‑based, top-down fantasy RPG.
+Genre:      Top-down RPG with roguelike elements.
 Platforms:  Web, Windows, Mac, iOS, Nintendo Switch.
 
 ## Story Overview
@@ -24,16 +24,16 @@ As her power grew, Nyxara created monstrous beings from fragments, unleashing th
 
 In the decades since, the abandoned metropolis has become a nest of aberrations. Recently, organized raiding parties of these creatures have begun terrorizing nearby settlements, suggesting a coordinated intelligence directing them — and a far greater threat looming on the horizon.
 
-King Aldemar assembled a team of six Awakened, tasked with reclaiming Dorgen-Vault and eliminating the source of the monsters. Accompanying them is Thalior, a Guardian who believes the stone the miners uncovered is the Voidstone, Nyxara's prison, and it must be resealed or destroyed before she is free to rain down catastrophe upon all of Ardenia.
+King Aldemar assembled a powerful Awakened hero, tasked with reclaiming Dorgen-Vault and eliminating the source of the monsters. Accompanying them is Thalior, a Guardian who believes the stone the miners uncovered is the Voidstone, Nyxara's prison, and it must be resealed or destroyed before she is free to rain down catastrophe upon all of Ardenia.
 
 #### The Awakened
 Long ago, before Nyxara was imprisioned, while she was activly making her monsters, a guardian showed the people how to absorb fragments. This granted them extraordinary abilities, but not without peril. During the process, the person falls into a deep coma. Most die within a few days, but others awaken insane, in a nightmare state. Very few adults who undergo the process survive, although adolescents have a higher survival rate. Those who successfully integrate with a fragment and awaken sane are called Awakened, and they possess enhanced strength, resilience, and the ability to channel the fragment's power as magic. Those who wake insane are executed immediately for the safety of all.
 
-The Awakened possess the ability to absorb more fragments to grow their strength far beyond normal humans. This gave the people of Ardenia a means of fighting back against the monstrous creations of Nyxara.
+The Awakened possess the ability to absorb more fragments to grow their strength far beyond normal humans. This gives the people of Ardenia a means of fighting back against the monstrous creations of Nyxara.
 
 ### Game Story
 #### Chapter 1: The City Center
-The player controls a team of six Awakened. Thalior directs you to take the city center. You descend through the entry and great foyer to the gates, then battle to the city center where Thalior brings an army to hold the position. In the city center there is a temple where you can respec your characters and an inn where you can sleep for HP/MP recovery for a very small fee.
+The player controls a single Awakened hero. Thalior directs you to take the city center. You descend through the entry and great foyer to the gates, then battle to the city center where Thalior brings an army to hold the position. In the city center there is a temple where you can respec your character and an inn where you can sleep for HP/MP recovery for a very small fee.
     * **Lore:** The boss drops a key that opens a door to a nearby mine shaft. The end of the mine shaft has a book that reveals the world backstory.
     * **Cultist:** The boss drops a cultic artifact.
     * **Theves Guild:** The quartermaster of the inn gives rumors of thieves and the start of a thieves guild.
@@ -65,12 +65,12 @@ The player controls a team of six Awakened. Thalior directs you to take the city
 * Chapter 8: At the entrance, Thalior provides you with a crystal sword said to shatter the Voidstone and destroy Nyxara. The player fights through the chamber and confronts the Voidstone. Nyxara pleads for mercy, presenting a choice: either shatter the gem or provide her with specific materials she claims will reseal her prison. If you shatter the gem, the credits roll. If you provide the materials, she creates a powerful boss that must be defeated, after which Nyxara is weakened and Thalior is able to reseal the Voidstone.
 
 ## Gameplay
-In Voidstone, players command a party of six adventurers through a sprawling subterranean metropolis using first-person, grid-based movement. The heart of gameplay revolves around strategic party management with permanent death consequences. Invested fragments can be recovered from fallen heroes, and replacement party members can be recruited at the City Hub. Combat unfolds through turn-based tactical battles where positioning, initiative, and action economy drive strategic decisions. As players defeat monsters, they collect fragments to invest in a classless progression system, allowing complete freedom in character development across various skill trees including combat abilities and magical schools.
+In Voidstone, the player commands a single Awakened hero through a sprawling subterranean metropolis using top-down, grid-based movement. The heart of gameplay revolves around strategic character development with consequences for death. Invested fragments can be recovered upon death. Combat unfolds through turn-based tactical battles where positioning, initiative, and action economy drive strategic decisions. As the player defeats monsters, they collect fragments to invest in a classless progression system, allowing complete freedom in character development across various skill trees including combat abilities and magical schools.
 
-The journey through Voidstone's depths features zone-based difficulty progression, environmental puzzles, and hidden secrets waiting to be discovered. Players will manage a shared inventory, craft and enchant equipment, and interact with NPCs through text-based dialogue. The City Hub serves as the central base of operations, where recruitment, crafting, enchanting, and quest management take place as players venture deeper into the mysterious metropolis to confront the force behind the Voidstone.
+The journey through Voidstone's depths features zone-based difficulty progression, environmental puzzles, and hidden secrets waiting to be discovered. The player will manage their inventory, craft and enchant equipment, and interact with NPCs through text-based dialogue. The City Hub serves as the central base of operations, where crafting, enchanting, and quest management take place as the hero ventures deeper into the mysterious metropolis to confront the force behind the Voidstone.
 
 ### World & Exploration
-- **First-Person Grid Movement:** Navigate a vast subterranean metropolis in cardinal directions
+- **Top-Down Grid Movement:** Navigate a vast subterranean metropolis in cardinal directions
 - **Zone-Based Difficulty:** Areas have fixed challenge levels with corresponding better rewards
 - **Environmental Challenges:** Traps, puzzles, and hazards that can be detected and mitigated with skills
 - **Hidden Content:** Secret areas and optional storylines discovered through thorough exploration
@@ -86,7 +86,7 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 
 ### Character Development
 - **Fragment-Based Progression:** Monsters yield fragments instead of XP
-- **Classless Specialization:** No predefined classes - characters develop through skill tree investments
+- **Classless Specialization:** No predefined classes - the hero develops through skill tree investments
 - **Base Stats:** STR (physical), DEX (speed/accuracy), INT (magical) - all starting at 10
 - **Respecialization:** Redistribute fragment investments at specific city locations
 - **Skill Trees:** Mele weapon skill, mage skill, and bow skill trees are unlocked by default. Priest skill, defence skill, and resilliance skill trees can be unlocked by exploration.
@@ -105,8 +105,8 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 - **Special Schools:** Dark magic and other specialized schools unlocked through specific quests
 
 ### Item Systems
-- **Pooled Inventory:** Shared across the party without restrictions
-- **Equipment Specialization:** Characters can focus on weapon types based on their skills
+- **Inventory:** Manage your inventory without restrictions
+- **Equipment Specialization:** Focus on weapon types based on your skills
 - **Crafting:** Collect materials, break down items, and commission city craftsmen
 - **Enchantment:** Apply magical effects to items using fragments as a resource
 - **Unique Artifacts:** Discover powerful items with special abilities tied to the game's lore
@@ -115,37 +115,27 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 - **Dialog:** Text-based NPC conversations with occasional choices impacting quest outcomes
 - **Quest Tracking:** Journal system with main and side objectives, clear "next step" guidance
 - **Economy:** Standard fantasy trade system with specialized vendors
-- **City Hub:** Central base for recruitment, crafting, enchanting, and quest management
-- **Reputation:** Actions affect how certain factions or NPCs respond to the party
+- **City Hub:** Central base for crafting, enchanting, and quest management
+- **Reputation:** Actions affect how certain factions or NPCs respond to the hero
 
 ## Development Milestones
-Subject to heavy change. I am only fleshing out four ahead of where I am.
+Subject to heavy change. I am only fleshing out just ahead of where I am.
 ### ☒ Milestone 0: Dev setup
+
 ### ⏲ Milestone 1: Walking simulator
 * ☐ Blocked UI mock in game.
 * ☐ Viewport shows world.
-* ☐ Blob can walk around, on the grid, in an unshaded and unlit hardcoded environment.
-  * ☐ Wall collisions work.
-  * ☐ Turns and moves are animated.
+* ☐ Hero can walk around, on the grid.
 
-### ☐ Milestone 2: Input system based movement
-* Can move using a gamepad and keyboard.
-
-### ☐ Milestone 3: UI based movement
-* Mock out UI movement buttons.
-* Movement buttons in UI respond to hover, press, and release from both the mouse and touch.
-
-### ☐ Milestone 4: Load a level
-* Game data structures defined.
-* Draft first test level.
-* Test level loads.
-
+### Milestone 2: Input system based movement
+### Milestone 3: UI based movement
+### Milestone 4: Load a level
 ### Milestone 5: Localization system
 ### Milestone 6: Font system
 ### Milestone 7: Display text on screen
 ### Milestone 8: Immediate Mode UI
 ### Milestone 9: In-game menu system
-### Milestone 10: Party
+### Milestone 10: Hero System
 ### Milestone 11: Save/Load system
 ### Milestone 12: NPCs, NPC interactions, conditional dialog trees
 ### Milestone 13: Shops
@@ -164,7 +154,6 @@ Subject to heavy change. I am only fleshing out four ahead of where I am.
 ### Milestone 26: Crafting
 ### Milestone 27: Enchanting
 ### Milestone 28: Respec at temple
-### Milestone 29: Recruit at barracks
 ### Milestone 30: Chapter 1
 ### Milestone 31: Chapter 2
 ### Milestone 32: Chapter 3
