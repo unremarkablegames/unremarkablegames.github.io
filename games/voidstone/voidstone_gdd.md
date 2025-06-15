@@ -4,32 +4,83 @@ title: "Voidstone GDD"
 
 # Voidstone GDD
 Title:      Voidstone
-Concept:    Control a solo hero to reclaim a subterranean metropolis. Uncover hidden quests, artifacts, and confront the force behind the Voidstone in a turn‑based, top-down fantasy RPG.
+Concept:    Control a solo hero to reclaim a subterranean metropolis. Uncover hidden quests, artifacts, and confront the force behind the Voidstone in a turn-based, top-down fantasy RPG.
 Genre:      Top-down RPG with roguelike elements.
 Platforms:  Web, Windows, Mac, iOS, Nintendo Switch.
+Engine:     Unity
 
 ## Story Overview
 ### Backstory
-In the beginning, there was Elora, a Worldseed sent by the creator to a barren planet. When she arrived, she shattered herself to form the world of Ardenia. The power released created all life - but not all of her was used. Some fragments survived. Her largest fragments became the Celestials, a group of sentient, immensely powerful beings who shaped the lands and skies. These Celestials are divided into three tiers: the most powerful are the Primarchs who govern cosmic forces, the next are the Shapers who craft the physical world, and then the Guardians who walk among mortals as guides and protectors.
+*Of the Making of Ardenia and the Fall of Nyxara*
 
-When Elora shattered, many smaller fragments, like specs of dust, were scattered across creation. They gave rise to the great beasts of legend: dragons soaring through mountain ranges, the mighty krakens lurking in oceanic depths, and other formidable creatures of extraordinary intelligence and power.
+In the days before days, there came Elora. She was the Worldseed, gift of the Creator to the barren sphere that would become Ardenia. Upon the moment of her arrival, she performed the Great Shattering, breaking herself into a thousand upon thousands of pieces, that beauty might rise from sacrifice. As pieces of Elora fell to the ground, life sprang forth from the barren rocks.
 
-Among the Guardians was Nyxara, whose curiosity led her to experiment with the void between realities. Her obsession grew as she discovered she could use fragments to create life in her image, though her creations emerged twisted and malevolent. Despite warnings from the Celestials, Nyxara persisted until Oranthel, leader of the Primarchs, was sent to intervene. He imprisoned her essence within a stone and buried her deep. The stone became a mountain seed, and a great mountain grew over her as a seal.
+Yet mark this well: not all of Elora was spent in that primordial sundering.
 
-Centuries passed, and the mountain, rich with mineral wealth, attracted miners who established the underground city of Dorgen-Vault. For generations, it flourished as a marvel of engineering and craft, with sprawling districts, massive foundries, and networks of mines delving ever deeper. The inhabitants grew wealthy, and their city became renowned throughout Ardenia.
+The mightiest shards of her being awakened to thought and will, becoming the Celestials—those who would shepherd the young world through its first turnings. Three orders arose among them, each according to their portion of power: First, the Primarchs, who hold dominion. Second, the Shapers, who wrought mountain and valley, river and sea, giving form to the formless. Last came the Guardians, gentlest and most beloved, who walked the world as teachers and protectors.
 
-Thirty years ago, miners breached a sealed chamber and discovered a mesmerizing dark gem. Those who gazed upon it heard whispers promising power and knowledge. Slowly, the whispers turned to commands as Nyxara, now known only as the Spirit of Void, possessed the miners. Under her influence, they formed a cult that performed rituals to weaken her prison.
+From the lesser fragments—motes of divine essence scattered like seeds upon the cosmic wind—came forth the Great Beasts, full of power and intelligence. Dragons took wing in the high places, their scales glittering with stolen starlight. Krakens descended to the uttermost depths, where pressure and darkness reign absolute. Phoenix and behemoth, basilisk and leviathan—each a fragment made flesh, each bearing a spark of the original fire.
 
-As her power grew, Nyxara created monstrous beings from fragments, unleashing them upon Dorgen-Vault's unsuspecting populace. The city fell in a single night of terror, forcing survivors to flee to the surface. The few who escaped told tales of friends and family transformed into mindless servants of the Voidstone.
+Now it happened that Nyxara, counted among the wisest of the Guardians, turned her gaze to mysteries best left unexamined. She delved into the spaces between spaces, the void that separates one reality from another. "Why," she asked, "should we not create as we were created? Why should the power of making be forbidden to us who are ourselves made?"
 
-In the decades since, the abandoned metropolis has become a nest of aberrations. Recently, organized raiding parties of these creatures have begun terrorizing nearby settlements, suggesting a coordinated intelligence directing them — and a far greater threat looming on the horizon.
+And she learned to sing to fragments and birth life, in her image, from the remnants of divinity.
 
-King Aldemar assembled a powerful Awakened hero, tasked with reclaiming Dorgen-Vault and eliminating the source of the monsters. Accompanying them is Thalior, a Guardian who believes the stone the miners uncovered is the Voidstone, Nyxara's prison, and it must be resealed or destroyed before she is free to rain down catastrophe upon all of Ardenia.
+But the children of Nyxara's art were abominations. Where natural creatures bore warmth, hers knew only cold hunger and malice. Where true life sought harmony, hers craved dissolution. They were mockeries of creation, bearing forms that hurt the eye and purposes that sickened the soul. Her fellow Guardians pleaded with her to cease.
+
+Nyxara heard their words, and hearing, rejected them.
+
+Then Oranthel the Golden, First Among Primarchs and eldest of Elora's children, descended from his place between the stars. He came not in wrath but in sorrow, for Nyxara was sister to him in the truest sense—born of the same shattering, shaped from the same divine essence. Long they contested in the deep places beneath the world, where stone runs like water and fire speaks in tongues.
+
+In the end, Oranthel prevailed, but he could not bring himself to unmake one who shared his origin. Instead, he wrought a prison of pure obsidian, as dark as the void Nyxara so loved, and into this stone he sealed her essence. Deep he buried it, deeper than any would ever delve, and spoke words of binding that would hold until the ending of the world.
+
+Or so he believed.
+
+Where Oranthel planted this seed of imprisonment, a mountain grew. In that mountain laid a vast treasure of mineral and gem. Ages turned. The Celestials withdrew from mortal affairs. Kingdoms rose and fell like waves upon the shore. And in time, men came to the mountain, drawn by veins of silver and gold that ran through its bones like blood.
+
+Thus was Dorgen-Vault born.
+
+For eight hundred years, the city prospered beneath the earth. Its halls echoed with the ring of hammer on anvil, its markets overflowed with treasures drawn from the deep. The miners of Dorgen-Vault were artists of stone and darkness, and their works were coveted from the Sunrise Kingdoms to the Courts of Twilight. They delved ever deeper, following veins of precious metal through the mountain's heart, never knowing they were circling a far more terrible treasure.
+
+Until thirty years ago. Until the Breaking of the Seal.
+
+The miners who found the chamber would later swear they had followed no map, obeyed no foreman's order. Something had called to them through the stone—a song without words, a promise without voice. They broke through into a perfect sphere of polished rock, and at its heart, floating in defiance of all natural law, hung a gem of absolute darkness. The Voidstone, though they knew not its name. Nyxara's prison, though they knew not its purpose.
+
+The first man to touch it fell to his knees and wept with joy. The second began to laugh and could not stop. The third spoke in languages that had been dead since the world was young.
+
+They were the first of the Voidtouched, and they would not be the last.
+
+Nyxara, who had schemed through millennia of imprisonment, poured her whispers through the cracks in her cage. She spoke to the miners of power unlimited, of secrets hidden since the foundation of the world, of the weakness of flesh and the strength that lay beyond it. One by one, they fell to her influence. A cult grew in the shadows of Dorgen-Vault, performing rituals to crack the prison their master could not break from within.
+
+And when the bonds grew weak enough, Nyxara began to create once more.
+
+The Fall of Dorgen-Vault is remembered in the songs of survivors as the Night of Unmaking. The things that crawled from the deep places bore the shapes of men and women, but their movements were those of spiders, their hungers those of the void. Friend turned on friend. Parents devoured children. The city that had stood for eight centuries fell in eight hours, and when the sun rose, only monsters walked its halls.
+
+For thirty years, the ruins have festered like an untended wound - but posed no threat. Yet now, the corruption spreads. War bands march from the mountain's gates with purpose and discipline. Villages burn. Travelers vanish. And those who escape speak of a darkness gathering beneath the stone, of something vast and patient preparing to emerge.
+
+King Aldemar, of the Ardent Line, has sent forth a call. He seeks an Awakened of uncommon power, one who can descend into the mountain's depths and face whatever horror commands the fallen city. To guide this champion he calls upon Thalior, a Guardian who remembers when the world was young, who stood witness when Oranthel pronounced his judgment.
+
+Thalior knows what stirs beneath the great halls of Dorgen-Vault. He knows the Voidstone weakens with each passing season. And he knows that should Nyxara break free entirely, she will remake the world itself, one fragment at a time, until all of Ardenia is filled with her creations.
+
+The last hope of the realm descends into darkness, bearing steel and flame against an enemy older than kingdoms. The Voidstone waits in the deep, patient and hungry.
 
 #### The Awakened
-Long ago, before Nyxara was imprisioned, while she was activly making her monsters, a guardian showed the people how to absorb fragments. This granted them extraordinary abilities, but not without peril. During the process, the person falls into a deep coma. Most die within a few days, but others awaken insane, in a nightmare state. Very few adults who undergo the process survive, although adolescents have a higher survival rate. Those who successfully integrate with a fragment and awaken sane are called Awakened, and they possess enhanced strength, resilience, and the ability to channel the fragment's power as magic. Those who wake insane are executed immediately for the safety of all.
+*Of the Gift of Vaelith and the Price of Power*
 
-The Awakened possess the ability to absorb more fragments to grow their strength far beyond normal humans. This gives the people of Ardenia a means of fighting back against the monstrous creations of Nyxara.
+In the dark days when Nyxara's abominations first crawled from the void, when mortal steel proved worthless against unholy flesh, there came among the people Vaelith the Compassionate, least and kindest of the Guardians. She witnessed humanity's despair, saw children devoured by shadows that wore their parents' faces, and her heart broke within her.
+
+"Behold," she said, "I shall teach you the secret that we Celestials have kept since the Great Shattering. You are born of Elora's fragments, as are we. The difference lies only in degree, not in kind. You may claim more fragments unto yourselves, if you dare pay the price."
+
+Thus began the First Awakening.
+
+To absorb a fragment is to invite a war within one's very soul. The body falls into the Sleep of Trials, a coma so deep that breath itself becomes uncertain. In this state, the fragment and the mortal essence contest for dominion. Most who attempt the joining die within three days, their bodies consuming themselves from within. Others emerge broken in mind, screaming prophecies in tongues that predate speech, their sanity shattered by visions of the void. These mad ones must be given the mercy of steel, lest they become vessels for horrors worse than death.
+
+Yet some—precious few—emerge triumphant. These are the Awakened, and they bear within themselves the fire of creation itself. Their bodies know strength beyond mortal limits. Their minds can shape reality through will alone, channeling the fragment's power as what lesser folk call magic. Most wonderous of all: they can continue to grow, absorbing more fragments, ascending ever closer to the divine.
+
+The young prove most adaptable to the Awakening, their souls still malleable, not yet hardened by the weight of years. Among adults, perhaps one in twenty survives the process intact. Among those who have seen fewer than twenty winters, the odds improve to one in five. Still terrible, yet against Nyxara's hordes, even terrible odds seemed a blessing.
+
+And so the Awakened became Ardenia's answer to the darkness—mortals who had touched divinity and lived, who could match the void-born horror for horror, strength for strength. They alone could face the spawn of Nyxara and prevail, for they wielded the same fundamental force that gave such creatures life.
+
+In this age, as shadows gather once more beneath Khaz Dromar, the Awakened stand as humanity's brightest hope and darkest gamble. For power always demands a price, and the line between savior and monster grows thinner with each fragment absorbed.
 
 ### Game Story
 #### Chapter 1: The City Center
@@ -117,57 +168,6 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 - **Economy:** Standard fantasy trade system with specialized vendors
 - **City Hub:** Central base for crafting, enchanting, and quest management
 - **Reputation:** Actions affect how certain factions or NPCs respond to the hero
-
-## Development Milestones
-Subject to heavy change. I am only fleshing out just ahead of where I am.
-### ☒ Milestone 0: Dev setup
-
-### ⏲ Milestone 1: Walking simulator
-* ☐ Blocked UI mock in game.
-* ☐ Viewport shows world.
-* ☐ Hero can walk around, on the grid.
-
-### Milestone 2: Input system based movement
-### Milestone 3: UI based movement
-### Milestone 4: Load a level
-### Milestone 5: Localization system
-### Milestone 6: Font system
-### Milestone 7: Display text on screen
-### Milestone 8: Immediate Mode UI
-### Milestone 9: In-game menu system
-### Milestone 10: Hero System
-### Milestone 11: Save/Load system
-### Milestone 12: NPCs, NPC interactions, conditional dialog trees
-### Milestone 13: Shops
-### Milestone 14: Combat rough
-### Milestone 15: Fragments, chests, and loot
-### Milestone 16: Skill tree
-### Milestone 17: Stats
-### Milestone 18: Mele combat
-### Milestone 19: Ranged combat
-### Milestone 20: Combat skills
-### Milestone 21: Inventory
-### Milestone 22: Equipment
-### Milestone 23: Conditional actions
-### Milestone 24: Conditional triggers
-### Milestone 25: Decomposition
-### Milestone 26: Crafting
-### Milestone 27: Enchanting
-### Milestone 28: Respec at temple
-### Milestone 30: Chapter 1
-### Milestone 31: Chapter 2
-### Milestone 32: Chapter 3
-### Milestone 33: Chapter 4
-### Milestone 34: Chapter 5
-### Milestone 35: Chapter 6
-### Milestone 36: Chapter 7
-### Milestone 37: Chapter 8
-### Milestone 39: Final ui
-### Milestone 38: Final art
-### Milestone 40: Final sfx
-### Milestone 41: Final music
-### Milestone 42: Final dialog
-
 
 <script src="https://giscus.app/client.js"
         data-repo="unremarkablegames/unremarkablegames.github.io"
