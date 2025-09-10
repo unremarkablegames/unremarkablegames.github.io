@@ -101,14 +101,8 @@ a:hover {background: #34495e;}
  .game-screenshot {
     max-width: 32%;
     height: auto;
-    border-radius: 64px;
+    border-radius: 24px;
  }
-
- .game-screenshot-landscape {
-  max-width: 32%;
-  height: auto;
-  border-radius: 24px;
-}
 
 /* padding */
 .padding-inline-1em {padding-inline: 1em;}
@@ -625,15 +619,6 @@ a:hover {background: #34495e;}
 }
 
 .game-screenshot:hover {
-  transform: scale(1.03);
-}
-
-.game-screenshot-landscape {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.game-screenshot-landscape:hover {
   transform: scale(1.03);
 }
 
