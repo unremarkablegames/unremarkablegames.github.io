@@ -55,7 +55,7 @@ And when the bonds grew weak enough, Nyxara began to create once more.
 
 The Fall of Dorgen-Vault is remembered in the songs of survivors as the Night of Unmaking. The things that crawled from the deep places bore the shapes of men and women, but their movements were those of spiders, their hungers those of the void. Friend turned on friend. Parents devoured children. The city that had stood for eight centuries fell in eight hours, and when the sun rose, only monsters walked its halls.
 
-For thirty years, the ruins have festered like an untended wound - but posed no threat. Yet now, the corruption spreads. War bands march from the mountain's gates with purpose and discipline. Villages burn. Travelers vanish. And those who escape speak of a darkness gathering beneath the stone, of something vast and patient preparing to emerge.
+For thirty years, the ruins have festered like an untended wound—but posed no threat. Yet now, the corruption spreads. War bands march from the mountain's gates with purpose and discipline. Villages burn. Travelers vanish. And those who escape speak of a darkness gathering beneath the stone, of something vast and patient preparing to emerge.
 
 King Aldemar, of the Ardent Line, has sent forth a call. He seeks an Awakened of uncommon power, one who can descend into the mountain's depths and face whatever horror commands the fallen city. To guide this champion he calls upon Thalior, a Guardian who remembers when the world was young, who stood witness when Oranthel pronounced his judgment.
 
@@ -74,7 +74,7 @@ Thus began the First Awakening.
 
 To absorb a fragment is to invite a war within one's very soul. The body falls into the Sleep of Trials, a coma so deep that breath itself becomes uncertain. In this state, the fragment and the mortal essence contest for dominion. Most who attempt the joining die within three days, their bodies consuming themselves from within. Others emerge broken in mind, screaming prophecies in tongues that predate speech, their sanity shattered by visions of the void. These mad ones must be given the mercy of steel, lest they become vessels for horrors worse than death.
 
-Yet some—precious few—emerge triumphant. These are the Awakened, and they bear within themselves the fire of creation itself. Their bodies know strength beyond mortal limits. Their minds can shape reality through will alone, channeling the fragment's power as what lesser folk call magic. Most wonderous of all: they can continue to grow, absorbing more fragments, ascending ever closer to the divine.
+Yet some—precious few—emerge triumphant. These are the Awakened, and they bear within themselves the fire of creation itself. Their bodies know strength beyond mortal limits. Their minds can shape reality through will alone, channeling the fragment's power as what lesser folk call magic. Most wondrous of all: they can continue to grow, absorbing more fragments, ascending ever closer to the divine.
 
 The young prove most adaptable to the Awakening, their souls still malleable, not yet hardened by the weight of years. Among adults, perhaps one in twenty survives the process intact. Among those who have seen fewer than twenty winters, the odds improve to one in five. Still terrible, yet against Nyxara's hordes, even terrible odds seemed a blessing.
 
@@ -87,32 +87,32 @@ In this age, as shadows gather once more beneath Khaz Dromar, the Awakened stand
 The player controls a single Awakened hero. Thalior directs you to take the city center. You descend through the entry and great foyer to the gates, then battle to the city center where Thalior brings an army to hold the position. In the city center there is a temple where you can respec your character and an inn where you can sleep for HP/MP recovery for a very small fee.
     * **Lore:** The boss drops a key that opens a door to a nearby mine shaft. The end of the mine shaft has a book that reveals the world backstory.
     * **Cultist:** The boss drops a cultic artifact.
-    * **Theves Guild:** The quartermaster of the inn gives rumors of thieves and the start of a thieves guild.
+    * **Thieves' Guild:** The quartermaster of the inn shares rumors of thieves and the start of a thieves' guild.
 * Chapter 2: The player fights through the forge district. This unlocks item decomposition.
-    * **Lore:** The boss dropsa key that opens a door to a nearby mine shaft. The end of the mine shaft has a book that reveals the last days before the city fell.
+    * **Lore:** The boss drops a key that opens a door to a nearby mine shaft. The end of the mine shaft has a book that reveals the last days before the city fell.
     * **Cultist:** The boss drops a cultic artifact.
     * **Cultist:** The quartermaster of the inn gives rumors of cultists.
 * Chapter 3: The player fights through the foundry district. This unlocks crafting of armor and weapons.
     * **Lore:** The boss drops a key that opens a door to a nearby mine shaft. The end of the mine shaft has a book that reveals the Voidstone is Nyxara.
     * **Cultist:** The boss drops a cultic artifact.
-    * **Cultist:** In this distrcit you find a door that, when you try to open it a magic barrier comes up. This is the cultists HQ. If you have all five cultic artifacts and talk to Thalior he can assemble them into a key. This is essentially just another dungeon with a cultic leader as the boss. If you defeat the leader you will get a key to a room with a mage locked in a cell. If you let him go he will unlock the priest skill tree.
+    * **Cultist:** In this district you find a door that, when you try to open it, a magic barrier appears. This is the cultists' HQ. If you have all five cultic artifacts and talk to Thalior, he can assemble them into a key. This is essentially just another dungeon with a cultic leader as the boss. If you defeat the leader, you will get a key to a room with a mage locked in a cell. If you let him go, he will unlock the priest skill tree.
 * Chapter 4: The player fights through the merchants' guild. This unlocks item crafting.
     * **Lore:** The boss drops a key that opens a door to a nearby mine shaft. The end of the mine shaft has a book that reveals Nyxara's story.
-    * **Theves Guild:** There is a secret room in the mine containing a master theif. If you defeat him you will gain an artifact.
+    * **Thieves' Guild:** There is a secret room in the mine containing a master thief. If you defeat him, you will gain an artifact.
     * **Cultist:** The boss drops a cultic artifact.
 * Chapter 5: The player fights through the college. This unlocks enchanting.
     * **Lore:** The boss drops a key that opens a door to a nearby mine shaft. The door is already opened. The end of the mine shaft has a book that reveals that Oranthel didn't want to kill Nyxara.
     * **Cultist:** The boss drops a cultic artifact.
-    * **Theves Guild:** There is a secret room in the mine containing the thieves guild. If you can pay the entrance fee and have the artifact from the master theif, they will unlock the defence skill tree.
-* Chapter 6: The player fights through the mining sector. This unlocks upgrading other sectors as well as access to the mineshaft leading to the Voidstone.
+    * **Thieves' Guild:** There is a secret room in the mine containing the thieves' guild. If you can pay the entrance fee and have the artifact from the master thief, they will unlock the defense skill tree.
+* Chapter 6: The player fights through the mining sector. This unlocks upgrading other sectors as well as access to the mine shaft leading to the Voidstone.
     * **Main Quest:** The boss drops the key to the mine shaft.
-    **Hero's Ghost:** The quatermaster will tell you about a gost of a guardsman spotted around the dark mineshaft.
+    **Hero's Ghost:** The quartermaster will tell you about a ghost of a guardsman spotted around the dark mine shaft.
 * Chapter 7: The player fights through the mine shaft to the Voidstone chamber. Thalior places a recall gate here and tells you to prepare well before entering.
     * **Hero's Ghost:** There is a secret room in this mine shaft with the ghost of a warrior. You are given a choice to attack or listen. If you listen, he will tell you that he was the last of the city guard to fall. His remains are near the city center.
         * If you talk to the quartermaster, he will insist that a hero's remains must not be left in the open. He tells you to speak to the crafter.
-        * If you talk to the crafter he will, for a hefty material price, build a monument.
-        * If you talk to the priest he will find the remains and entoumb them in the monument.
-        * When you return to the secret room the warrior will thank you, unlock the resiliance skill tree, and disapear.
+        * If you talk to the crafter, he will, for a hefty material price, build a monument.
+        * If you talk to the priest, he will find the remains and entomb them in the monument.
+        * When you return to the secret room, the warrior will thank you, unlock the resilience skill tree, and disappear.
 * Chapter 8: At the entrance, Thalior provides you with a crystal sword said to shatter the Voidstone and destroy Nyxara. The player fights through the chamber and confronts the Voidstone. Nyxara pleads for mercy, presenting a choice: either shatter the gem or provide her with specific materials she claims will reseal her prison. If you shatter the gem, the credits roll. If you provide the materials, she creates a powerful boss that must be defeated, after which Nyxara is weakened and Thalior is able to reseal the Voidstone.
 
 ## Gameplay
@@ -131,7 +131,7 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 ### Party System
 - **Six-Member Party:** Manage a team of adventurers with complementary abilities
 - **Permadeath:** Character death is permanent, but invested fragments can be recovered
-- **Total Party Kill:** A new, random party will be respawned at either the temple or the city entrance with gained fragments recovered
+- **Total Party Kill:** A new, random party will respawn at either the temple or the city entrance with recovered fragments
 - **Recruitment:** Replace fallen party members in the city and redistribute recovered fragments
 - **Party Roles:** While classless, specialized character builds for tanking, DPS, support, etc. emerge naturally
 
@@ -140,7 +140,7 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 - **Classless Specialization:** No predefined classes - the hero develops through skill tree investments
 - **Base Stats:** STR (physical), DEX (speed/accuracy), INT (magical) - all starting at 10
 - **Respecialization:** Redistribute fragment investments at specific city locations
-- **Skill Trees:** Mele weapon skill, mage skill, and bow skill trees are unlocked by default. Priest skill, defence skill, and resilliance skill trees can be unlocked by exploration.
+- **Skill Trees:** Melee weapon, mage, and bow skill trees are unlocked by default. Priest, defense, and resilience skill trees can be unlocked through exploration.
 
 ### Combat
 - **Turn-Based Tactics:** Initiative-driven combat with positioning and strategic elements
@@ -163,7 +163,7 @@ The journey through Voidstone's depths features zone-based difficulty progressio
 - **Unique Artifacts:** Discover powerful items with special abilities tied to the game's lore
 
 ### World Interaction
-- **Dialog:** Text-based NPC conversations with occasional choices impacting quest outcomes
+- **Dialogue:** Text-based NPC conversations with occasional choices impacting quest outcomes
 - **Quest Tracking:** Journal system with main and side objectives, clear "next step" guidance
 - **Economy:** Standard fantasy trade system with specialized vendors
 - **City Hub:** Central base for crafting, enchanting, and quest management
