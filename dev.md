@@ -3,4 +3,4 @@ title: "Dev"
 ---
 
 ## What are we working on next?
-[Voidstone](games/voidstone/voidstone)!!!
+<img class="game_tile" src="/assets/img/bb_icon.png" alt="Brinebound Icon"> [Brinebound](/games/brinebound)
