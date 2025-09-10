@@ -13,6 +13,6 @@ content and respectful of tough topics. Right now, all of our games are appropri
 #### Follow Along!
 If you want to keep up to date, I publish game launches and occasional updates on my free substack.
 
-<iframe src="https://unremarkablegames.substack.com/embed" style="border:1px solid #e5e8e8; background: #424949;" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://unremarkablegames.substack.com/embed" width="100%" style="border:1px solid #e5e8e8; background: #424949;" frameborder="0" scrolling="no"></iframe>
 
 Sign up and follow along!

@@ -89,6 +89,7 @@ a:hover {background: #34495e;}
     height: 128px;
     border-radius: 32px;
     vertical-align: middle;
+    margin-bottom: 1em;
 }
 
 .screenshot-row {
