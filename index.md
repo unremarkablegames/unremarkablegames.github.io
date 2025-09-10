@@ -9,3 +9,10 @@ Just honest craftsmanship and interactive stories worth telling.
 
 We believe parents and players alike should know what they're getting. We are transparent about
 content and respectful of tough topics. Right now, all of our games are appropriate for any age.
+
+#### Follow Along!
+If you want to keep up to date, I publish game launches and occasional updates on my free substack.
+
+<iframe src="https://unremarkablegames.substack.com/embed" style="border:1px solid #e5e8e8; background: #424949;" frameborder="0" scrolling="no"></iframe>
+
+Sign up and follow along!
