@@ -1,5 +1,8 @@
 body {font-size: medium;}
 
+/* Ensure images never overflow containers */
+img {max-width: 100%; height: auto;}
+
 hr {
     border: none;
     background-color: #2e4053;
@@ -64,7 +67,7 @@ a:hover {background: #34495e;}
 
 .content {
     max-width: 64em;
-    min-width: 28em;
+    width: 100%;
     margin: auto;
 }
 
@@ -73,11 +76,36 @@ a:hover {background: #34495e;}
     font-size: x-small;
 }
 
+/* Crew profile layout */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile h3 { margin: 0 0 10px 0; }
+.profile p { margin: 0; }
+
 @media screen and (max-width: 40em) {
     .logo-text {font-size: xx-large;}
-    body {font-size: small;}
+    body {font-size: medium;}
     hr {height: 3px;}
     main {padding-inline: 1em;}
+    .nav-list {flex-wrap: wrap;}
+    .nav-item {padding-inline: 1em;}
+    .content {width: 100%;}
+    .profile {flex-direction: column; align-items: flex-start; gap: 12px;}
+    .profile img {width: 112px; height: 112px;}
+    .footer-text {margin-inline: 1em;}
+    .screenshot-row {flex-direction: column;}
+    .game-screenshot {max-width: 100%;}
 }
 @media screen and (max-width: 30em) {
     .logo-text {font-size: x-large;}
