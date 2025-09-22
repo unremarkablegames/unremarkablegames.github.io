@@ -17,7 +17,7 @@ news, and maybe even a sneak peek at the game I’m currently working on.
 <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
-        #mc_embed_signup{background:#85929e; color:#1b2631 false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
+        #mc_embed_signup{background:#85929e; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%; color:#1b2631}
 </style>
 <div id="mc_embed_signup">
     <form action="https://unremarkablegames.us1.list-manage.com/subscribe/post?u=67895038db1b8e2b60f9ed1d5&amp;id=76b2bc8342&amp;f_id=00f772e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
