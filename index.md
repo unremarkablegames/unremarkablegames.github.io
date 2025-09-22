@@ -10,8 +10,6 @@ Just honest craftsmanship and interactive stories worth telling.
 We believe parents and players alike should know what they're getting. We are transparent about
 content and respectful of tough topics. Right now, all of our games are appropriate for any age.
 
----
-
 <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
