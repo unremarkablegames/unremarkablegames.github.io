@@ -18,6 +18,7 @@ content and respectful of tough topics. Right now, all of our games are appropri
         #mc_embed_signup{clear:left; width: 100%; background: #283747; color: #d6dbdf}
         #mc_embed_signup_scroll{padding-top: 10px}
         #mc_embed_signup .button {background-color: #d6dbdf; color: #212f3c}
+        #mc_embed_signup .button:hover {background-color: #aeb6bf; color: #212f3c}
 </style>
 <div id="mc_embed_signup">
     <form action="https://unremarkablegames.us1.list-manage.com/subscribe/post?u=67895038db1b8e2b60f9ed1d5&amp;id=76b2bc8342&amp;f_id=00f772e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
