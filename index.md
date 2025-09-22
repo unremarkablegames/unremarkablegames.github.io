@@ -15,10 +15,8 @@ content and respectful of tough topics. Right now, all of our games are appropri
 <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
-        #mc_embed_signup{clear:left; width: 100%; background: #283747; color: #85929e}
-        #mc-embedded-subscribe{}
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        #mc_embed_signup{clear:left; width: 100%; background: #283747; color: #d6dbdf}
+        #mc-embedded-subscribe{color: inherit; background-color: inherit}
 </style>
 <div id="mc_embed_signup">
     <form action="https://unremarkablegames.us1.list-manage.com/subscribe/post?u=67895038db1b8e2b60f9ed1d5&amp;id=76b2bc8342&amp;f_id=00f772e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
