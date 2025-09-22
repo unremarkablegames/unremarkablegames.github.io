@@ -15,7 +15,8 @@ content and respectful of tough topics. Right now, all of our games are appropri
 <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
-        #mc_embed_signup{clear:left; width: 100%}
+        #mc_embed_signup{clear:left; width: 100%; background: #283747; color: #85929e}
+        #mc-embedded-subscribe{}
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
