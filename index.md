@@ -14,10 +14,11 @@ content and respectful of tough topics. Right now, all of our games are appropri
 Get a useful email on the first Friday of every month - game launches and updates, unremarkable
 news, and maybe even a sneak peek at the game I’m currently working on.
 
+<div class="bg-wet-asphalt-700">
 <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
-        #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
+        #mc_embed_signup{background:#eee; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
 </style>
 <div id="mc_embed_signup">
     <form action="https://unremarkablegames.us1.list-manage.com/subscribe/post?u=67895038db1b8e2b60f9ed1d5&amp;id=76b2bc8342&amp;f_id=00f772e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
@@ -42,3 +43,4 @@ news, and maybe even a sneak peek at the game I’m currently working on.
 </form>
 </div>
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+</div>
