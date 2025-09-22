@@ -15,7 +15,8 @@ content and respectful of tough topics. Right now, all of our games are appropri
 <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style type="text/css">
-        #mc_embed_signup{clear:left; width: 100%; background: #283747; color: #d6dbdf; margin-top: 10px}
+        #mc_embed_signup{clear:left; width: 100%; background: #283747; color: #d6dbdf}
+        #mc_embed_signup_scroll{margin-top: 10px}
         #mc_embed_signup .button {color: inherit; background-color: inherit}
 </style>
 <div id="mc_embed_signup">
