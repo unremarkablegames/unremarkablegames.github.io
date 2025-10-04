@@ -5,7 +5,7 @@ title: "Join"
 <div id="mc_embed_signup">
     <form action="https://unremarkablegames.us1.list-manage.com/subscribe/post?u=67895038db1b8e2b60f9ed1d5&amp;id=76b2bc8342&amp;f_id=00f772e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
         <div id="mc_embed_signup_scroll"><h2>Subscribe to our unremarkable mailing list!</h2>
-            <p>Follow along with Unremarkable games! Get a useful email on the first Friday of every month - game launches and updates, unremarkable news, and maybe even a sneak peek at a game in development.</p>
+            <p>Keep up to date with Unremarkable games! Get a useful email on the first Friday of every month - game launches and updates, unremarkable news, and maybe even a sneak peek at a game in development.</p>
             <div class="mc-field-group"><label for="mce-EMAIL">Email Address </label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
         <div id="mce-responses" class="clear foot">
             <div class="response" id="mce-error-response" style="display: none;"></div>
