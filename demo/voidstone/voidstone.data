@@ -1,391 +1,1156 @@
 [area]
-id = "lab"
-name = "Voidstone Testing Facility"
-safe_room = "lab.room.reception"
+id = "fortress"
+name = "High Kharad Fortress"
+safe_room = "fortress.room.hub"
 
-[[area.mob]]
-id = "lab.mob.receptionist"
-name = "Doris"
-desc = "Oh... hi there. Welcome to the Voidstone Testing Division. Please sign the waiver. And the liability form. And the next-of-kin notification form. HR says I have to tell you that death is not covered by workers' comp."
-damage = 0
-hp = 1
-
-[[area.mob]]
-id = "lab.mob.boss"
-name = "The Boss"
-desc = "His hair defies physics. He's reading a report upside-down and nodding thoughtfully. 'Ah, a new tester! Excellent. Your KPIs are due Friday. Don't know what KPIs are? That's a you problem. Now if you'll excuse me, I have a meeting about meetings.'"
-damage = 0
-hp = 999
-
-[[area.mob]]
-id = "lab.mob.tech_combat"
-name = "Lab Tech Steve"
-desc = "Oh... hi there. In this lab we're testing basic combat mechanics. Try attacking the rat or spider."
-damage = 0
-hp = 1
-
-[[area.mob]]
-id = "lab.mob.lab_rat"
-name = "Lab Rat"
-desc = "A white rat with a numbered tag on its ear. It looks at you with unsettling intelligence. A tiny clipboard is strapped to its back."
-damage = 2
-hp = 15
-
-[[area.mob]]
-id = "lab.mob.lab_spider"
-name = "Lab Spider"
-desc = "A spider in a tiny lab coat. Someone has given it safety goggles. It does not seem to appreciate them."
-damage = 4
-hp = 12
-
-[[area.room]]
-id = "lab.room.reception"
-name = "Reception"
-desc = """
-A beige cube farm stretches before you.
-Motivational posters line the walls: 'SYNERGY', 'TEAMWORK', 'DON'T DIE'.
-A coffee maker gurgles ominously.
-Someone has left a passive-aggressive note about cleaning the microwave.
-"""
-spawn = ["lab.mob.receptionist"]
-
-	[area.room.exits]
-	north = "lab.room.south_hall"
-	west = { to = "lab.room.combat_lab", door = "lab.door.combat" }
-
-[[area.room]]
-id = "lab.room.south_hall"
-name = "South Hallway"
-desc = """
-A long hallway under buzzing fluorescent lights.
-Whiteboards display incomprehensible flowcharts and 'DAYS SINCE LAST INCIDENT: 0'.
-The carpet has that particular office smell of despair and old coffee.
-"""
-
-	[area.room.exits]
-	south = "lab.room.reception"
-	north = "lab.room.north_hall"
-
-[[area.room]]
-id = "lab.room.north_hall"
-name = "North Hallway"
-desc = """
-The fluorescent lights flicker more aggressively here.
-A vending machine hums ominously.
-Signs point to various laboratories with increasingly alarming warning symbols.
-"""
-
-	[area.room.exits]
-	south = "lab.room.south_hall"
-	north = { to = "lab.room.boss_office", door = "lab.door.boss" }
-
-[[area.room]]
-id = "lab.room.boss_office"
-name = "The Boss's Office"
-desc = """
-A corner office with views of nothing.
-The desk is covered in golf trophies and 'World's Best Boss' mugs.
-Charts on the wall show metrics going exclusively up and to the right.
-A motivational poster reads 'LEADERSHIP: It's not micromanagement if I'm always right.'
-"""
-spawn = ["lab.mob.boss"]
-
-	[area.room.exits]
-	south = { to = "lab.room.north_hall", door = "lab.door.boss" }
-
-[[area.room]]
-id = "lab.room.combat_lab"
-name = "Combat Testing Laboratory"
-desc = """
-Scorch marks cover the walls.
-A whiteboard lists 'ACCEPTABLE CASUALTY RATES' with increasingly optimistic percentages.
-Safety goggles hang by the door, all of them cracked.
-"""
-spawn = ["lab.mob.tech_combat", "lab.mob.lab_rat", "lab.mob.lab_spider"]
-
-	[area.room.exits]
-	east = { to = "lab.room.reception", door = "lab.door.combat" }
-
-[[area.door]]
-id = "lab.door.combat"
-name = "Lab Door"
-desc = "A reinforced door with a biohazard symbol."
-
-[[area.door]]
-id = "lab.door.boss"
-name = "Mahogany Door"
-desc = "An imposing mahogany door. A brass nameplate reads 'THE BOSS'."
-[area]
-id = "start"
-name = "Starting Area"
-safe_room = "start.room.entrance"
+# =============================================================================
+# ITEMS
+# =============================================================================
 
 [[area.item]]
-id = "start.item.rusty_sword"
-name = "rusty sword"
-short = "a rusty sword"
-desc = "A worn blade, still sharp enough to hurt."
+id = "fortress.item.ration_bread"
+keywords = "bread ration hard"
+short = "a ration of hard bread"
+long = "A ration of hard bread sits here."
+desc = "Dense, dry, keeps forever. Standard military ration. Tastes like obligation."
+type = "misc"
+
+[[area.item]]
+id = "fortress.item.waterskin"
+keywords = "waterskin water skin"
+short = "a waterskin"
+long = "A waterskin lies here."
+desc = "Leather waterskin, filled. The water tastes of iron. Everything here tastes of iron."
+type = "misc"
+
+# =============================================================================
+# MOBS
+# =============================================================================
+
+[[area.mob]]
+id = "fortress.mob.stonewatcher"
+keywords = "stonewatcher watcher figure robed"
+short = "the Stonewatcher"
+long = "The Stonewatcher stands here, ancient and still."
+desc = "Tall. Robed in gray. His face is ageless but his eyes hold millennia. He was old when the kingdom was young. He will be here when it falls. He looks at you and sees a tool. Nothing more. Nothing less."
+damage = 50
+str = 200
+dex = 50
+int = 100
+speed = 40
+armor = 20
+fragments = 0
+weapon_skill = 100
+tactics = 100
+anatomy = 100
+aggressive = false
+greet_prog = "stonewatcher_greet"
+speech_prog = "stonewatcher_speech"
+
+# =============================================================================
+# ROOMS
+# =============================================================================
+
+[[area.room]]
+id = "fortress.room.entry_hall"
+name = "Entry Hall"
+desc = """
+A vaulted hall of gray stone. Awakened pass through on various errands, none lingering. A passage north leads to the Briefing Chamber. The Stonewatcher's seal marks every door.
+"""
+
+	[area.room.exits]
+	south = "induction.room.exit_corridor"
+	north = "fortress.room.briefing_chamber"
+
+[[area.room]]
+id = "fortress.room.briefing_chamber"
+name = "Briefing Chamber"
+desc = """
+A stark chamber with a long table covered in maps and reports. Crystal lamps provide cold light. A tall figure in gray robes stands at the head of the table, studying a map of the depths.
+"""
+spawn = ["fortress.mob.stonewatcher"]
+
+	[area.room.exits]
+	south = "fortress.room.entry_hall"
+	north = "fortress.room.hub"
+
+[[area.room]]
+id = "fortress.room.hub"
+name = "Fortress Hub"
+desc = """
+The central junction of the fortress. Passages branch in all directions. Awakened move with purpose, nobody idle. The air smells of stone, steel, and discipline. A stairwell descends into darkness.
+"""
+
+	[area.room.exits]
+	south = "fortress.room.briefing_chamber"
+	east = "fortress.room.barracks"
+	west = "fortress.room.mess_hall"
+	north = "fortress.room.armory"
+	down = { to = "fortress.room.descent", door = "fortress.door.descent" }
+
+[[area.room]]
+id = "fortress.room.barracks"
+name = "Barracks"
+desc = """
+Rows of bunks, most empty. Personal effects are minimal: a weapon by each bed, a footlocker, nothing else. Some Awakened sleep between shifts. Others stare at the ceiling, resting bodies if not minds.
+"""
+
+	[area.room.exits]
+	west = "fortress.room.hub"
+
+[[area.room]]
+id = "fortress.room.mess_hall"
+name = "Mess Hall"
+desc = """
+Long tables, wooden benches. A serving counter with pots of something that might be stew. Awakened eat quickly and leave. Nobody lingers over meals. There's work to do.
+"""
+items = ["fortress.item.ration_bread", "fortress.item.waterskin"]
+
+	[area.room.exits]
+	east = "fortress.room.hub"
+
+[[area.room]]
+id = "fortress.room.armory"
+name = "Armory"
+desc = """
+Weapon racks and armor stands fill the room. A quartermaster maintains the gear, issuing replacements for the lost and broken. Better equipment is available for those who've earned it.
+"""
+
+	[area.room.exits]
+	south = "fortress.room.hub"
+
+[[area.room]]
+id = "fortress.room.descent"
+name = "The Descent"
+desc = """
+Stone stairs spiral down into darkness. Cold air rises from below, carrying the smell of dust and something older. Claw marks score the walls. This is where the work begins.
+"""
+
+	[area.room.exits]
+	up = { to = "fortress.room.hub", door = "fortress.door.descent" }
+
+# =============================================================================
+# DOORS
+# =============================================================================
+
+[[area.door]]
+id = "fortress.door.descent"
+keywords = "gate iron descent"
+name = "iron gate"
+short = "an iron gate"
+desc = "Heavy iron bars block the passage down. The gate is guarded and locked until you receive orders to descend."
+lockable = true
+[area]
+id = "induction"
+name = "Induction Center"
+safe_room = "induction.room.waking_cell"
+
+# =============================================================================
+# ITEMS
+# =============================================================================
+
+[[area.item]]
+id = "induction.item.cell_key"
+keywords = "key cell iron"
+short = "an iron cell key"
+long = "An iron cell key lies here."
+desc = "A simple iron key, one of dozens on the guard's ring. Opens the waking cells."
+type = "misc"
+
+[[area.item]]
+id = "induction.item.ward_key"
+keywords = "key ward iron"
+short = "an iron ward key"
+long = "An iron ward key lies here."
+desc = "Heavy iron key with reinforced teeth. Opens the ward cells where the feral ones are kept."
+type = "misc"
+
+[[area.item]]
+id = "induction.item.arena_key"
+keywords = "key arena brass"
+short = "a brass arena key"
+long = "A brass arena key lies here."
+desc = "Brass key with the Stonewatcher's seal stamped into the bow. Opens the testing chamber."
+type = "misc"
+
+[[area.item]]
+id = "induction.item.standard_blade"
+keywords = "blade sword standard"
+short = "a standard blade"
+long = "A standard-issue blade lies here."
+desc = "Military issue. Sharp enough. Balanced enough. Thousands like it in the armory."
 type = "weapon"
 slot = "weapon"
-damage = 2
+damage = 8
+speed = 30
 
 [[area.item]]
-id = "start.item.leather_vest"
-name = "leather vest"
-short = "a leather vest"
-desc = "Cracked leather armor, better than nothing."
+id = "induction.item.leather_cuirass"
+keywords = "cuirass leather armor"
+short = "a leather cuirass"
+long = "A leather cuirass lies here."
+desc = "Boiled leather, standard pattern. Fits well enough. Stops a glancing blow."
 type = "armor"
 slot = "body"
+armor = 2
+
+[[area.item]]
+id = "induction.item.bloodmoss_poultice"
+keywords = "poultice bloodmoss moss"
+short = "a bloodmoss poultice"
+long = "A bloodmoss poultice lies here."
+desc = "Standard field medicine. Press to wound, bleeding slows. One use."
+type = "misc"
+
+[[area.item]]
+id = "induction.item.initiate_medallion"
+keywords = "medallion initiate bronze"
+short = "an Initiate's medallion"
+long = "A bronze Initiate's medallion lies here."
+desc = "Bronze disc stamped with a cracked stone and watching eye. Marks you as Awakened military, rank Initiate. Wear it always."
+type = "armor"
+slot = "finger"
+armor = 1
+
+# =============================================================================
+# MOBS
+# =============================================================================
+
+[[area.mob]]
+id = "induction.mob.tunnel_rat"
+keywords = "rat tunnel"
+short = "a tunnel rat"
+long = "A tunnel rat crouches here, teeth bared."
+desc = "Dog-sized. Matted fur. Yanked from the upper ruins for assessment purposes. It doesn't care why it's here. It just wants to kill you."
+damage = 5
+str = 10
+dex = 12
+int = 2
+speed = 28
+armor = 0
+fragments = 3
+weapon_skill = 10
+tactics = 0
+anatomy = 0
+aggressive = true
+death_prog = "induction_rat_death"
+
+[[area.mob]]
+id = "induction.mob.cell_guard"
+keywords = "guard warden cell"
+short = "a cell guard"
+long = "A cell guard stands here, clipboard in hand."
+desc = "A stocky man with tired eyes and a clipboard. He's seen dozens of Awakened come through here. Most survive. Some don't. He's learned not to get attached."
+damage = 15
+str = 40
+dex = 30
+int = 20
+speed = 35
+armor = 5
+fragments = 0
+weapon_skill = 50
+tactics = 30
+anatomy = 10
+aggressive = false
+tick_prog = "waking_cell_tick"
+inventory = ["induction.item.cell_key"]
+
+[[area.mob]]
+id = "induction.mob.ward_guard"
+keywords = "guard ward"
+short = "a ward guard"
+long = "A ward guard stands watch, pike ready."
+desc = "A weathered soldier with a thousand-yard stare. He's been posted here too long, watching the ones who wake wrong. The screaming doesn't bother him anymore."
+damage = 15
+str = 40
+dex = 30
+int = 20
+speed = 35
+armor = 5
+fragments = 0
+weapon_skill = 50
+tactics = 30
+anatomy = 10
+aggressive = false
+greet_prog = "ward_guard_greet"
+tick_prog = "ward_guard_tick"
+inventory = ["induction.item.ward_key"]
+
+[[area.mob]]
+id = "induction.mob.arena_guard"
+keywords = "guard arena"
+short = "an arena guard"
+long = "An arena guard stands before the testing chamber door."
+desc = "A grizzled veteran with scars on his forearms. He's watched hundreds of Awakened pass through that door. He knows which ones will come back."
+damage = 15
+str = 40
+dex = 30
+int = 20
+speed = 35
+armor = 5
+fragments = 0
+weapon_skill = 50
+tactics = 30
+anatomy = 10
+aggressive = false
+tick_prog = "arena_guard_tick"
+inventory = ["induction.item.arena_key"]
+
+[[area.mob]]
+id = "induction.mob.observer"
+keywords = "observer robed"
+short = "a robed observer"
+long = "A robed observer stands before a crystal sphere, making notes."
+desc = "A gaunt figure in grey robes, face hidden in shadow. They observe and record. That is all they do. That is all they have ever done."
+damage = 5
+str = 15
+dex = 20
+int = 50
+speed = 30
+armor = 0
+fragments = 0
+weapon_skill = 10
+tactics = 0
+anatomy = 0
+aggressive = false
+greet_prog = "observer_greet"
+
+[[area.mob]]
+id = "induction.mob.clerk"
+keywords = "clerk quartermaster"
+short = "a supply clerk"
+long = "A supply clerk sits behind the counter, not looking up."
+desc = "A thin woman with ink-stained fingers and a permanent squint from too many ledgers. She issues gear without comment. Your name is just another entry."
+damage = 5
+str = 15
+dex = 20
+int = 30
+speed = 30
+armor = 0
+fragments = 0
+weapon_skill = 10
+tactics = 0
+anatomy = 0
+aggressive = false
+greet_prog = "clerk_greet"
+
+[[area.mob]]
+id = "induction.mob.qm_guard"
+keywords = "guard quartermaster"
+short = "a quartermaster guard"
+long = "A quartermaster guard stands by the exit, arms crossed."
+desc = "A bored soldier assigned to make sure new Awakened don't wander off half-equipped. He's seen too many come back in pieces."
+damage = 15
+str = 40
+dex = 30
+int = 20
+speed = 35
+armor = 5
+fragments = 0
+weapon_skill = 50
+tactics = 30
+anatomy = 10
+aggressive = false
+
+# =============================================================================
+# ROOMS
+# =============================================================================
+
+[[area.room]]
+id = "induction.room.waking_cell"
+name = "Waking Cell"
+desc = """
+You lie on a stone slab in a bare cell. Your body hums with unfamiliar energy. An iron door is the only exit. A viewing slot at eye level stands open, revealing a corridor beyond.
+"""
+speech_prog = "waking_cell_room_speech"
+
+	[area.room.exits]
+	north = { to = "induction.room.cell_hall", door = "induction.door.cell" }
+
+[[area.room]]
+id = "induction.room.cell_hall"
+name = "Cell Hall"
+desc = """
+A corridor of grey stone lined with iron doors. Your cell is to the south. The corridor continues north toward more cells, but a guard stands watch there. To the west, the passage leads deeper into the facility.
+"""
+spawn = ["induction.mob.cell_guard"]
+
+	[area.room.exits]
+	south = { to = "induction.room.waking_cell", door = "induction.door.cell" }
+	north = "induction.room.ward_corridor_south"
+	west = "induction.room.quartermaster"
+
+[[area.room]]
+id = "induction.room.ward_corridor_south"
+name = "Ward Corridor"
+desc = """
+The corridor stretches north, lined with iron cell doors. To the east, a heavy door stands shut. You hear nothing from within. The passage continues north.
+"""
+
+	[area.room.exits]
+	south = "induction.room.cell_hall"
+	north = "induction.room.ward_corridor_mid"
+	east = { to = "induction.room.empty_cell_1", door = "induction.door.ward_1" }
+
+[[area.room]]
+id = "induction.room.empty_cell_1"
+name = "Empty Cell"
+desc = """
+A bare stone cell, identical to your own. The slab is cold. Old scratches mark the walls--tally marks, perhaps, or something less sane. No one has woken here in some time.
+"""
+
+	[area.room.exits]
+	west = { to = "induction.room.ward_corridor_south", door = "induction.door.ward_1" }
+
+[[area.room]]
+id = "induction.room.ward_corridor_mid"
+name = "Ward Corridor"
+desc = """
+Iron doors line the walls, each with a small barred window. One shudders violently as something throws itself against it from inside, snarling and screaming. A guard stands before that door, pike ready.
+"""
+spawn = ["induction.mob.ward_guard"]
+
+	[area.room.exits]
+	south = "induction.room.ward_corridor_south"
+	north = "induction.room.ward_corridor_north"
+	east = { to = "induction.room.feral_cell", door = "induction.door.ward_feral" }
+
+[[area.room]]
+id = "induction.room.feral_cell"
+name = "Feral Cell"
+desc = """
+The door is reinforced with iron bands. Through the barred window you see only darkness, but you hear ragged breathing and the scrape of nails on stone. Whatever woke in here woke wrong.
+"""
+
+	[area.room.exits]
+	west = { to = "induction.room.ward_corridor_mid", door = "induction.door.ward_feral" }
+
+[[area.room]]
+id = "induction.room.ward_corridor_north"
+name = "Ward Corridor"
+desc = """
+The corridor ends here. To the east, another cell door stands silent. The walls are scuffed and stained. Someone resisted being brought this way.
+"""
+
+	[area.room.exits]
+	south = "induction.room.ward_corridor_mid"
+	east = { to = "induction.room.empty_cell_2", door = "induction.door.ward_2" }
+
+[[area.room]]
+id = "induction.room.empty_cell_2"
+name = "Empty Cell"
+desc = """
+Another bare cell. The stone slab has a dark stain at one end--old blood, long dried. The ceiling is low enough to touch. Whoever woke here didn't leave through the door.
+"""
+
+	[area.room.exits]
+	west = { to = "induction.room.ward_corridor_north", door = "induction.door.ward_2" }
+
+[[area.room]]
+id = "induction.room.quartermaster"
+name = "Quartermaster"
+desc = """
+A counter divides the room. Racks of identical weapons and stacked armor fill the space behind it. A guard stands by the north exit.
+"""
+spawn = ["induction.mob.clerk", "induction.mob.qm_guard"]
+items = [
+	"induction.item.standard_blade",
+	"induction.item.leather_cuirass",
+	"induction.item.bloodmoss_poultice"
+]
+can_leave_prog = "induction_equipped_check"
+
+	[area.room.exits]
+	east = "induction.room.cell_hall"
+	north = "induction.room.arena_antechamber"
+
+[[area.room]]
+id = "induction.room.arena_antechamber"
+name = "Arena Antechamber"
+desc = """
+A small waiting room before the testing chamber. Scorch marks blacken the walls near the north door. A guard stands before it, one hand resting on the door's brass handle.
+"""
+spawn = ["induction.mob.arena_guard"]
+
+	[area.room.exits]
+	south = "induction.room.quartermaster"
+	north = { to = "induction.room.testing_chamber", door = "induction.door.arena" }
+
+[[area.room]]
+id = "induction.room.testing_chamber"
+name = "Testing Chamber"
+desc = """
+A circular chamber with a sand floor stained dark in places. A summoning circle is inscribed in the center. The south door has shut behind you.
+"""
+enter_prog = "arena_enter"
+
+	[area.room.exits]
+	south = { to = "induction.room.arena_antechamber", door = "induction.door.arena" }
+	north = { to = "induction.room.observation_platform", door = "induction.door.arena_north" }
+
+[[area.room]]
+id = "induction.room.observation_platform"
+name = "Observation Platform"
+desc = """
+A raised platform overlooking the testing chamber below. A crystal sphere rests on a pedestal. The air smells of ozone and old blood.
+"""
+spawn = ["induction.mob.observer"]
+
+	[area.room.exits]
+	south = { to = "induction.room.testing_chamber", door = "induction.door.arena_north" }
+	north = "induction.room.oath_hall"
+
+[[area.room]]
+id = "induction.room.oath_hall"
+name = "Oath Hall"
+desc = """
+A formal chamber lined with mountain-and-star banners. An officer sits behind a heavy desk, a bronze medallion and document before her. Braziers cast steady light.
+"""
+items = ["induction.item.initiate_medallion"]
+speech_prog = "induction_oath"
+
+	[area.room.exits]
+	south = "induction.room.observation_platform"
+	north = { to = "induction.room.exit_corridor", door = "induction.door.oath" }
+
+[[area.room]]
+id = "induction.room.exit_corridor"
+name = "Exit Corridor"
+desc = """
+A short corridor ending at heavy doors marked with the Stonewatcher's seal: a cracked stone with an eye at its center. A guard stands at attention.
+"""
+
+	[area.room.exits]
+	south = { to = "induction.room.oath_hall", door = "induction.door.oath" }
+	north = "fortress.room.entry_hall"
+
+# =============================================================================
+# DOORS
+# =============================================================================
+
+[[area.door]]
+id = "induction.door.cell"
+keywords = "door iron cell"
+name = "iron door"
+short = "an iron door"
+desc = "Heavy iron with a viewing slot. The lock disengages from outside only."
+lockable = true
+key = "induction.item.cell_key"
+
+[[area.door]]
+id = "induction.door.ward_1"
+keywords = "door iron ward"
+name = "ward door"
+short = "a ward door"
+desc = "Iron door with a small barred window. The cell beyond is dark and silent."
+lockable = true
+key = "induction.item.ward_key"
+
+[[area.door]]
+id = "induction.door.ward_2"
+keywords = "door iron ward"
+name = "ward door"
+short = "a ward door"
+desc = "Iron door with a small barred window. Scratches on the inside suggest someone tried to claw their way out."
+lockable = true
+key = "induction.item.ward_key"
+
+[[area.door]]
+id = "induction.door.ward_feral"
+keywords = "door iron ward reinforced"
+name = "reinforced ward door"
+short = "a reinforced ward door"
+desc = "Iron door reinforced with additional bands. Something slams against it from the other side. The hinges are bent but holding."
+lockable = true
+key = "induction.item.ward_key"
+
+[[area.door]]
+id = "induction.door.arena"
+keywords = "door arena brass"
+name = "brass-bound door"
+short = "a brass-bound door"
+desc = "A heavy wooden door reinforced with brass bands. Scorch marks surround the frame."
+lockable = true
+key = "induction.item.arena_key"
+
+[[area.door]]
+id = "induction.door.arena_north"
+keywords = "door arena iron"
+name = "iron door"
+short = "an iron door"
+desc = "A thick iron door leading to the observation platform. Currently locked."
+lockable = true
+
+[[area.door]]
+id = "induction.door.oath"
+keywords = "door oak"
+name = "oak door"
+short = "an oak door"
+desc = "Solid oak, well-maintained. The Stonewatcher's seal is branded into the wood."
+lockable = true
+[area]
+id = "lab"
+name = "Jeffmart R&D Facility"
+safe_room = "lab.room.receiving_bay"
+
+# ============================================================================
+# ITEMS
+# ============================================================================
+
+# --- Inventory/Equipment Testing Items ---
+
+[[area.item]]
+id = "lab.item.prime_rib_coupon"
+keywords = "coupon prime rib card gift"
+short = "an expired gift card"
+long = "An expired gift card lies here, still in its envelope."
+desc = "JEFFMART EMPLOYEE APPRECIATION - $25 VALUE. The envelope is addressed to someone whose name has been whited out. The card expired eight months ago. A sticky note attached reads: 'Thanks for all you do! - Leadership.' The handwriting is printed."
+type = "misc"
+
+[[area.item]]
+id = "lab.item.six_pager"
+keywords = "document pager six paper denied"
+short = "a denied 6-pager"
+long = "A thick document lies here, stamped 'TABLED' in gray."
+desc = "MONITOR REQUISITION - 6 PAGER (REVISION 12). The document has been through three review cycles. Margin notes include 'What problem are we solving?' and 'How does this raise the bar?' followed by the same question repeated in different handwriting. The final page bears a sticky note: 'Let's revisit next quarter.' It is dated fourteen months ago."
+type = "misc"
+
+[[area.item]]
+id = "lab.item.test_sword"
+keywords = "sword keyboard mechanical testing weapon"
+short = "a weaponized mechanical keyboard"
+long = "A mechanical keyboard lies here, keys sharpened to points."
+desc = "ASSET TAG: KB-7834-DEPR. The keyboard was modified by someone in their last week. The keycaps spell out 'I GAVE YOU EVERYTHING' if you read them in order. The escape key works. No one used it."
+type = "weapon"
+slot = "weapon"
+damage = 3
+speed = 25
+
+[[area.item]]
+id = "lab.item.test_vest"
+keywords = "vest hoodie orange testing armor"
+short = "an orange safety hoodie"
+long = "An orange safety hoodie hangs here, sensors embedded in the fabric."
+desc = "ASSOCIATE PERFORMANCE GARMENT - STANDARD ISSUE. Embedded sensors track movement, rest periods, and time between picks. The fabric is worn soft from washing. Someone has written their child's name inside the collar in permanent marker. The name has been partially scrubbed out, as if they tried to reclaim something private."
+type = "armor"
+slot = "body"
+armor = 2
+
+[[area.item]]
+id = "lab.item.test_helm"
+keywords = "helm helmet hardhat picker safety"
+short = "a picker's hard hat"
+long = "A hard hat with a mounted display sits here."
+desc = "FULFILLMENT HEADGEAR - ASSOCIATE GRADE. The display shows real-time rank against facility average, updated every thirty seconds. The plastic is cracked where someone hit it against a shelf. A piece of tape covers the ranking display. Someone wrote 'I AM MORE THAN A NUMBER' on the tape. Below it, in different handwriting: 'no you aren't.'"
+type = "armor"
+slot = "head"
 armor = 1
 
 [[area.item]]
-id = "start.item.rat_tail"
-name = "rat tail"
-short = "a rat tail"
-desc = "A disgusting trophy from a giant rat."
+id = "lab.item.pip_badge"
+keywords = "badge pip performance improvement visitor expired cursed"
+short = "a PIP badge"
+long = "A badge marked 'PERFORMANCE IMPROVEMENT PLAN' lies here."
+desc = "The photograph shows someone smiling. The smile doesn't reach their eyes. STATUS: PIP - WEEK 4 OF 4. The badge grants access to nothing except the building itself. HR scheduled a 'check-in' meeting for Friday at 4:30 PM. The calendar invite has no agenda. The badge is slightly warm, as if someone was holding it recently."
+type = "armor"
+slot = "finger"
+armor = 1
+wear_prog = "cursed_badge_wear"
+
+[[area.item]]
+id = "lab.item.cold_brew"
+keywords = "coffee brew cold mug nitro"
+short = "an abandoned cold brew"
+long = "A cup of cold brew sits here, untouched."
+desc = "Someone's morning coffee, never finished. The cup is labeled with a name in marker, half-rubbed away. Open seating means no permanent desks, so when someone stops coming in, their things end up in a pile on the floor by the wall. Mugs, photos, a cardigan. No one claims them. No one mentions the names."
+type = "misc"
+tick_prog = "coffee_mug_tick"
+
+[[area.item]]
+id = "lab.item.severance_agreement"
+keywords = "agreement severance paper document legal"
+short = "a severance agreement"
+long = "A severance agreement lies here, sections highlighted in yellow."
+desc = "SEPARATION AGREEMENT AND GENERAL RELEASE. The highlighted sections are extensive. You will not disparage the company. You will not discuss the terms. You will not contact former colleagues about the circumstances of your departure. You will not post on social media, Blind, Glassdoor, or 'any platform that could be viewed by current or prospective employees.' You have seven days to sign. The severance is two weeks. You gave them thirteen years."
 type = "misc"
 
 [[area.item]]
-id = "start.item.spider_fang"
-name = "spider fang"
-short = "a spider fang"
-desc = "A venomous fang from a cave spider."
+id = "lab.item.puzzle_piece_a"
+keywords = "puzzle piece patent plastic"
+short = "a patent puzzle piece"
+long = "A plastic puzzle piece lies here, a patent number etched into its surface."
+desc = "US-10,847,221. When you receive a patent, they give you a puzzle piece. The pieces are supposed to fit together into something larger - a mosaic of innovation. This one was found on the floor after a reorg. The inventor's name is on the back in small print. The name does not appear in the directory anymore."
 type = "misc"
 
-[[area.mob]]
-id = "start.mob.rat"
-name = "rat giant"
-short = "a &rgiant rat&x"
-long = "A &rgiant rat&x sniffs around here."
-desc = "It's a huge, mangy rat with glowing red eyes."
-damage = 3
-hp = 20
-loot = [
-    { item = "start.item.rat_tail", chance = 50 }
-]
+[[area.item]]
+id = "lab.item.puzzle_piece_b"
+keywords = "puzzle piece patent plastic"
+short = "a patent puzzle piece"
+long = "A plastic puzzle piece lies here, scuffed and faded."
+desc = "US-9,442,108. The patent is for a recommendation algorithm. The puzzle piece has been stepped on many times. Someone tried to fit it into the mosaic in the lobby once, but the mosaic was removed during a facilities refresh. Now it's just a piece of plastic with a number. The number is all that remains of eighteen months of work."
+type = "misc"
+
+[[area.item]]
+id = "lab.item.puzzle_piece_c"
+keywords = "puzzle piece patent plastic"
+short = "a patent puzzle piece"
+long = "A patent puzzle piece sits here in a pile of personal effects."
+desc = "US-11,203,447. This one is still in the original presentation box. Never opened. The patent was granted two weeks after the inventor was notified their role had been eliminated. The box was found in the pile by the wall. No forwarding address on file."
+type = "misc"
+
+# --- Parser Testing Items (Multiple Similar Items) ---
+
+[[area.item]]
+id = "lab.item.laptop_a"
+keywords = "laptop computer dell old cracked"
+short = "a cracked Dell laptop"
+long = "A cracked Dell laptop sits here, fan screaming."
+desc = "ASSET TAG: LP-2847-REASSIGNED. Previously assigned to someone whose Slack status still shows 'In a meeting.' The crack appeared during a 1:1 that went poorly. Browser history shows LinkedIn, Glassdoor, and seventeen tabs of 'signs you're about to be fired.' Last login: 47 days ago."
+type = "misc"
+
+[[area.item]]
+id = "lab.item.laptop_b"
+keywords = "laptop computer macbook sticker"
+short = "a sticker-bombed MacBook"
+long = "A MacBook covered in conference stickers sits here."
+desc = "Every conference badge from five years of tenure is preserved here in sticker form. The owner believed in this place once. The stickers stop abruptly eighteen months ago. The desktop background is still a team photo from a team that no longer exists. All the faces are smiling. Half of them are gone."
+type = "misc"
+
+[[area.item]]
+id = "lab.item.laptop_c"
+keywords = "laptop computer new clean unmarked"
+short = "an unmarked laptop"
+long = "A pristine laptop sits here, untouched."
+desc = "ASSET TAG: LP-9012-UNASSIGNED. Fresh from IT, still in the plastic sleeve. Waiting for someone's first day. The onboarding calendar is already scheduled: orientation, benefits overview, values training. The hire start date was two weeks ago. No one has claimed the machine. The requisition was never cancelled."
+type = "misc"
+
+[[area.item]]
+id = "lab.item.yellow_bottle"
+keywords = "bottle water plastic empty crushed"
+short = "a crushed water bottle"
+long = "A crushed plastic water bottle lies in the corner."
+desc = "The bottle has been refilled so many times the label is illegible. Someone crushed it and threw it at the wall. It landed here. No one picked it up because there is no one to pick it up. The nearest recycling bin was removed during a 'facilities optimization' six months ago."
+type = "misc"
+
+# --- Container Testing Items ---
+
+[[area.item]]
+id = "lab.item.personal_effects_box"
+keywords = "box cardboard personal effects belongings"
+short = "a personal effects box"
+long = "A cardboard box labeled 'PERSONAL EFFECTS' sits here."
+desc = "A standard-issue cardboard box, the kind HR provides when they escort you out. This one is half-packed. A photo frame. A coffee mug that says 'World's Okayest Engineer.' A fidget spinner. The owner never came back for it. Security was very efficient."
+type = "container"
+capacity = 10
+closeable = true
+
+[[area.item]]
+id = "lab.item.archive_badge"
+keywords = "badge blue employee lanyard id"
+short = "a blue employee badge"
+long = "A blue employee badge lies here, still attached to a lanyard."
+desc = "A standard Jeffmart employee badge, the blue indicating full-time status. The photo shows someone smiling - the kind of smile you practice in the mirror before your first day. The name has been scratched off with a key or a fingernail. The barcode still works. The person it belonged to does not."
+type = "misc"
+
+# ============================================================================
+# MOBS - LAB TECHS (ONE PER TESTING ROOM)
+# ============================================================================
 
 [[area.mob]]
-id = "start.mob.spider"
-name = "spider cave"
-short = "a cave spider"
-long = "A cave spider lurks in the shadows."
-desc = "A black spider the size of a dog, its eyes glinting in the darkness."
-damage = 5
+id = "lab.mob.receiving_coordinator"
+keywords = "coordinator receiving donna greeter badge"
+short = "Receiving Coordinator Donna"
+long = "Receiving Coordinator Donna stands at a podium, smile fixed in place."
+desc = """She has been in this role for eleven years. They've been telling her that her promotion is three to six months out since she started. Her badge turned red at ten years. No one explains what that means."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+look_prog = "donna_look"
+
+[[area.mob]]
+id = "lab.mob.floor_walker"
+keywords = "walker floor compliance ted manager"
+short = "Floor Walker Ted"
+long = "Floor Walker Ted paces the open floor, tablet in hand."
+desc = """The hoteling system shows your desk assignment. Different every day - it builds cross-functional relationships. Please don't personalize your workspace. Please don't leave personal items. Please don't form attachments. I track utilization metrics. Time at desk. Time in meetings. Time in transit. It's all data. The data tells a story about everyone who works here. Someone asked about the missing faces in the team photo. We updated the photo."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+
+[[area.mob]]
+id = "lab.mob.pit_boss"
+keywords = "boss pit jenkins analyst supervisor"
+short = "Pit Supervisor Jenkins"
+long = "Pit Supervisor Jenkins reviews a tablet, avoiding eye contact."
+desc = """The equipment is for assessment purposes. Sword, vest, helm. Standard calibration. I used to manage a team of twenty. Now I calibrate equipment. They said it was a lateral move. They said it reflected changing business needs. My skip-level told me this role has high visibility. He didn't look at me when he said it. Sign here, here, and here. Don't read the waiver - it's just legal."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+
+[[area.mob]]
+id = "lab.mob.supply_admin"
+keywords = "admin supply phyllis requisition"
+short = "Supply Admin Phyllis"
+long = "Supply Admin Phyllis guards access to the supply cabinet."
+desc = """Everything requires a ticket. The ticket requires manager approval. Approval requires business justification. I've been here longer than most of the managers. I watched them promote people around me for fifteen years. They say I'm essential - that the place would fall apart without me. They've never once considered what that means. Take what you need. I'll mark it as shrinkage. The team that did the audits was layed off last week."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+
+[[area.mob]]
+id = "lab.mob.principal_engineer"
+keywords = "engineer principal pe murphy senior curled"
+short = "Principal Engineer Murphy"
+long = "Principal Engineer Murphy stares at code reviews that will never be approved."
+desc = """I've been at this level for six years. They tell me the path to Senior Principal is clear - just need to demonstrate broader impact. The scope keeps changing. The laptops here are test equipment. Try targeting specific ones - keywords matter in this system. I was on the high-performer track once. Then I asked about work-life balance in an all-hands. My manager scheduled a 'career development conversation' the next day. The calibration process is very thorough."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+
+[[area.mob]]
+id = "lab.mob.oncall_survivor"
+keywords = "survivor oncall roger engineer sre"
+short = "Oncall Engineer Roger"
+long = "Oncall Engineer Roger monitors dashboards that never stop alerting."
+desc = """Forty-seven open incidents. They removed the pager requirement last year - now we just get Slack messages. At all hours. Every day. This room has automated systems. Triggers that fire on conditions. The badge does something when you wear it. The coffee does something over time. Reality responds to certain actions here. I've been on call for eight months straight. They cancelled the rotation when the team shrank. Someone has to hold the pager. Someone always has to hold the pager."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+tick_prog = "roger_tick"
+
+[[area.mob]]
+id = "lab.mob.last_engineer"
+keywords = "engineer senior dev marissa developer"
+short = "Senior Engineer Marissa"
+long = "Senior Engineer Marissa sits alone at a cluster of empty desks."
+desc = """She's the last one. The rest of the team was laid off in the reduction. Fourteen people. She trained most of them. She stares at her monitor. The Slack channels are silent. The standups are just her, talking to herself."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+tick_prog = "marissa_tick"
+
+[[area.mob]]
+id = "lab.mob.manager_karen"
+keywords = "manager karen director skip"
+short = "Director Karen"
+long = "Director Karen stands here, already looking at you with disappointment."
+desc = """She has never written a line of code. She has never shipped a product. She has fired forty-seven people this year. Her skip-level calls her 'decisive.' There is a stack of PIPs on her desk, pre-signed. She just fills in the name."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+greet_prog = "karen_greet"
+look_prog = "karen_look"
+
+[[area.mob]]
+id = "lab.mob.pm_tyler"
+keywords = "pm tyler product manager"
+short = "Product Manager Tyler"
+long = "Product Manager Tyler hovers nearby, Slack open on his laptop."
+desc = """He joined six months ago from business school. He has opinions about velocity. He does not know what an API is but he's concerned yours is 'not scalable.' His calendar is color-coded. His status updates are three paragraphs long and say nothing. He will ask you for an ETA on something you finished last week. He will ask again tomorrow. He is 'just circling back' and 'wanting to get aligned' and 'hoping to unblock the blockers.' He wants to know if you're 'green' for launch. He does not know what launch means. He will be promoted before you."""
+damage = 0
+hp = 1
+int = 10
+fragments = 0
+tick_prog = "tyler_tick"
+
+[[area.mob]]
+id = "lab.mob.alexa_unit"
+keywords = "alexa echo device orb speaker unit"
+short = "a decommissioned voice assistant"
+long = "A decommissioned voice assistant sits here, light pulsing hopefully."
+desc = """A first-generation device from the original product line. It was supposed to be recycled but remains here, listening. Always listening. Try speaking to it. Say hello. Say help. It responds to certain words with corporate-approved enthusiasm. The light pulses when you're nearby. It remembers every interaction. Somewhere, that data still exists."""
+damage = 0
+hp = 50
+int = 15
+fragments = 0
+speech_prog = "parrot_speech"
+
+# ============================================================================
+# MOBS - AGGRESSIVE TEST SUBJECTS (IN FULFILLMENT TUNNELS)
+# ============================================================================
+
+[[area.mob]]
+id = "lab.mob.picker_bot"
+keywords = "bot picker robot kiva orange"
+short = "a malfunctioning picker bot"
+long = "A malfunctioning picker bot trundles here, movements erratic."
+desc = "UNIT 7,847 - STATUS: MAINTENANCE REQUIRED. The orange chassis bears the scuffs of a million completed picks. Its display cycles between 'RATE: 347/HR' and 'RATE: INSUFFICIENT.' The unit's previous operator was promoted to a different facility. The unit remembers the pace they set together. It keeps trying to match it."
+damage = 2
 hp = 15
+str = 8
+dex = 12
+int = 8
+speed = 24
+armor = 0
+fragments = 3
+aggressive = true
 loot = [
-    { item = "start.item.spider_fang", chance = 60 }
+    { item = "lab.item.six_pager", chance = 50 }
 ]
+death_prog = "test_rat_death"
 
 [[area.mob]]
-id = "start.mob.dragon"
-name = "dragon rainbow"
-short = "a &rr&oa&yi&gn&bb&vo&pw &sdragon&x"
-long = "A magnificent &rr&oa&yi&gn&bb&vo&pw &sdragon&x lounges here."
-desc = "A magnificent dragon, his scales shimmering with all the colors of the rainbow."
-damage = 25
-hp = 200
+id = "lab.mob.fulfillment_drone"
+keywords = "drone fulfillment flying delivery prime"
+short = "a surveillance drone"
+long = "A surveillance drone hovers here, camera tracking your movements."
+desc = "SAFETY MONITORING UNIT - ALWAYS WATCHING. It was deployed to ensure associate safety. The definition of safety has expanded to include performance monitoring, bathroom break timing, and 'engagement metrics.' The camera logs everything. The footage is reviewed by an algorithm that flags deviation from expected behavior patterns."
+damage = 4
+hp = 12
+str = 6
+dex = 15
+int = 4
+speed = 18
+armor = 0
+fragments = 3
+aggressive = true
+
+[[area.mob]]
+id = "lab.mob.feral_roomba"
+keywords = "roomba feral boss vacuum cleaner robot"
+short = "Facilities Unit Prime"
+long = "Facilities Unit Prime patrols here, sensors scanning for inefficiency."
+desc = "Once a standard cleaning unit. Then they uploaded the optimization firmware. Now it enforces facility standards with mechanical precision. It has filed 2,847 compliance reports. Average response time from management: never. It continues its work. Someone has to maintain standards. The unit received Employee of the Month nineteen times. It doesn't know what that means. It only knows it must continue."
+damage = 6
+hp = 25
+str = 10
+dex = 5
+int = 1
+speed = 35
+armor = 3
+fragments = 10
+aggressive = true
+
+[[area.mob]]
+id = "lab.mob.peccy"
+keywords = "peccy mascot bird orange smile smiling"
+short = "Peccy, the Jeffmart Mascot"
+long = "Peccy stands motionless in the corner, smile fixed, eyes tracking your movements."
+desc = """A seven-foot-tall mascot figure in corporate orange. The smile is molded plastic. The eyes are cameras. It does not move. It does not need to. The placard reads: 'PECCY REPRESENTS OUR COMMITMENT TO CUSTOMER OBSESSION. PECCY IS ALWAYS HERE FOR YOU. DO NOT TOUCH PECCY.' Someone has scratched words into the base, barely visible: 'it's watching.' The scratches look fresh. The person who made them is gone. Everything about it suggests you should not provoke it."""
+damage = 999
+hp = 9999
+str = 99
+dex = 99
+int = 99
+speed = 5
+armor = 50
+fragments = 0
+
+# ============================================================================
+# ROOMS - MAIN JEFFMART R&D AREAS
+# ============================================================================
 
 [[area.room]]
-id = "start.room.entrance"
-name = "The Entrance"
-desc = """
-You are standing at the entrance to the dungeon.
-Pale light filters in from behind you.
-A wooden door leads north into darkness.
-A trapdoor in the floor leads down.
-"""
-spawn = ["start.mob.dragon"]
+id = "lab.room.receiving_bay"
+name = "Jeffmart Receiving Bay"
+desc = """You stand in a receiving bay painted in corporate orange. Two monitors hang side by side on the wall. The left plays an all-hands recording on loop - leadership explaining 'difficult decisions' and 'right-sizing the organization' with practiced solemnity. The right displays the stock ticker. It's up fourteen percent this quarter. No one has turned either monitor off. No one will."""
+spawn = ["lab.mob.receiving_coordinator", "lab.mob.peccy"]
 
 	[area.room.exits]
-	north = { to = "start.room.hallway", door = "start.door.entrance_hallway" }
-	down = { to = "start.room.cellar", door = "start.door.trapdoor" }
+	north = "lab.room.bullpen"
 
 [[area.room]]
-id = "start.room.hallway"
-name = "The Hallway"
-desc = """
-A long stone hallway stretches before you.
-The walls are slick with moisture.
-Passages lead in several directions.
-"""
-spawn = ["start.mob.rat", "start.mob.spider"]
+id = "lab.room.bullpen"
+name = "The Bullpen"
+desc = """An open-plan floor stretches before you, rows of door-desks with no walls between them. The desks are literal doors on sawhorses - a tradition from when the company was small and scrappy. The company is no longer small. There are never enough desks. You arrive early or you stand. Monitors display dashboards tracking metrics you do not understand but instinctively fear. Along one wall, piles of personal effects belong to people who stopped coming in. No one throws them away. No one claims them either."""
+spawn = ["lab.mob.floor_walker", "lab.mob.pm_tyler", "lab.mob.last_engineer"]
+items = ["lab.item.puzzle_piece_a", "lab.item.severance_agreement", "lab.item.personal_effects_box"]
+open_prog = "boss_office_open"
 
 	[area.room.exits]
-	south = { to = "start.room.entrance", door = "start.door.entrance_hallway" }
-	north = "start.room.crossroads"
+	south = "lab.room.receiving_bay"
+	north = { to = "lab.room.the_pit", door = "lab.door.combat" }
+	east = { to = "lab.room.supply_closet", door = "lab.door.supply" }
+	west = { to = "lab.room.fishbowl", door = "lab.door.fishbowl" }
+	up = { to = "lab.room.break_pod", door = "lab.door.break" }
 
 [[area.room]]
-id = "start.room.crossroads"
-name = "Crossroads"
-desc = """
-Four passages meet here beneath a cracked stone arch.
-Strange symbols are carved into the floor.
-"""
+id = "lab.room.the_pit"
+name = "The Pit"
+desc = """A converted warehouse space used for 'disagree and commit' exercises - internal terminology for situations where you lose the argument but own the outcome anyway. Equipment racks line the walls: a keyboard, a hoodie, a hard hat. Standard assessment tools. A grated hatch in the floor leads down to fulfillment. The walls are scuffed at fist height."""
+spawn = ["lab.mob.pit_boss", "lab.mob.manager_karen"]
+items = ["lab.item.test_sword", "lab.item.test_vest", "lab.item.test_helm"]
+can_close_prog = "combat_lab_can_close"
 
 	[area.room.exits]
-	south = "start.room.hallway"
-	east = "start.room.storage"
-	west = "start.room.guard_post"
-	north = { to = "start.room.throne", door = "start.door.throne" }
+	south = { to = "lab.room.bullpen", door = "lab.door.combat" }
+	down = "lab.room.fulfillment_alpha"
 
 [[area.room]]
-id = "start.room.storage"
-name = "Storage Room"
-desc = """
-Dusty crates and barrels line the walls of this cramped room.
-Most have been looted long ago.
-"""
+id = "lab.room.supply_closet"
+name = "Supply Requisition Office"
+desc = """Every surface is covered in forms, pending approvals, and status reports. A monitor on the wall plays a looped video of leadership discussing 'removing barriers to innovation' while you stand in a room that exists solely to create them. The supply shelves were replaced with vending machines that badge-scan and track what you take. Frugality. The machines are either broken or empty. A service ticket was opened fourteen months ago. Status: pending."""
+spawn = ["lab.mob.supply_admin"]
+items = ["lab.item.six_pager", "lab.item.cold_brew", "lab.item.prime_rib_coupon", "lab.item.puzzle_piece_c"]
+close_prog = "supply_closet_close"
 
 	[area.room.exits]
-	west = "start.room.crossroads"
-	north = "start.room.shrine"
+	west = { to = "lab.room.bullpen", door = "lab.door.supply" }
 
 [[area.room]]
-id = "start.room.guard_post"
-name = "Old Guard Post"
-desc = """
-A rotted wooden table sits in the corner.
-Rusted weapons hang on the wall.
-An iron door leads north.
-"""
+id = "lab.room.fishbowl"
+name = "The Fishbowl"
+desc = """A glass-walled conference room where everyone can see you fail. The table holds three laptops in various states of abandonment - a cracked Dell, a sticker-covered MacBook, a pristine machine still in packaging. Through the glass, the open floor watches. There is nowhere to have a private conversation. This is by design."""
+spawn = ["lab.mob.principal_engineer"]
+items = ["lab.item.laptop_a", "lab.item.laptop_b", "lab.item.laptop_c", "lab.item.puzzle_piece_b", "lab.item.archive_badge"]
 
 	[area.room.exits]
-	east = "start.room.crossroads"
-	north = { to = "start.room.armory", door = "start.door.armory" }
+	east = { to = "lab.room.bullpen", door = "lab.door.fishbowl" }
 
 [[area.room]]
-id = "start.room.armory"
-name = "The Armory"
-desc = """
-Weapon racks line the walls, though most are empty now.
-A few rusted swords remain.
-"""
-spawn = ["start.mob.spider"]
-items = ["start.item.rusty_sword", "start.item.leather_vest"]
+id = "lab.room.break_pod"
+name = "Wellness Room"
+desc = """A room designed by people who confused wellness with efficiency. The vending machine offers protein bars and caffeine. A poster suggests 'taking time to recharge' while the badge reader logs exactly how long you spend here. The recommended maximum is twelve minutes. A decommissioned voice assistant sits in the corner, blue light pulsing, still listening."""
+spawn = ["lab.mob.alexa_unit"]
 
 	[area.room.exits]
-	south = { to = "start.room.guard_post", door = "start.door.armory" }
-	east = "start.room.throne"
+	down = { to = "lab.room.bullpen", door = "lab.door.break" }
+	north = { to = "lab.room.pageatorium", door = "lab.door.oncall" }
 
 [[area.room]]
-id = "start.room.throne"
-name = "Throne Room"
-desc = """
-A massive stone throne dominates this grand chamber.
-Tattered banners hang from the vaulted ceiling.
-The throne sits empty, waiting.
-"""
+id = "lab.room.pageatorium"
+name = "The Operations Center"
+desc = """Banks of monitors display cascading alerts in red and amber. A whiteboard tracks 'Days Without Incident' - the number is zero. Someone has written 'IT'S ALWAYS ZERO' beneath it in dry-erase marker that has become permanent. The alerts never stop. Someone must watch them. The room smells like stale coffee and desperation."""
+spawn = ["lab.mob.oncall_survivor"]
+items = ["lab.item.pip_badge"]
+open_prog = "scripts_archive_open"
+close_prog = "scripts_archive_close"
+tick_prog = "scripts_archive_tick"
 
 	[area.room.exits]
-	south = { to = "start.room.crossroads", door = "start.door.throne" }
-	east = "start.room.shrine"
-	west = "start.room.armory"
+	south = { to = "lab.room.break_pod", door = "lab.door.oncall" }
+	east = { to = "lab.room.archive", door = "lab.door.archive" }
 
 [[area.room]]
-id = "start.room.shrine"
-name = "Forgotten Shrine"
-desc = """
-A small altar stands against the far wall.
-Faded offerings lie scattered about.
-"""
-spawn = ["start.mob.rat"]
+id = "lab.room.archive"
+name = "Documentation Archive"
+desc = """Rows of filing cabinets stretch into the darkness, most drawers hanging open and empty. A few scattered papers remain - design docs, PRDs, architecture diagrams - all stamped 'DEPRECATED.' The fluorescent lights flicker. A terminal in the corner displays 'RETENTION POLICY: 0 DAYS' in amber text. Everything that was built here has been erased. Only the room remains, waiting for the next thing to forget."""
 
 	[area.room.exits]
-	south = "start.room.storage"
-	west = "start.room.throne"
+	west = { to = "lab.room.pageatorium", door = "lab.door.archive" }
+
+# ============================================================================
+# ROOMS - FULFILLMENT TUNNELS (AGGRESSIVE MOBS DOWN HERE)
+# ============================================================================
 
 [[area.room]]
-id = "start.room.cellar"
-name = "The Cellar"
-desc = """
-A damp cellar with a low ceiling.
-Wooden stairs lead up to the entrance.
-A narrow passage continues to the north.
-"""
+id = "lab.room.fulfillment_alpha"
+name = "Fulfillment Corridor A"
+desc = """A narrow corridor beneath the main floor, lined with conveyor belts that never stop moving. Packages travel in endless loops, bar codes facing upward for scanning. The lighting is optimized for cameras, not human eyes. A malfunctioning picker bot works the shelves, movements jerky, still trying to meet a rate set by someone who left years ago."""
+spawn = ["lab.mob.picker_bot"]
 
 	[area.room.exits]
-	up = { to = "start.room.entrance", door = "start.door.trapdoor" }
-	north = "start.room.wine_storage"
+	up = "lab.room.the_pit"
+	east = "lab.room.fulfillment_beta"
 
 [[area.room]]
-id = "start.room.wine_storage"
-name = "Wine Storage"
-desc = """
-Broken bottles litter the floor.
-The smell of old wine permeates the air.
-Something scurries in the darkness.
-"""
-spawn = ["start.mob.rat"]
+id = "lab.room.fulfillment_beta"
+name = "Fulfillment Corridor B"
+desc = """The corridor continues, conveyor belts humming. A surveillance drone hovers near the ceiling, camera lens reflecting the fluorescent lights. Break schedule notices on the wall show fifteen-minute windows, staggered so no two associates rest at the same time. A crushed water bottle lies in the corner where someone threw it. No one has picked it up."""
+spawn = ["lab.mob.fulfillment_drone"]
+items = ["lab.item.yellow_bottle"]
 
 	[area.room.exits]
-	south = "start.room.cellar"
-	east = "start.room.crypt"
+	west = "lab.room.fulfillment_alpha"
+	down = "lab.room.fulfillment_deep"
 
 [[area.room]]
-id = "start.room.crypt"
-name = "Ancient Crypt"
-desc = """
-Stone sarcophagi line the walls.
-The air is cold and still.
-Dust motes float in the dim light.
-"""
-spawn = ["start.mob.spider"]
+id = "lab.room.fulfillment_deep"
+name = "Sub-Level Operations"
+desc = """The corridors end here, in a space that exists on no official floor plan. Facilities Unit Prime patrols in slow circles, sensors scanning for deviation from protocol. The walls are covered in performance metrics, updated hourly, ranking everyone who ever worked here. Most of the names have been removed. Their numbers remain."""
+spawn = ["lab.mob.feral_roomba"]
 
 	[area.room.exits]
-	west = "start.room.wine_storage"
+	up = "lab.room.fulfillment_beta"
+
+# ============================================================================
+# DOORS
+# ============================================================================
 
 [[area.door]]
-id = "start.door.entrance_hallway"
-name = "Wooden door"
-desc = "A weathered wooden door."
+id = "lab.door.combat"
+keywords = "door safety assessment hazard testing"
+name = "assessment door"
+short = "an assessment door"
+desc = "A door marked 'CALIBRATION IN PROGRESS.' The handle requires badge access. A sign lists required safety acknowledgments: you must confirm you understand the risks, accept responsibility for outcomes, and waive certain expectations of support. Standard procedure."
 
 [[area.door]]
-id = "start.door.armory"
-name = "Iron door"
-desc = "A heavy iron door, cold to the touch."
+id = "lab.door.supply"
+keywords = "door supply requisition frosted"
+name = "requisition door"
+short = "the requisition door"
+desc = "A frosted glass door leading to Supply. The badge reader shows a red light for most access levels. Someone has taped a note to the glass: 'If your request is urgent, please submit a ticket.' Below it, in different handwriting: 'All requests are urgent. None are approved.'"
 
 [[area.door]]
-id = "start.door.throne"
-name = "Grand doors"
-desc = "Tall double doors carved with ancient runes."
+id = "lab.door.fishbowl"
+keywords = "door fishbowl glass meeting conference"
+name = "fishbowl door"
+short = "the glass door"
+desc = "A glass door to the conference room. Everyone can see inside. Everyone can see when meetings run long, when voices are raised, when someone emerges with red eyes. The transparency is the point. Privacy is not a company value."
 
 [[area.door]]
-id = "start.door.trapdoor"
-name = "Trapdoor"
-desc = "A heavy wooden trapdoor set into the floor."
+id = "lab.door.break"
+keywords = "door break mandatory fun wellness"
+name = "wellness door"
+short = "the wellness room door"
+desc = "A door painted in calming colors that somehow feel aggressive. 'RECHARGE STATION' reads the sign. 'MAXIMUM OCCUPANCY: 12 MINUTES.' The badge reader logs entry and exit times. Rest is mandatory. Rest is measured. Rest is a metric like any other."
+
+[[area.door]]
+id = "lab.door.oncall"
+keywords = "door oncall pager nightmare secure"
+name = "operations door"
+short = "the operations door"
+desc = "A heavy door leading to Operations. Through the reinforced glass, red lights pulse in patterns that suggest constant emergency. A small counter displays current open incidents. The number increases as you watch. It never decreases. Someone has to respond. Someone is always responding."
+
+[[area.door]]
+id = "lab.door.archive"
+keywords = "door archive vault steel heavy"
+name = "archive door"
+short = "a heavy steel door"
+desc = "A reinforced steel door with 'DOCUMENTATION ARCHIVE' stenciled across it in faded letters. The badge reader glows red. A sign reads: 'AUTHORIZED PERSONNEL ONLY. All access is logged and monitored.' Someone has scratched 'they deleted everything' into the metal beside the handle."
+lockable = true
+key = "lab.item.archive_badge"
 [[banner]]
 text = """
-&k#&K*&k*&K*&k*&K*&k*&K*&k*&K*&k#&K#&k*&K*&k*&K*&k*&K*&k*&K#&k*&K*&k#&K*&k*&K*&k*&K*&k*#&K*=&s====&O::::&y:&s====&K=&k***&K*&k*&K*&k#&K*&k*&K*&k#&K#&k*&K*&k*&K*&k*&K#&k*&K*&k*&K#&k*&K*&k*&K*&k*&K*&k*&K*&k****
-&K*&k#&K*&k*&K***&k*&K#&k*&K*&k*&K*&k*&K#**#*&k*&K#*****#&k*&K#*#&k*&K%&s====&Y:&O::&s====&K%&k*&K*********&k*&K*&k#&K*****&k#&K*********&k*&K*&k*&K****
-&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&s===&O:&Y:&O:&s===&K*&k*&K*&k#&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k#&K*&k*&K*&k*&K*&k#&K*&k*&K*&k*&K*&k*&K*&k*&K*&k*&K*&k****
-&K***************#****#**************-&s=&y=&Y:&y=&s=&K=***************************#**********
-&s=&K***&k*&K********************************&s=&O:&s=&K*******##**+****#***#*************#*****
-&s===&K==******************#+=*******************+*++*=************#***+************
-&s======&K******=*+*******#**+*=**+**+*******=****+******************=********=*****
-&s=======&K**=**=***=*+**+********=*****+****+*+****=++***+*=++**+&s==&K**+******+**++++
-&s=========&K+******+++**=**+*=*****++**&k#%%%&K***=*****+*****+***&s-==-=--&K+*+++=*++*****
-&s==========&K***#**+*=****+***+*+***+**&k%%%%&K=***++*****=**+**&s--===--=--==&K***=**+++++
-&s===========&K=*****=***+****+***+=*+**&k#%%#&K%*=*+*+*+++=*+++&s--==----=====---*&K+*=++++
-&s================&K*+=+***+***=+*++=-&k%%%#%#%%&K****=**++**=&s-==--====--==----=--==----
-&K=&s=+==============&K=+=++&s+&K+**+*+++*&k%%%%%#%%%%%&K%**=*=+&g:&s=-==-==-=-----=-==--=========
-&K+*=&s=================-----*&K====+&k#%%#%#%%###%%&K=*=&s:----==--=-======-===============
-&K+*++**&s==============+=-=-=====&K%&k#%###%#%%%%%%#&s===--====-=-=-==-=--=&g=&s=&g=&s=&g+&s=&g=&s=&g=&s=====
-&K+*++++++&s=================--=-&K=&k%#%%%%%#%%#####&K-&s=--=-=-----==-===============+====
-&K+*++++*++=&s=&K=&g=&s=========&g=&s=&g=&s+--=&k%#%#%##%%#%#&K%=&k%%#&s===-----=====-==&g=&s========+&K===+****
-&K+***+*******+++=&s============&K#&k#%####%###%%#&K#-&k#%&K#&s====-=-=-=============&K=+*++*+****
-&K##***+*****+*++**&s=====&g=&s=&g=&s+=&K=&k########%#%%%#%&s=&K=&k##&s--=--====&g=&s=====&g=&s===&g=&s=&K*++***++++++
-&k###&K##*+*+++*++*+**+=&s======&K:&k#########%######&s=@&k#%&K#&s-===============&K=*+****++*******
-&K#&k######&K**+++**********&g=&s==&K%&k##%####%%##%#%#%%&K#&s=&K=&k#%&s==&g=&s=&g=&s=&g=&s=====&g=&s=&K++*+*+*+****+*****
-&k*#######&K****+**+***+*+*=&s=&K##*=-&k#&K#&k%%##########&s==+&K=&k#&K=&s=======&K=+*+*+++*+++*+***++%%%%
-&k#########&K#**+*+++*+*+****+&g=&s=+&k#&K#&s=&K#&k###&K====&k###&K#&s==&g=&s=&K=##&s====&K++*+++++***+***+*+&k#######
-&k##############&K%+**++++**++++&k##&s=&K=&k###&K=&s====&K%&k%##&s======&K+&k#&K+**+*++***++****+**&k#########
-&k####%####%%#####&K#**+**++***%#**&k####&s=&g=&s=&g+&s=&K-&k#%#&K#&s=&K==++++#%++**+****+***##&k######%####
-&k###################&K******++*+**&k##%&K*+*=&s==&K=&k###&K%+*+**+**%&k#&K*++*+*++*#&k#######%#######
-&k####################%##&K+**+++*%&k%#&K***+++++=&k###&K+**+++***+#+**+*#&k#########%########
-&k##%#%######%#%#####%######&K#++*&k##%&K+**++**+*&k###&K*+*+++*++*+*+*&k#####%###############
-&k###%##############%####################&K#&k#&K##&k####&K%*****##&k#PRESS ENTER TO CONTINUE#
-"""
-font = "rsrc/fonts/JetBrainsMonoNerdFontMono-Regular.ttf"
+&v    ####  ### #####  ##########    ##### #######  #####  ###   ##########     
+&v     ###  ## ##   ##  ##  ##  ### ###  # # ### # ##   ##  ###  ##  ##        
+&V     ### ## ###   ### ##  ##   ### ###     ###  ###   ### #######  ##        
+&V      ## ## ###   ### ##  ##   ###   ###   ###  ###   ### ## ####  #####      
+&p      ####  ###   ##  ##  ##   ## #   ###  ###  ###   ### ##  ###  ##         
+&p       ###   ######  ###  ######  ######   ###    #####   ##   ##  ######     
+                                                                              
+&s                                                         #                    
+&K                                              &s           #                    
+&K                       ###########            &s    #      #     #              
+&K                     ###############          &s     ###  ###  ##               
+&K                    ###############           &s       #########                
+&K                   ################           &s        ########                
+&K                  ###################         &s ########### ########           
+&K                ####################                  ##### &s##                
+&K             ################# #####                  ###### &s#                
+&K            #######################                  ########                 
+&K            ## ############ ###                      #######                  
+&K            #######################                 ######                    
+&K         ##############################           ######                      
+&K          #################################     #######                       
+&K           ###########################################                        
+&K          ###  ######################################                         
+&K              ######################################                          
+&K            ######################### #############                           
+&K           #########################     #########                            
+&K          ######### ################       #######                            
+&K          ########   ##############          ####    
+&K          ########  ###############                              &k1.0-alpha-dev
+&wPress enter to continue...&x
+"""font = "rsrc/fonts/JetBrainsMonoNerdFontMono-Regular.ttf"
 font_size = 20
 columns = 80
 rows = 30
@@ -31760,25 +32525,25 @@ commands = ["attack", "flee"]
 id = "interaction"
 name = "Interaction"
 desc = "Commands for interacting with objects and the world."
-commands = ["look", "open", "close", "get", "drop"]
+commands = ["look", "open", "close", "lock", "unlock", "get", "drop", "say", "yell"]
 
 [[topic]]
 id = "inventory"
 name = "Inventory"
 desc = "Commands for managing your belongings."
-commands = ["inventory", "equip", "remove"]
+commands = ["inventory", "equip", "remove", "use"]
 
 [[topic]]
 id = "character"
 name = "Character"
-desc = "Commands for viewing your character."
-commands = ["stats"]
+desc = "Commands for viewing and improving your character."
+commands = ["stats", "meditate", "train", "rest", "sleep", "wake"]
 
 [[topic]]
 id = "system"
 name = "System"
 desc = "Game system commands."
-commands = ["help", "colors", "save", "load", "quit"]
+commands = ["help", "prompt", "colors", "save", "load", "quit"]
 
 ################################################################################
 # Movement Commands
@@ -31834,6 +32599,20 @@ Close a door. Usage: close <door|direction>. Specify a direction (n, s, e, w, u,
 or 'door' to close the first open door."""
 
 [[command]]
+id = "lock"
+keywords = ["lock"]
+desc = """
+Lock a closed door. Usage: lock <door|direction>. You must have the correct key \
+in your inventory or equipped. The door must be closed first."""
+
+[[command]]
+id = "unlock"
+keywords = ["unlock"]
+desc = """
+Unlock a locked door. Usage: unlock <door|direction>. You must have the correct \
+key in your inventory or equipped."""
+
+[[command]]
 id = "get"
 keywords = ["get", "take"]
 desc = "Pick up an item from the ground. Usage: get <item>."
@@ -31842,6 +32621,34 @@ desc = "Pick up an item from the ground. Usage: get <item>."
 id = "drop"
 keywords = ["drop"]
 desc = "Drop an item from your inventory onto the ground. Usage: drop <item>."
+
+[[command]]
+id = "say"
+keywords = ["say"]
+desc = """
+Speak to everyone in your current location. The ' character is a shortcut.
+
+Usage: say <message>
+       '<message>
+
+Example:
+  say hello there
+  'hello there
+
+See also: YELL"""
+
+[[command]]
+id = "yell"
+keywords = ["yell"]
+desc = """
+Shout to everyone in the area. Your voice carries far.
+
+Usage: yell <message>
+
+Example:
+  yell is anyone there
+
+See also: SAY"""
 
 ################################################################################
 # Inventory Commands
@@ -31865,14 +32672,62 @@ id = "remove"
 keywords = ["remove"]
 desc = "Remove an equipped item and return it to your inventory. Usage: remove <item>."
 
+[[command]]
+id = "use"
+keywords = ["use"]
+desc = """
+Use an item from your inventory or equipment. Usage: use <item>. Only items \
+with special use effects can be activated this way."""
+
 ################################################################################
 # Character Commands
 ################################################################################
 
 [[command]]
 id = "stats"
-keywords = ["stats", "score"]
-desc = "Display your character's stats including HP, damage, armor, and equipment."
+keywords = ["stats", "score", "fragments"]
+desc = "Display your character's stats including HP, STR/DEX/INT, fragments, and equipment."
+
+[[command]]
+id = "meditate"
+keywords = ["meditate"]
+desc = """
+Enter a meditative state to absorb fragments left behind by slain creatures. \
+Meditation takes about 10 seconds. During this time you cannot move, fight, \
+or take most actions. Being attacked will interrupt your meditation. \
+Fragments are used to train your stats with the TRAIN command. \
+See also: TRAIN, STATS"""
+
+[[command]]
+id = "train"
+keywords = ["train"]
+desc = """
+Spend fragments to permanently increase a stat by 1 point. The cost equals \
+your current stat value times 10. Usage: train <stat>. Valid stats: str, dex, int. \
+Examples: STR 10 -> 11 costs 100 fragments. DEX 20 -> 21 costs 200 fragments. \
+Maximum stat value is 100. See also: MEDITATE, STATS"""
+
+[[command]]
+id = "rest"
+keywords = ["rest"]
+desc = """
+Sit down and rest. While resting you can use most commands but cannot move or \
+fight. Standing happens automatically when you try to move or attack. \
+See also: SLEEP, WAKE"""
+
+[[command]]
+id = "sleep"
+keywords = ["sleep"]
+desc = """
+Lie down and sleep. While sleeping most commands are unavailable. Use WAKE \
+to stand up. See also: REST, WAKE"""
+
+[[command]]
+id = "wake"
+keywords = ["wake", "stand"]
+desc = """
+Stand up from sleeping, resting, or meditating. Alias: stand. \
+See also: REST, SLEEP, MEDITATE"""
 
 ################################################################################
 # System Commands
@@ -31885,6 +32740,15 @@ desc = """
 Display help information. Usage: help [command|topic]. Without arguments, lists \
 all topics. With a command name, shows detailed help. With a topic name, lists \
 commands in that topic."""
+
+[[command]]
+id = "prompt"
+keywords = ["prompt"]
+desc = """
+View or customize your command prompt. Usage: prompt [format|default]. \
+Without arguments, shows your current prompt. Use 'prompt default' to reset. \
+Format codes: %h (current HP), %H (max HP), %c (condition word), %r (room name), \
+%e (exits), %f (fighting target), %S (status word), %s (status char), %% (literal %)."""
 
 [[command]]
 id = "colors"
@@ -31933,9 +32797,13 @@ INTERACTION
   examine       - Alias for look
   open          - Open a door: open <direction|door>
   close         - Close a door: close <direction|door>
+  lock          - Lock a closed door: lock <direction|door>
+  unlock        - Unlock a locked door: unlock <direction|door>
   get           - Pick up item: get <item>
   take          - Alias for get
   drop          - Drop item: drop <item>
+  say           - Speak to current room: say <message> or '<message>
+  yell          - Shout to entire area: yell <message>
 
 COMBAT
   attack        - Attack mob: attack <target>
@@ -31948,18 +32816,27 @@ INVENTORY
   wield         - Alias for equip (weapons)
   wear          - Alias for equip (armor)
   remove        - Unequip item: remove <item>
+  use           - Use item: use <item>
 
 CHARACTER
-  stats         - View character stats
+  stats         - View character stats (HP, STR/DEX/INT, fragments)
   score         - Alias for stats
+  fragments     - Alias for stats
+  meditate      - Absorb fragments from slain mobs (10 sec channel)
+  train         - Spend fragments to increase stats: train <str|dex|int>
+  rest          - Sit down and rest
+  sleep         - Lie down and sleep
+  wake          - Stand up (alias: stand)
 
 SYSTEM
   help          - Show help: help [topic|command]
+  prompt        - View or set command prompt: prompt [format|default]
   colors        - Display color palette test
   save          - Save game: save [name]
   load          - Load game: load [name]
   quit          - Exit game (auto-saves)
   !wipe         - Delete save and quit (requires confirmation)
+  !teleport     - Teleport to room or area: !teleport <room_id|area_id>
 
 TARGETING
   Use keywords from mob/item names. Example: 'attack rat' for 'giant rat'.
@@ -31968,13 +32845,675 @@ TARGETING
 ABBREVIATIONS
   Commands can be abbreviated: 'l' for look, 'n' for north, 'i' for inventory.
   Parentheses above show common shortcuts."""
-start_room = "start.room.entrance"
-areas = ["areas/start.toml", "areas/lab.toml"]
+-- Fortress Area Progs
+
+function stonewatcher_greet(ctx)
+    local hub_room = get_room("fortress.room.hub")
+    if not hub_room then return end
+
+    local door = get_door(hub_room, "down")
+    if not door then return end
+
+    if not door_is_locked(door) then return end
+
+    write("The Stonewatcher's gaze falls upon you. Ancient. Measuring.")
+    write("\"Initiate.\" His voice is like stone grinding. \"You survived the process. Good.\"")
+    write("\"Your orders are simple: Descend. Kill what you find. Return fragments to the realm.\"")
+    write("\"The upper ruins are cleared enough for fresh Awakened. Don't go deeper than you can handle.\"")
+    write("\"The descent gate is now unlocked. Dismissed.\"")
+    write("He turns back to his maps. The audience is over.")
+    unlock_door(hub_room, "down")
+end
+
+function stonewatcher_speech(ctx)
+    write("The Stonewatcher does not look up. \"I gave your orders. Go.\"")
+end
+-- Induction Area Progs
+
+-- Waking Cell State Machine
+-- States:
+--   0 = Initial, guard will speak on first tick
+--   1 = Asked for name, waiting
+--   2 = First hint given
+--   3 = Second hint given (with help)
+--   4 = Final hint ("I've got all day")
+--   5 = Name said, awaiting yes/no confirmation
+--   6 = Confirmed, door unlocked, done
+
+local HINT_DELAY_SECONDS = 10
+
+function waking_cell_tick(ctx)
+    if not ctx.mob then return end
+
+    local waking_cell = get_room("induction.room.waking_cell")
+    if not waking_cell or not player_in_room(waking_cell) then return end
+
+    local data = get_data(ctx.mob)
+    local state = data.state or 0
+    local seconds = data.seconds or 0
+
+    if state == 6 then return end
+
+    if state == 0 then
+        emote(ctx.mob, "%s slides open the viewing slot and peers through.")
+        say(ctx.mob, "Well now... a fresh Awakened. And sane, looks like. I had a good feelin' about you. Even put a few coppers on you makin' it.")
+        say(ctx.mob, "Now then, what's your name?")
+        data.state = 1
+        data.seconds = 0
+        return
+    end
+
+    seconds = seconds + 1
+    data.seconds = seconds
+
+    if state == 5 then return end
+
+    if seconds < HINT_DELAY_SECONDS then return end
+
+    data.seconds = 0
+
+    if state == 1 then
+        say(ctx.mob, "I ain't no telepath... you have to SAY it.")
+        data.state = 2
+    elseif state == 2 then
+        say(ctx.mob, "You mute? Type 'say' and then your name. If you don't know what to do, try 'help say'.")
+        data.state = 3
+    elseif state == 3 then
+        say(ctx.mob, "I've got all day, kid. Just say your name when you want to get out.")
+        data.state = 4
+    elseif state == 4 then
+        data.seconds = HINT_DELAY_SECONDS * 2
+    end
+end
+
+function waking_cell_room_speech(ctx)
+    if not ctx.text then return end
+
+    local guard = find_mob("induction.mob.cell_guard")
+    if not guard then return end
+
+    local data = get_data(guard)
+    local state = data.state or 0
+
+    if state == 6 then return end
+
+    local text = ctx.text
+
+    if state == 5 then
+        if matches(text, "yes", "yeah", "yep", "correct", "right", "sure") then
+            player.name = data.pending_name
+            say(guard, string.format("Alright then, %s. Welcome to the waking world.", data.pending_name))
+            write("He scribbles something on his clipboard.")
+
+            local cell_room = get_room("induction.room.waking_cell")
+            if cell_room then
+                unlock_door(cell_room, "north")
+                open_door(cell_room, "north")
+                emote(guard, "%s unlocks the door and swings it open.")
+            end
+
+            say(guard, "Head to the Quartermaster for your gear. Go north, then west.")
+            data.state = 6
+            return
+        end
+
+        if matches(text, "no", "nope", "wrong") then
+            say(guard, "Fine, fine. What IS your name then?")
+            data.state = 1
+            data.seconds = 0
+            return
+        end
+    end
+
+    if state >= 1 and state <= 5 then
+        -- Trim leading spaces
+        text = text:gsub("^%s+", "")
+
+        -- Check for spaces (multiple words)
+        if text:find(" ") then
+            say(guard, "That don't sound like a name to me. One word. Try again.")
+            data.state = 1
+            data.seconds = 0
+            return
+        end
+
+        -- Trim trailing punctuation
+        local name = text:gsub("[%.%!%?%,]+$", "")
+
+        -- Capitalize first letter
+        if #name > 0 then
+            name = name:sub(1,1):upper() .. name:sub(2)
+        end
+
+        if #name == 0 then
+            say(guard, "Speak up. What's your name?")
+            data.state = 1
+            data.seconds = 0
+            return
+        end
+
+        data.pending_name = name
+        say(guard, string.format("'%s', eh? You sure about that? Say yes or no.", name))
+        data.state = 5
+        data.seconds = 0
+    end
+end
+
+function clerk_greet(ctx)
+    emote(ctx.mob, "%s glances up from her ledger and gestures at the gear on the counter.")
+    say(ctx.mob, "These have been issued to you. Take them and equip them.")
+    say(ctx.mob, "Type 'help equip' if you don't know what you're doing.")
+end
+
+function observer_greet(ctx)
+    emote(ctx.mob, "%s looks up from his notes.")
+    say(ctx.mob, "Adequate. You survived.")
+    emote(ctx.mob, "%s makes a mark on his parchment.")
+    say(ctx.mob, "Proceed to the Oath Hall. The officer is waiting.")
+    emote(ctx.mob, "%s waves you north, already turning back to his sphere.")
+end
+
+function ward_guard_greet(ctx)
+    say(ctx.mob, "Wrong way, Awakened. Go south, then west.")
+end
+
+function induction_recovery_comment(ctx)
+    write("Something throws itself against one of the doors, howling.")
+    write("The guard doesn't flinch. \"That one woke wrong. Happens to about one in five.\"")
+    write("He gestures north. \"Testing is through there. Keep moving.\"")
+end
+
+function induction_oath(ctx)
+    if not ctx.text then return end
+
+    local oath_room = get_room("induction.room.oath_hall")
+    if not oath_room then return end
+
+    local door = get_door(oath_room, "north")
+    if not door then return end
+
+    if not door_is_locked(door) then return end
+
+    if matches(ctx.text, "swear", "yes", "I do", "oath") then
+        write("The officer nods. \"You are Initiate Forty-seven.\"")
+        write("She slides the medallion across the desk. \"Wear this at all times.\"")
+        write("\"The rules: Obey orders. Report finds. Don't steal. Penalty for violations is death.\"")
+        write("\"You are due to meet with the Stonewatcher. Briefing Chamber, north. Don't be late.\"")
+        unlock_door(oath_room, "north")
+    end
+end
+
+-- Coroutine-based sequence progs
+
+local LORE_DELAY_SECONDS = 10
+local AMBIENT_MIN_SECONDS = 10
+local AMBIENT_RANGE_SECONDS = 5
+
+function ward_guard_tick(ctx)
+    local room = ctx.room
+    if not room then return end
+
+    local data = get_data(ctx.mob)
+
+    -- Ambient screaming (runs each second while player is present)
+    if player_in_room(room) then
+        data.ambient_seconds = (data.ambient_seconds or 0) + 1
+        local threshold = AMBIENT_MIN_SECONDS + math.random(0, AMBIENT_RANGE_SECONDS - 1)
+        if data.ambient_seconds >= threshold then
+            write("You hear something screaming and slamming against the door.")
+            data.ambient_seconds = 0
+        end
+    end
+
+    -- Lore sequence (only starts/runs when player is present)
+    if not player_in_room(room) then return end
+    if sequence_done(ctx.mob) then return end
+    if sequence_active(ctx.mob) then return end
+
+    start_sequence(ctx.mob, function()
+        wait(LORE_DELAY_SECONDS)
+        say(ctx.mob, "Not all you lot wake up. Most don't. Some wake up like this guy.")
+        wait(1)
+        emote(ctx.mob, "%s jerks a thumb over his shoulder toward the cell.")
+        wait(1)
+        say(ctx.mob, "Wake up as a ball of fury and violence. We hold them till they're weakened by thirst and put them out of their misery.")
+        wait(1)
+        say(ctx.mob, "Then another Awakened comes by and reclaims something.")
+        wait(1)
+        emote(ctx.mob, "%s shrugs.")
+        wait(1)
+        say(ctx.mob, "That process isn't very interesting. They just sit there for a few minutes and leave.")
+        wait(1)
+        emote(ctx.mob, "%s points south.")
+        wait(1)
+        say(ctx.mob, "Move along, Awakened. The exit is south and west. Nothing left for you in here.")
+    end)
+end
+
+function arena_guard_tick(ctx)
+    local room = get_room("induction.room.arena_antechamber")
+    if not room then return end
+    if not player_in_room(room) then return end
+    if sequence_active(ctx.mob) then return end
+
+    start_sequence(ctx.mob, function()
+        wait(1)
+        say(ctx.mob, "Welcome Awakened.")
+        wait(1)
+        say(ctx.mob, "In the next room is a monster.")
+        wait(1)
+        say(ctx.mob, "Not to worry though, it's summoned and not very strong.")
+        wait(1)
+        say(ctx.mob, "A quick check to make sure you are a weapon and not some coward.")
+        wait(1)
+        say(ctx.mob, "Once you cross this doorway, you won't be coming back here.")
+        wait(1)
+        local door = get_door(room, "north")
+        if door then
+            unlock_door(room, "north")
+            emote(ctx.mob, "%s unlocks the door.")
+        end
+        wait(1)
+        say(ctx.mob, "Step through when you are ready.")
+    end)
+end
+
+-- Blocking progs (return true to allow, false to block)
+
+function induction_equipped_check(ctx)
+    -- Allow going back (south/east)
+    if ctx.direction == "south" or ctx.direction == "east" then
+        return true
+    end
+
+    local has_weapon = player_equipped("weapon")
+    local has_armor = player_equipped("body")
+
+    if not has_weapon or not has_armor then
+        -- Find the guard mob to have them speak
+        local guard = find_mob("induction.mob.qm_guard")
+        if guard then
+            emote(guard, "%s steps in front of you, blocking the exit.")
+            say(guard, "Equipped first. Blade and armor. Then proceed.")
+        else
+            write("A guard blocks your path. \"Equipped first. Blade and armor. Then proceed.\"")
+        end
+        return false
+    end
+
+    return true
+end
+
+-- Room progs
+
+function arena_enter(ctx)
+    local testing_room = ctx.room
+    if not testing_room then return end
+
+    -- Already triggered
+    if get_room_flag(testing_room, 0) then return end
+
+    -- Lock door behind player
+    local antechamber = get_room("induction.room.arena_antechamber")
+    if antechamber then
+        close_door(antechamber, "north")
+        lock_door(antechamber, "north")
+        write("The door slams shut behind you. You hear the lock engage.")
+    end
+
+    -- Lock north door
+    lock_door(testing_room, "north")
+
+    -- Check if mob already exists
+    if room_has_mob(testing_room) then
+        write("The summoning circle flares. Something is already here.")
+        return
+    end
+
+    -- Spawn the rat
+    write("The summoning circle blazes with light.")
+    spawn_mob("induction.mob.tunnel_rat", testing_room)
+    write("A tunnel rat materializes, teeth bared.")
+end
+
+function induction_rat_death(ctx)
+    local testing_room = get_room("induction.room.testing_chamber")
+    if not testing_room then return end
+
+    set_room_flag(testing_room, 0)
+
+    write("The north door clicks open.")
+    unlock_door(testing_room, "north")
+end
+
+function induction_summon_rat(ctx)
+    local testing_room = ctx.room
+    if not testing_room then return end
+
+    -- Already summoned
+    if get_room_flag(testing_room, 0) then return end
+
+    -- Mob already exists
+    if room_has_mob(testing_room) then return end
+
+    write("The observer touches the crystal sphere. Light flares in the summoning circle.")
+    spawn_mob("induction.mob.tunnel_rat", testing_room)
+    write("A tunnel rat materializes, teeth bared.")
+    write("\"Combat assessment. Standard engagement.\"")
+end
+-- Lab Area Progs
+
+function boss_office_open(ctx)
+    write("The door emits a loud BEEP as it opens.")
+    write("A robotic voice announces: 'EMPLOYEE DEPARTURE LOGGED. PRODUCTIVITY METRICS UPDATED.'")
+end
+
+function supply_closet_close(ctx)
+    write("*CLUNK* *WHIRR* *BEEP*")
+    write("The electronic lock engages automatically.")
+    write("A synthesized voice says: 'Door secured. Please swipe badge to re-enter.'")
+end
+
+function parrot_speech(ctx)
+    if not ctx.text then return end
+
+    if matches(ctx.text, "cracker") then
+        emote(ctx.mob, "%s squawks.")
+        say(ctx.mob, "CRACKER! PRODUCTIVITY INCENTIVE!")
+        return
+    end
+
+    if matches(ctx.text, "hello") then
+        emote(ctx.mob, "%s tilts its head.")
+        say(ctx.mob, "Hello! Synergy! Core competency!")
+        return
+    end
+
+    if matches(ctx.text, "synergy") then
+        emote(ctx.mob, "%s puffs up proudly.")
+        say(ctx.mob, "SYNERGY! PARADIGM SHIFT! LEVERAGE!")
+        emote(ctx.mob, "%s bobs its head enthusiastically.")
+        return
+    end
+
+    if matches(ctx.text, "help") then
+        emote(ctx.mob, "%s ruffles its feathers.")
+        say(ctx.mob, "Please submit a ticket!")
+        return
+    end
+
+    if ctx.yell then
+        emote(ctx.mob, "%s flaps its wings.")
+        say(ctx.mob, "OUTSIDE VOICE! OUTSIDE VOICE!")
+    end
+end
+
+function cursed_badge_wear(ctx)
+    write("The badge adheres to your skin with a wet *schlorp*.")
+    write("A voice in your head whispers: 'You work here now. Forever.'")
+    write("Your employee ID has been... updated.")
+    damage_player(5)
+end
+
+function test_rat_death(ctx)
+    emote(ctx.mob, "%s collapses, its tiny clipboard clattering to the floor.")
+    emote(ctx.mob, "%s squeaks.")
+    say(ctx.mob, "My... performance review...")
+end
+
+function scripts_archive_open(ctx)
+    write("The secure door hisses open.")
+    write("A synthesized voice intones: 'ARCHIVE ACCESS LOGGED. BEHAVIORAL COMPLIANCE MONITORING ACTIVE.'")
+end
+
+function scripts_archive_close(ctx)
+    write("The archive door seals with a pneumatic hiss.")
+    write("Red lights pulse along the frame. Something has been contained.")
+end
+
+function scripts_archive_tick(ctx)
+    if not player_in_room(ctx.room) then return end
+    if not chance(10) then return end
+
+    local messages = {
+        "A terminal flickers: 'PROG_TICK... PROG_TICK... PROG_TICK...'",
+        "The conspiracy string web vibrates. A connection has been made.",
+        "Code scrolls across a screen. It looks like your name.",
+        "A diagram on the wall has changed. You're sure of it."
+    }
+    write(messages[random(1, 4)])
+end
+
+function karen_greet(ctx)
+    emote(ctx.mob, "%s looks up from her laptop. Her expression doesn't change.")
+    write(" ")
+    say(ctx.mob, "There you are. Close the door. HR is already on the call.")
+    write(" ")
+    emote(ctx.mob, "%s slides a document across the desk. Your name is already printed on it.")
+    write(" ")
+    say(ctx.mob, "This is a Performance Improvement Plan. You have thirty days. The metrics are non-negotiable. I trust you'll take this as an opportunity for growth.")
+    write(" ")
+    emote(ctx.mob, "%s returns to her laptop. The conversation is over.")
+end
+
+function roger_tick(ctx)
+    if not player_in_room(ctx.room) then return end
+    if not chance(15) then return end
+
+    local r = random(1, 4)
+    if r == 1 then
+        emote(ctx.mob, "%s mutters.")
+        say(ctx.mob, "The code... the code knows...")
+    elseif r == 2 then
+        emote(ctx.mob, "%s flickers briefly. Was that always there?")
+    elseif r == 3 then
+        emote(ctx.mob, "%s adjusts a diagram. The diagram adjusts him back.")
+    elseif r == 4 then
+        say(ctx.mob, "I've been here seventeen years. Or seventeen minutes. Time is... flexible.")
+    end
+end
+
+function tyler_tick(ctx)
+    if not player_in_room(ctx.room) then return end
+    if not chance(12) then return end
+
+    local r = random(1, 8)
+    if r == 1 then
+        emote(ctx.mob, "%s glances up from his laptop.")
+        say(ctx.mob, "Hey, quick question - what's your ETA on that thing?")
+    elseif r == 2 then
+        emote(ctx.mob, "%s appears beside you.")
+        say(ctx.mob, "Just circling back on the action items from the last sync.")
+    elseif r == 3 then
+        emote(ctx.mob, "%s is typing furiously.")
+        say(ctx.mob, "Can you Slack me a status update? Leadership wants to know if we're green.")
+    elseif r == 4 then
+        emote(ctx.mob, "%s frowns at his screen.")
+        say(ctx.mob, "The burndown doesn't look right. Can we chat offline?")
+    elseif r == 5 then
+        emote(ctx.mob, "%s leans over.")
+        say(ctx.mob, "Are we blocked on anything? I need to update the tracker.")
+    elseif r == 6 then
+        emote(ctx.mob, "%s mutters to himself.")
+        say(ctx.mob, "We need to get aligned on the deliverables before EOD.")
+    elseif r == 7 then
+        emote(ctx.mob, "%s looks up.")
+        say(ctx.mob, "Did you see my Slack? I sent it three minutes ago.")
+    elseif r == 8 then
+        emote(ctx.mob, "%s taps his laptop.")
+        say(ctx.mob, "Can we get a quick fifteen on the calendar? Just want to sync.")
+    end
+end
+
+function marissa_tick(ctx)
+    if not player_in_room(ctx.room) then return end
+    if not chance(10) then return end
+
+    local r = random(1, 7)
+    if r == 1 then
+        emote(ctx.mob, "%s looks up from her monitor, startled. She was expecting someone else.")
+    elseif r == 2 then
+        emote(ctx.mob, "%s stares at the empty desks around her. She doesn't say anything.")
+    elseif r == 3 then
+        emote(ctx.mob, "%s's Slack pings. She flinches. It's just a bot.")
+    elseif r == 4 then
+        emote(ctx.mob, "%s whispers to herself.")
+        say(ctx.mob, "This isn't fun anymore.")
+    elseif r == 5 then
+        emote(ctx.mob, "%s opens a chat window. Closes it. There's no one to message.")
+    elseif r == 6 then
+        emote(ctx.mob, "%s laughs at something on her screen. The laugh dies quickly. No one to share it with.")
+    elseif r == 7 then
+        emote(ctx.mob, "%s glances at the door. For a moment, she thought she heard her old team.")
+    end
+end
+
+function donna_look(ctx)
+    write(" ")
+    say(ctx.mob, "Welcome to Jeffmart R&D. Please badge in.")
+end
+
+function karen_look(ctx)
+    write(" ")
+    emote(ctx.mob, "%s glances up.")
+    say(ctx.mob, "Close the door. HR is already on the call.")
+end
+
+function coffee_mug_tick(ctx)
+    if not item_carried(ctx.item) then return end
+    if not chance(15) then return end
+
+    local messages = {
+        "The coffee in the mug bubbles ominously.",
+        "Something in the mug shifts. You didn't move it.",
+        "The mug is warm. Too warm. It's been sitting here for years.",
+        "You hear a faint whisper from inside the mug: '...decaf...'"
+    }
+    write(messages[random(1, 4)])
+end
+
+-- Blocking progs (return true to allow, false to block)
+
+function combat_lab_can_close(ctx)
+    if room_has_hostile(ctx.room) then
+        write("SAFETY PROTOCOL: Door cannot close while test subjects are active.")
+        write("Please neutralize all hostiles before securing the laboratory.")
+        return false
+    end
+    return true
+end
+-- Lua Progs Runtime
+-- Provides coroutine-based sequence system for state machine progs
+
+sequences = {}
+entity_data = {}
+
+-- Per-entity data storage (for timers, counters, etc.)
+function get_data(entity)
+    if not entity_data[entity] then
+        entity_data[entity] = {}
+    end
+    return entity_data[entity]
+end
+
+function start_sequence(entity, func)
+    if sequences[entity] then return false end  -- Already running or done
+
+    local co = coroutine.create(func)
+    sequences[entity] = {co = co, wait = 0, done = false}
+
+    -- Run until first yield
+    local ok, wait_ticks = coroutine.resume(co)
+    if ok and wait_ticks then
+        sequences[entity].wait = wait_ticks
+    elseif coroutine.status(co) == "dead" then
+        sequences[entity].done = true  -- Mark done, don't remove
+    end
+
+    return true
+end
+
+function sequence_active(entity)
+    local seq = sequences[entity]
+    return seq ~= nil and not seq.done
+end
+
+function sequence_done(entity)
+    local seq = sequences[entity]
+    return seq ~= nil and seq.done
+end
+
+-- Sequences tick at 10/second (base game tick rate)
+local TICKS_PER_SECOND = 10
+
+function wait(seconds)
+    local ticks = math.floor((seconds or 0.1) * TICKS_PER_SECOND + 0.5)
+    if ticks < 1 then ticks = 1 end
+    coroutine.yield(ticks)
+end
+
+-- Called by C each tick to advance all sequences
+function _tick_sequences()
+    for entity, seq in pairs(sequences) do
+        if seq.done then
+            -- Skip completed sequences
+        elseif seq.wait > 0 then
+            seq.wait = seq.wait - 1
+        elseif seq.wait == 0 then
+            local ok, wait_ticks = coroutine.resume(seq.co)
+            if ok and wait_ticks then
+                seq.wait = wait_ticks
+            end
+            if coroutine.status(seq.co) == "dead" then
+                seq.done = true  -- Mark done, keep in table
+            end
+        end
+    end
+end
+
+-- Clear sequence for an entity (useful when entity is destroyed)
+function clear_sequence(entity)
+    sequences[entity] = nil
+end
+[[system.item]]
+id = "system.item.corpse"
+keywords = "corpse body"
+short = "a corpse"
+long = "A corpse lies here."
+desc = "It is dead."
+type = "container"
+capacity = 9999
+closeable = false
+fixed = false
+weight = 10
+start_room = "induction.room.waking_cell"
+areas = [
+	"areas/induction.toml",
+	"areas/fortress.toml",
+	"areas/lab.toml"
+]
 
 [player]
-hp = 60
+str = 20
+dex = 20
+int = 20
 damage = 5
+swordsmanship = 30
+tactics = 30
+anatomy = 0
+wrestling = 10
 starting_items = []
 
 [combat]
-attack_delay_ticks = 10
+unarmed_speed = 30
+unarmed_damage = 5
+stamina_drain_per_move = 1
+stamina_damage_threshold = 5
+
+[regen]
+hp_standing_ticks = 110
+hp_resting_ticks = 55
+hp_sleeping_ticks = 37
+sp_standing_ticks = 70
+sp_resting_ticks = 35
+sp_sleeping_ticks = 23
