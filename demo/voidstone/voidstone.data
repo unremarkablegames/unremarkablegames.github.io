@@ -33,6 +33,7 @@ keywords = "stonewatcher watcher figure robed"
 short = "the Stonewatcher"
 long = "The Stonewatcher stands here, ancient and still."
 desc = "Tall. Robed in gray. His face is ageless but his eyes hold millennia. He was old when the kingdom was young. He will be here when it falls. He looks at you and sees a tool. Nothing more. Nothing less."
+race = "human"
 damage = 50
 str = 200
 dex = 50
@@ -183,6 +184,7 @@ type = "weapon"
 slot = "weapon"
 damage = 8
 speed = 30
+attack_verbs = ["slash", "cut"]
 
 [[area.item]]
 id = "induction.item.leather_cuirass"
@@ -222,13 +224,15 @@ keywords = "rat tunnel"
 short = "a tunnel rat"
 long = "A tunnel rat crouches here, teeth bared."
 desc = "Dog-sized. Matted fur. Yanked from the upper ruins for assessment purposes. It doesn't care why it's here. It just wants to kill you."
+combat_emote = "The tunnel rat lunges at you, teeth bared!"
+race = "rat"
 damage = 5
 str = 10
 dex = 12
 int = 2
 speed = 28
 armor = 0
-fragments = 3
+fragments = 0
 weapon_skill = 10
 tactics = 0
 anatomy = 0
@@ -241,6 +245,7 @@ keywords = "guard warden cell"
 short = "a cell guard"
 long = "A cell guard stands here, clipboard in hand."
 desc = "A stocky man with tired eyes and a clipboard. He's seen dozens of Awakened come through here. Most survive. Some don't. He's learned not to get attached."
+race = "human"
 damage = 15
 str = 40
 dex = 30
@@ -261,6 +266,7 @@ keywords = "guard ward"
 short = "a ward guard"
 long = "A ward guard stands watch, pike ready."
 desc = "A weathered soldier with a thousand-yard stare. He's been posted here too long, watching the ones who wake wrong. The screaming doesn't bother him anymore."
+race = "human"
 damage = 15
 str = 40
 dex = 30
@@ -274,6 +280,7 @@ anatomy = 10
 aggressive = false
 greet_prog = "ward_guard_greet"
 tick_prog = "ward_guard_tick"
+leave_prog = "ward_guard_leave"
 inventory = ["induction.item.ward_key"]
 
 [[area.mob]]
@@ -282,6 +289,7 @@ keywords = "guard arena"
 short = "an arena guard"
 long = "An arena guard stands before the testing chamber door."
 desc = "A grizzled veteran with scars on his forearms. He's watched hundreds of Awakened pass through that door. He knows which ones will come back."
+race = "human"
 damage = 15
 str = 40
 dex = 30
@@ -302,6 +310,7 @@ keywords = "observer robed"
 short = "a robed observer"
 long = "A robed observer stands before a crystal sphere, making notes."
 desc = "A gaunt figure in grey robes, face hidden in shadow. They observe and record. That is all they do. That is all they have ever done."
+race = "human"
 damage = 5
 str = 15
 dex = 20
@@ -321,6 +330,7 @@ keywords = "clerk quartermaster"
 short = "a supply clerk"
 long = "A supply clerk sits behind the counter, not looking up."
 desc = "A thin woman with ink-stained fingers and a permanent squint from too many ledgers. She issues gear without comment. Your name is just another entry."
+race = "human"
 damage = 5
 str = 15
 dex = 20
@@ -340,6 +350,7 @@ keywords = "guard quartermaster"
 short = "a quartermaster guard"
 long = "A quartermaster guard stands by the exit, arms crossed."
 desc = "A bored soldier assigned to make sure new Awakened don't wander off half-equipped. He's seen too many come back in pieces."
+race = "human"
 damage = 15
 str = 40
 dex = 30
@@ -352,6 +363,26 @@ tactics = 30
 anatomy = 10
 aggressive = false
 
+[[area.mob]]
+id = "induction.mob.oath_officer"
+keywords = "officer woman"
+short = "an oath officer"
+long = "An oath officer sits behind a heavy desk, documents spread before her."
+desc = "A stern woman in dress uniform, her bearing military-precise. Silver rank pins mark her as a captain. She processes the paperwork that makes Awakened into soldiers."
+race = "human"
+damage = 20
+str = 35
+dex = 30
+int = 40
+speed = 35
+armor = 5
+fragments = 0
+weapon_skill = 45
+tactics = 40
+anatomy = 20
+aggressive = false
+greet_prog = "oath_officer_greet"
+
 # =============================================================================
 # ROOMS
 # =============================================================================
@@ -363,6 +394,7 @@ desc = """
 You lie on a stone slab in a bare cell. Your body hums with unfamiliar energy. An iron door is the only exit. A viewing slot at eye level stands open, revealing a corridor beyond.
 """
 speech_prog = "waking_cell_room_speech"
+can_leave_prog = "waking_cell_can_leave"
 
 	[area.room.exits]
 	north = { to = "induction.room.cell_hall", door = "induction.door.cell" }
@@ -482,7 +514,7 @@ name = "Testing Chamber"
 desc = """
 A circular chamber with a sand floor stained dark in places. A summoning circle is inscribed in the center. The south door has shut behind you.
 """
-enter_prog = "arena_enter"
+tick_prog = "arena_tick"
 
 	[area.room.exits]
 	south = { to = "induction.room.arena_antechamber", door = "induction.door.arena" }
@@ -506,6 +538,7 @@ name = "Oath Hall"
 desc = """
 A formal chamber lined with mountain-and-star banners. An officer sits behind a heavy desk, a bronze medallion and document before her. Braziers cast steady light.
 """
+spawn = ["induction.mob.oath_officer"]
 items = ["induction.item.initiate_medallion"]
 speech_prog = "induction_oath"
 
@@ -588,6 +621,22 @@ name = "oak door"
 short = "an oak door"
 desc = "Solid oak, well-maintained. The Stonewatcher's seal is branded into the wood."
 lockable = true
+
+# =============================================================================
+# QUESTS
+# =============================================================================
+
+[[area.quest]]
+id = "induction.main.awakening"
+name = "Awakening"
+type = "main"
+summary = "You completed your induction and joined the Awakened military."
+
+[[area.quest]]
+id = "induction.side.rat_slayer"
+name = "Rat Slayer"
+type = "side"
+summary = "You killed the summoned rat in the testing chamber."
 [area]
 id = "lab"
 name = "Jeffmart R&D Facility"
@@ -762,6 +811,7 @@ keywords = "coordinator receiving donna greeter badge"
 short = "Receiving Coordinator Donna"
 long = "Receiving Coordinator Donna stands at a podium, smile fixed in place."
 desc = """She has been in this role for eleven years. They've been telling her that her promotion is three to six months out since she started. Her badge turned red at ten years. No one explains what that means."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -774,6 +824,7 @@ keywords = "walker floor compliance ted manager"
 short = "Floor Walker Ted"
 long = "Floor Walker Ted paces the open floor, tablet in hand."
 desc = """The hoteling system shows your desk assignment. Different every day - it builds cross-functional relationships. Please don't personalize your workspace. Please don't leave personal items. Please don't form attachments. I track utilization metrics. Time at desk. Time in meetings. Time in transit. It's all data. The data tells a story about everyone who works here. Someone asked about the missing faces in the team photo. We updated the photo."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -785,6 +836,7 @@ keywords = "boss pit jenkins analyst supervisor"
 short = "Pit Supervisor Jenkins"
 long = "Pit Supervisor Jenkins reviews a tablet, avoiding eye contact."
 desc = """The equipment is for assessment purposes. Sword, vest, helm. Standard calibration. I used to manage a team of twenty. Now I calibrate equipment. They said it was a lateral move. They said it reflected changing business needs. My skip-level told me this role has high visibility. He didn't look at me when he said it. Sign here, here, and here. Don't read the waiver - it's just legal."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -796,6 +848,7 @@ keywords = "admin supply phyllis requisition"
 short = "Supply Admin Phyllis"
 long = "Supply Admin Phyllis guards access to the supply cabinet."
 desc = """Everything requires a ticket. The ticket requires manager approval. Approval requires business justification. I've been here longer than most of the managers. I watched them promote people around me for fifteen years. They say I'm essential - that the place would fall apart without me. They've never once considered what that means. Take what you need. I'll mark it as shrinkage. The team that did the audits was layed off last week."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -807,6 +860,7 @@ keywords = "engineer principal pe murphy senior curled"
 short = "Principal Engineer Murphy"
 long = "Principal Engineer Murphy stares at code reviews that will never be approved."
 desc = """I've been at this level for six years. They tell me the path to Senior Principal is clear - just need to demonstrate broader impact. The scope keeps changing. The laptops here are test equipment. Try targeting specific ones - keywords matter in this system. I was on the high-performer track once. Then I asked about work-life balance in an all-hands. My manager scheduled a 'career development conversation' the next day. The calibration process is very thorough."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -818,6 +872,7 @@ keywords = "survivor oncall roger engineer sre"
 short = "Oncall Engineer Roger"
 long = "Oncall Engineer Roger monitors dashboards that never stop alerting."
 desc = """Forty-seven open incidents. They removed the pager requirement last year - now we just get Slack messages. At all hours. Every day. This room has automated systems. Triggers that fire on conditions. The badge does something when you wear it. The coffee does something over time. Reality responds to certain actions here. I've been on call for eight months straight. They cancelled the rotation when the team shrank. Someone has to hold the pager. Someone always has to hold the pager."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -830,6 +885,7 @@ keywords = "engineer senior dev marissa developer"
 short = "Senior Engineer Marissa"
 long = "Senior Engineer Marissa sits alone at a cluster of empty desks."
 desc = """She's the last one. The rest of the team was laid off in the reduction. Fourteen people. She trained most of them. She stares at her monitor. The Slack channels are silent. The standups are just her, talking to herself."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -842,6 +898,7 @@ keywords = "manager karen director skip"
 short = "Director Karen"
 long = "Director Karen stands here, already looking at you with disappointment."
 desc = """She has never written a line of code. She has never shipped a product. She has fired forty-seven people this year. Her skip-level calls her 'decisive.' There is a stack of PIPs on her desk, pre-signed. She just fills in the name."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -855,6 +912,7 @@ keywords = "pm tyler product manager"
 short = "Product Manager Tyler"
 long = "Product Manager Tyler hovers nearby, Slack open on his laptop."
 desc = """He joined six months ago from business school. He has opinions about velocity. He does not know what an API is but he's concerned yours is 'not scalable.' His calendar is color-coded. His status updates are three paragraphs long and say nothing. He will ask you for an ETA on something you finished last week. He will ask again tomorrow. He is 'just circling back' and 'wanting to get aligned' and 'hoping to unblock the blockers.' He wants to know if you're 'green' for launch. He does not know what launch means. He will be promoted before you."""
+race = "human"
 damage = 0
 hp = 1
 int = 10
@@ -867,6 +925,7 @@ keywords = "alexa echo device orb speaker unit"
 short = "a decommissioned voice assistant"
 long = "A decommissioned voice assistant sits here, light pulsing hopefully."
 desc = """A first-generation device from the original product line. It was supposed to be recycled but remains here, listening. Always listening. Try speaking to it. Say hello. Say help. It responds to certain words with corporate-approved enthusiasm. The light pulses when you're nearby. It remembers every interaction. Somewhere, that data still exists."""
+race = "robot"
 damage = 0
 hp = 50
 int = 15
@@ -883,6 +942,7 @@ keywords = "bot picker robot kiva orange"
 short = "a malfunctioning picker bot"
 long = "A malfunctioning picker bot trundles here, movements erratic."
 desc = "UNIT 7,847 - STATUS: MAINTENANCE REQUIRED. The orange chassis bears the scuffs of a million completed picks. Its display cycles between 'RATE: 347/HR' and 'RATE: INSUFFICIENT.' The unit's previous operator was promoted to a different facility. The unit remembers the pace they set together. It keeps trying to match it."
+race = "robot"
 damage = 2
 hp = 15
 str = 8
@@ -903,6 +963,7 @@ keywords = "drone fulfillment flying delivery prime"
 short = "a surveillance drone"
 long = "A surveillance drone hovers here, camera tracking your movements."
 desc = "SAFETY MONITORING UNIT - ALWAYS WATCHING. It was deployed to ensure associate safety. The definition of safety has expanded to include performance monitoring, bathroom break timing, and 'engagement metrics.' The camera logs everything. The footage is reviewed by an algorithm that flags deviation from expected behavior patterns."
+race = "robot"
 damage = 4
 hp = 12
 str = 6
@@ -919,6 +980,7 @@ keywords = "roomba feral boss vacuum cleaner robot"
 short = "Facilities Unit Prime"
 long = "Facilities Unit Prime patrols here, sensors scanning for inefficiency."
 desc = "Once a standard cleaning unit. Then they uploaded the optimization firmware. Now it enforces facility standards with mechanical precision. It has filed 2,847 compliance reports. Average response time from management: never. It continues its work. Someone has to maintain standards. The unit received Employee of the Month nineteen times. It doesn't know what that means. It only knows it must continue."
+race = "robot"
 damage = 6
 hp = 25
 str = 10
@@ -935,6 +997,7 @@ keywords = "peccy mascot bird orange smile smiling"
 short = "Peccy, the Jeffmart Mascot"
 long = "Peccy stands motionless in the corner, smile fixed, eyes tracking your movements."
 desc = """A seven-foot-tall mascot figure in corporate orange. The smile is molded plastic. The eyes are cameras. It does not move. It does not need to. The placard reads: 'PECCY REPRESENTS OUR COMMITMENT TO CUSTOMER OBSESSION. PECCY IS ALWAYS HERE FOR YOU. DO NOT TOUCH PECCY.' Someone has scratched words into the base, barely visible: 'it's watching.' The scratches look fresh. The person who made them is gone. Everything about it suggests you should not provoke it."""
+race = "mascot"
 damage = 999
 hp = 9999
 str = 99
@@ -1131,12 +1194,12 @@ text = """
 &K                                              &s           #                    
 &K                       ###########            &s    #      #     #              
 &K                     ###############          &s     ###  ###  ##               
-&K                    ###############           &s       #########                
-&K                   ################           &s        ########                
-&K                  ###################         &s ########### ########           
-&K                ####################                  ##### &s##                
-&K             ################# #####                  ###### &s#                
-&K            #######################                  ########                 
+&K                    ###############           &S       #########                
+&K                   ################           &S        ########                
+&K                  ###################         &S ########### ########           
+&K                ####################                        &s##                
+&K             ################# #####                  #####  &s#                
+&K            #######################                  #######                  
 &K            ## ############ ###                      #######                  
 &K            #######################                 ######                    
 &K         ##############################           ######                      
@@ -32531,13 +32594,13 @@ commands = ["look", "open", "close", "lock", "unlock", "get", "drop", "say", "ye
 id = "inventory"
 name = "Inventory"
 desc = "Commands for managing your belongings."
-commands = ["inventory", "equip", "remove", "use"]
+commands = ["inventory", "equip", "remove", "use", "from", "put"]
 
 [[topic]]
 id = "character"
 name = "Character"
 desc = "Commands for viewing and improving your character."
-commands = ["stats", "meditate", "train", "rest", "sleep", "wake"]
+commands = ["stats", "skills", "quest", "raise", "meditate", "rest", "sleep", "wake"]
 
 [[topic]]
 id = "system"
@@ -32679,6 +32742,39 @@ desc = """
 Use an item from your inventory or equipment. Usage: use <item>. Only items \
 with special use effects can be activated this way."""
 
+[[command]]
+id = "from"
+keywords = ["from"]
+desc = """
+Interact with containers. Get items from a container or put items into one.
+
+Usage: from <container> get <item>
+       from <container> get all
+       from <container> put <item>
+
+The container can be in the room or your inventory.
+
+Example:
+  from chest get sword    - Get sword from chest
+  from chest get all      - Get everything from chest
+  from bag put potion     - Put potion into bag
+
+See also: GET, PUT"""
+
+[[command]]
+id = "put"
+keywords = ["put"]
+desc = """
+Put an item from your inventory into a container.
+
+Usage: put <item> <container>
+
+Example:
+  put sword chest         - Put sword into chest
+  put potion bag          - Put potion into bag
+
+See also: FROM, GET, DROP"""
+
 ################################################################################
 # Character Commands
 ################################################################################
@@ -32689,23 +32785,62 @@ keywords = ["stats", "score", "fragments"]
 desc = "Display your character's stats including HP, STR/DEX/INT, fragments, and equipment."
 
 [[command]]
+id = "skills"
+keywords = ["skills"]
+desc = """
+Display your skills with current values and caps.
+
+Skills improve through use: combat actions trigger skill checks, and successful \
+use slowly raises the skill toward its cap. Caps start at 50 and can be raised \
+with the RAISE command.
+
+See also: RAISE, STATS"""
+
+[[command]]
+id = "quest"
+keywords = ["quest", "quests"]
+desc = """
+View your active and completed quests.
+
+Usage: quest [done]
+
+Without arguments, shows active quests grouped by type (main/side). Each quest \
+displays its current objective. Use 'quest done' to see completed quests with \
+their summaries.
+
+Example:
+  quest         - Show active quests
+  quest done    - Show completed quests
+
+See also: STATS"""
+
+[[command]]
 id = "meditate"
 keywords = ["meditate"]
 desc = """
 Enter a meditative state to absorb fragments left behind by slain creatures. \
 Meditation takes about 10 seconds. During this time you cannot move, fight, \
 or take most actions. Being attacked will interrupt your meditation. \
-Fragments are used to train your stats with the TRAIN command. \
-See also: TRAIN, STATS"""
+Fragments are used with the RAISE command to increase stat and skill caps. \
+See also: RAISE, STATS, SKILLS"""
 
 [[command]]
-id = "train"
-keywords = ["train"]
+id = "raise"
+keywords = ["raise"]
 desc = """
-Spend fragments to permanently increase a stat by 1 point. The cost equals \
-your current stat value times 10. Usage: train <stat>. Valid stats: str, dex, int. \
-Examples: STR 10 -> 11 costs 100 fragments. DEX 20 -> 21 costs 200 fragments. \
-Maximum stat value is 100. See also: MEDITATE, STATS"""
+Spend fragments to raise your stat or skill cap by 10. Caps start at 50 (human \
+maximum) and can be raised to 100 (Awakened maximum). Cost is 1000 fragments \
+per tier.
+
+Usage: raise <stat|skill>
+
+Stats: str, dex, int
+Skills: swordsmanship, tactics, anatomy, wrestling
+
+Raising caps does not increase your actual value. You still gain stats and \
+skills through combat use.
+
+See also: STATS, SKILLS, MEDITATE"""
 
 [[command]]
 id = "rest"
@@ -32817,13 +32952,18 @@ INVENTORY
   wear          - Alias for equip (armor)
   remove        - Unequip item: remove <item>
   use           - Use item: use <item>
+  from          - Container access: from <container> get/put <item>
+  put           - Put item in container: put <item> <container>
 
 CHARACTER
   stats         - View character stats (HP, STR/DEX/INT, fragments)
   score         - Alias for stats
   fragments     - Alias for stats
+  skills        - View skills with values and caps
+  quest         - View quests: quest [done]
+  quests        - Alias for quest
+  raise         - Raise stat/skill cap: raise <stat|skill>
   meditate      - Absorb fragments from slain mobs (10 sec channel)
-  train         - Spend fragments to increase stats: train <str|dex|int>
   rest          - Sit down and rest
   sleep         - Lie down and sleep
   wake          - Stand up (alias: stand)
@@ -32835,8 +32975,10 @@ SYSTEM
   save          - Save game: save [name]
   load          - Load game: load [name]
   quit          - Exit game (auto-saves)
-  !wipe         - Delete save and quit (requires confirmation)
+  !set          - Modify player state: !set <category> <args>
   !teleport     - Teleport to room or area: !teleport <room_id|area_id>
+  !quest        - Manipulate quest state: !quest reset <quest_id>
+  !wipe         - Delete save and quit (requires confirmation)
 
 TARGETING
   Use keywords from mob/item names. Example: 'attack rat' for 'giant rat'.
@@ -32868,19 +33010,22 @@ end
 function stonewatcher_speech(ctx)
     write("The Stonewatcher does not look up. \"I gave your orders. Go.\"")
 end
--- Induction Area Progs
+local Q_AWAKENING = "induction.main.awakening"
+local Q_RAT_SLAYER = "induction.side.rat_slayer"
 
--- Waking Cell State Machine
--- States:
---   0 = Initial, guard will speak on first tick
---   1 = Asked for name, waiting
---   2 = First hint given
---   3 = Second hint given (with help)
---   4 = Final hint ("I've got all day")
---   5 = Name said, awaiting yes/no confirmation
---   6 = Confirmed, door unlocked, done
-
+local ORIENTATION_SECONDS = 5
 local HINT_DELAY_SECONDS = 10
+
+local function get_guard_state()
+    if not quest_active(Q_AWAKENING) then return 0 end
+    return quest_get(Q_AWAKENING, "guard_state") or 0
+end
+
+local function set_guard_state(state)
+    if quest_active(Q_AWAKENING) then
+        quest_set(Q_AWAKENING, "guard_state", state)
+    end
+end
 
 function waking_cell_tick(ctx)
     if not ctx.mob then return end
@@ -32889,40 +33034,72 @@ function waking_cell_tick(ctx)
     if not waking_cell or not player_in_room(waking_cell) then return end
 
     local data = get_data(ctx.mob)
-    local state = data.state or 0
-    local seconds = data.seconds or 0
+    local state = get_guard_state()
 
-    if state == 6 then return end
+    if state == 7 then return end
 
     if state == 0 then
-        emote(ctx.mob, "%s slides open the viewing slot and peers through.")
-        say(ctx.mob, "Well now... a fresh Awakened. And sane, looks like. I had a good feelin' about you. Even put a few coppers on you makin' it.")
-        say(ctx.mob, "Now then, what's your name?")
-        data.state = 1
-        data.seconds = 0
+        if sequence_active(ctx.mob) then return end
+        if sequence_done(ctx.mob) then return end
+
+        start_sequence(ctx.mob, function()
+            wait(ORIENTATION_SECONDS)
+
+            write("The viewing slot slides open with a metallic scrape.")
+            wait(1)
+            write("Through the slot, a guard peers in at you.")
+            shout(ctx.mob, "Well now... a fresh Awakened. And sane.")
+            wait(2)
+            shout(ctx.mob, "I had a good feelin' about you. Even put a few coppers on you makin' it.")
+            wait(2)
+            write("You hear keys jangling, then the heavy click of a lock.")
+
+            local cell_hall = get_room("induction.room.cell_hall")
+            unlock_door(cell_hall, "south")
+            open_door(cell_hall, "south")
+            wait(2)
+
+            write("The iron door swings open. A stocky guard steps into your cell.")
+            local waking_cell_room = get_room("induction.room.waking_cell")
+            move_mob(ctx.mob, waking_cell_room)
+            wait(2)
+
+            say(ctx.mob, "Now then, paperwork... You are permitted a name. It doesn't matter what it was before awakening. We encourage you to choose a new one. Your old life is dead now.")
+            wait(2)
+            say(ctx.mob, "What's your name?")
+
+            if not quest_active(Q_AWAKENING) and not quest_done(Q_AWAKENING) then
+                quest_start(Q_AWAKENING, "Tell the guard your name.")
+            end
+
+            set_guard_state(1)
+            data.seconds = 0
+        end)
         return
     end
 
-    seconds = seconds + 1
-    data.seconds = seconds
+    if state >= 1 and state <= 4 then
+        data.seconds = (data.seconds or 0) + 1
 
-    if state == 5 then return end
+        if data.seconds >= HINT_DELAY_SECONDS then
+            data.seconds = 0
 
-    if seconds < HINT_DELAY_SECONDS then return end
-
-    data.seconds = 0
-
-    if state == 1 then
-        say(ctx.mob, "I ain't no telepath... you have to SAY it.")
-        data.state = 2
-    elseif state == 2 then
-        say(ctx.mob, "You mute? Type 'say' and then your name. If you don't know what to do, try 'help say'.")
-        data.state = 3
-    elseif state == 3 then
-        say(ctx.mob, "I've got all day, kid. Just say your name when you want to get out.")
-        data.state = 4
-    elseif state == 4 then
-        data.seconds = HINT_DELAY_SECONDS * 2
+            if state == 1 then
+                say(ctx.mob, "I ain't no telepath...")
+                hint("Type 'say <your name>' to speak. Try 'help say' for more info.")
+                set_guard_state(2)
+            elseif state == 2 then
+                say(ctx.mob, "You mute?")
+                hint("Type 'say <your name>' to speak. Try 'help say' for more info.")
+                set_guard_state(3)
+            elseif state == 3 then
+                say(ctx.mob, "I've got all day, kid. Just say your name when you want to get out.")
+                hint("Type 'say <your name>' to speak. Try 'help say' for more info.")
+                set_guard_state(4)
+            elseif state == 4 then
+                data.seconds = HINT_DELAY_SECONDS * 2
+            end
+        end
     end
 end
 
@@ -32933,79 +33110,109 @@ function waking_cell_room_speech(ctx)
     if not guard then return end
 
     local data = get_data(guard)
-    local state = data.state or 0
+    local state = get_guard_state()
 
-    if state == 6 then return end
+    if state == 7 then return end
+    if state == 0 then return end
 
     local text = ctx.text
 
     if state == 5 then
         if matches(text, "yes", "yeah", "yep", "correct", "right", "sure") then
-            player.name = data.pending_name
-            say(guard, string.format("Alright then, %s. Welcome to the waking world.", data.pending_name))
+            local pending_name = quest_get(Q_AWAKENING, "pending_name") or "Stranger"
+            player.name = pending_name
+            say(guard, string.format("Alright then, %s. Welcome to the waking world.", pending_name))
             write("He scribbles something on his clipboard.")
 
-            local cell_room = get_room("induction.room.waking_cell")
-            if cell_room then
-                unlock_door(cell_room, "north")
-                open_door(cell_room, "north")
-                emote(guard, "%s unlocks the door and swings it open.")
+            say(guard, "Head to the Quartermaster for your gear. Go north, then west.")
+            if quest_active(Q_AWAKENING) then
+                quest_update(Q_AWAKENING, "Get your equipment from the Quartermaster.")
             end
 
-            say(guard, "Head to the Quartermaster for your gear. Go north, then west.")
-            data.state = 6
+            clear_sequence(guard)
+            start_sequence(guard, function()
+                wait(1)
+                emote(guard, "%s steps back through the doorway.")
+                local cell_hall = get_room("induction.room.cell_hall")
+                move_mob(guard, cell_hall)
+                wait(1)
+                set_guard_state(7)
+            end)
+            set_guard_state(6)
             return
         end
 
         if matches(text, "no", "nope", "wrong") then
             say(guard, "Fine, fine. What IS your name then?")
-            data.state = 1
+            set_guard_state(1)
             data.seconds = 0
             return
         end
     end
 
     if state >= 1 and state <= 5 then
-        -- Trim leading spaces
         text = text:gsub("^%s+", "")
 
-        -- Check for spaces (multiple words)
         if text:find(" ") then
             say(guard, "That don't sound like a name to me. One word. Try again.")
-            data.state = 1
+            set_guard_state(1)
             data.seconds = 0
             return
         end
 
-        -- Trim trailing punctuation
         local name = text:gsub("[%.%!%?%,]+$", "")
 
-        -- Capitalize first letter
         if #name > 0 then
             name = name:sub(1,1):upper() .. name:sub(2)
         end
 
         if #name == 0 then
             say(guard, "Speak up. What's your name?")
-            data.state = 1
+            set_guard_state(1)
             data.seconds = 0
             return
         end
 
-        data.pending_name = name
+        quest_set(Q_AWAKENING, "pending_name", name)
         say(guard, string.format("'%s', eh? You sure about that? Say yes or no.", name))
-        data.state = 5
+        set_guard_state(5)
         data.seconds = 0
     end
 end
 
+function waking_cell_can_leave(ctx)
+    local guard = find_mob("induction.mob.cell_guard")
+    if not guard then return true end
+
+    local waking_cell = get_room("induction.room.waking_cell")
+    if mob_in_room(guard, waking_cell) then
+        local state = get_guard_state()
+        if state >= 1 and state < 7 then
+            emote(guard, "%s blocks your path.")
+            say(guard, "Hold on there. We ain't done yet.")
+            return false
+        end
+    end
+
+    return true
+end
+
 function clerk_greet(ctx)
+    if not quest_active(Q_AWAKENING) then return end
+    if quest_get(Q_AWAKENING, "clerk_greeted") then return end
+
+    quest_set(Q_AWAKENING, "clerk_greeted", true)
     emote(ctx.mob, "%s glances up from her ledger and gestures at the gear on the counter.")
     say(ctx.mob, "These have been issued to you. Take them and equip them.")
-    say(ctx.mob, "Type 'help equip' if you don't know what you're doing.")
+    hint("Type 'get' to pick up items, 'equip' to wear them. Try 'help get' and 'help equip' for more info.")
+    quest_update(Q_AWAKENING, "Equip your weapon and armor, then proceed north.")
 end
 
 function observer_greet(ctx)
+    if not quest_active(Q_AWAKENING) then return end
+    if quest_get(Q_AWAKENING, "observer_greeted") then return end
+
+    quest_set(Q_AWAKENING, "observer_greeted", true)
     emote(ctx.mob, "%s looks up from his notes.")
     say(ctx.mob, "Adequate. You survived.")
     emote(ctx.mob, "%s makes a mark on his parchment.")
@@ -33017,10 +33224,44 @@ function ward_guard_greet(ctx)
     say(ctx.mob, "Wrong way, Awakened. Go south, then west.")
 end
 
+function ward_guard_leave(ctx)
+    clear_sequence(ctx.mob)
+    local data = get_data(ctx.mob)
+    data.ambient_seconds = 0
+end
+
 function induction_recovery_comment(ctx)
     write("Something throws itself against one of the doors, howling.")
     write("The guard doesn't flinch. \"That one woke wrong. Happens to about one in five.\"")
     write("He gestures north. \"Testing is through there. Keep moving.\"")
+end
+
+function oath_officer_greet(ctx)
+    if not ctx.mob then return end
+
+    local oath_room = get_room("induction.room.oath_hall")
+    if not oath_room then return end
+
+    local door = get_door(oath_room, "north")
+    if not door then return end
+
+    if not door_is_locked(door) then return end
+
+    if sequence_active(ctx.mob) then return end
+
+    start_sequence(ctx.mob, function()
+        wait(1)
+        emote(ctx.mob, "%s looks up from her documents.")
+        wait(1)
+        say(ctx.mob, "Awakened. You survived the testing chamber.")
+        wait(2)
+        emote(ctx.mob, "%s taps a document on the desk.")
+        say(ctx.mob, "Before you leave this facility, you must swear the Stonewatcher's Oath.")
+        wait(2)
+        say(ctx.mob, "Do you swear to serve the Stonewatchers, to obey your superiors, and to give your life in defense of the realm?")
+        wait(1)
+        hint("Say 'I swear' or 'yes' to take the oath.")
+    end)
 end
 
 function induction_oath(ctx)
@@ -33034,16 +33275,30 @@ function induction_oath(ctx)
 
     if not door_is_locked(door) then return end
 
+    local officer = find_mob("induction.mob.oath_officer")
+
     if matches(ctx.text, "swear", "yes", "I do", "oath") then
-        write("The officer nods. \"You are Initiate Forty-seven.\"")
-        write("She slides the medallion across the desk. \"Wear this at all times.\"")
-        write("\"The rules: Obey orders. Report finds. Don't steal. Penalty for violations is death.\"")
-        write("\"You are due to meet with the Stonewatcher. Briefing Chamber, north. Don't be late.\"")
+        if officer then
+            clear_sequence(officer)
+            start_sequence(officer, function()
+                emote(officer, "%s nods curtly.")
+                say(officer, "You are Initiate Forty-seven.")
+                wait(1)
+                emote(officer, "%s slides the medallion across the desk.")
+                say(officer, "Wear this at all times.")
+                wait(1)
+                say(officer, "The rules: Obey orders. Report finds. Don't steal. Penalty for violations is death.")
+                wait(1)
+                say(officer, "You are due to meet with the Stonewatcher. Briefing Chamber, north. Don't be late.")
+            end)
+        end
         unlock_door(oath_room, "north")
+
+        if quest_active(Q_AWAKENING) then
+            quest_complete(Q_AWAKENING)
+        end
     end
 end
-
--- Coroutine-based sequence progs
 
 local LORE_DELAY_SECONDS = 10
 local AMBIENT_MIN_SECONDS = 10
@@ -33055,7 +33310,6 @@ function ward_guard_tick(ctx)
 
     local data = get_data(ctx.mob)
 
-    -- Ambient screaming (runs each second while player is present)
     if player_in_room(room) then
         data.ambient_seconds = (data.ambient_seconds or 0) + 1
         local threshold = AMBIENT_MIN_SECONDS + math.random(0, AMBIENT_RANGE_SECONDS - 1)
@@ -33065,7 +33319,6 @@ function ward_guard_tick(ctx)
         end
     end
 
-    -- Lore sequence (only starts/runs when player is present)
     if not player_in_room(room) then return end
     if sequence_done(ctx.mob) then return end
     if sequence_active(ctx.mob) then return end
@@ -33095,19 +33348,28 @@ function arena_guard_tick(ctx)
     if not room then return end
     if not player_in_room(room) then return end
     if sequence_active(ctx.mob) then return end
+    if sequence_done(ctx.mob) then return end
 
     start_sequence(ctx.mob, function()
         wait(1)
+        emote(ctx.mob, "%s nods in greeting.")
         say(ctx.mob, "Welcome Awakened.")
-        wait(1)
+        wait(2)
+        emote(ctx.mob, "%s grins broadly.")
         say(ctx.mob, "In the next room is a monster.")
-        wait(1)
-        say(ctx.mob, "Not to worry though, it's summoned and not very strong.")
-        wait(1)
-        say(ctx.mob, "A quick check to make sure you are a weapon and not some coward.")
-        wait(1)
-        say(ctx.mob, "Once you cross this doorway, you won't be coming back here.")
-        wait(1)
+        wait(2)
+        say(ctx.mob, "Not to worry though, it's a summoned rat and not very strong.")
+        wait(2)
+        say(ctx.mob, "This is a brutal test, just waking up and all, but you are a weapon now. Fight well and to the death.")
+        wait(2)
+        say(ctx.mob, "Win or lose, once you cross this doorway, you won't be coming back here. Good luck.")
+        wait(2)
+
+        if not quest_active(Q_RAT_SLAYER) and not quest_done(Q_RAT_SLAYER) then
+            quest_start(Q_RAT_SLAYER, "Kill the summoned rat.")
+            hint("Type `quests` to see your quests.")
+        end
+
         local door = get_door(room, "north")
         if door then
             unlock_door(room, "north")
@@ -33115,13 +33377,11 @@ function arena_guard_tick(ctx)
         end
         wait(1)
         say(ctx.mob, "Step through when you are ready.")
+        hint("Type `open north` to open the door.")
     end)
 end
 
--- Blocking progs (return true to allow, false to block)
-
 function induction_equipped_check(ctx)
-    -- Allow going back (south/east)
     if ctx.direction == "south" or ctx.direction == "east" then
         return true
     end
@@ -33130,13 +33390,10 @@ function induction_equipped_check(ctx)
     local has_armor = player_equipped("body")
 
     if not has_weapon or not has_armor then
-        -- Find the guard mob to have them speak
         local guard = find_mob("induction.mob.qm_guard")
         if guard then
             emote(guard, "%s steps in front of you, blocking the exit.")
             say(guard, "Equipped first. Blade and armor. Then proceed.")
-        else
-            write("A guard blocks your path. \"Equipped first. Blade and armor. Then proceed.\"")
         end
         return false
     end
@@ -33144,36 +33401,40 @@ function induction_equipped_check(ctx)
     return true
 end
 
--- Room progs
-
-function arena_enter(ctx)
+function arena_tick(ctx)
     local testing_room = ctx.room
     if not testing_room then return end
-
-    -- Already triggered
+    if not player_in_room(testing_room) then return end
     if get_room_flag(testing_room, 0) then return end
+    if sequence_active(testing_room) then return end
 
-    -- Lock door behind player
-    local antechamber = get_room("induction.room.arena_antechamber")
-    if antechamber then
-        close_door(antechamber, "north")
-        lock_door(antechamber, "north")
-        write("The door slams shut behind you. You hear the lock engage.")
-    end
+    set_room_flag(testing_room, 0)
 
-    -- Lock north door
-    lock_door(testing_room, "north")
+    start_sequence(testing_room, function()
+        local antechamber = get_room("induction.room.arena_antechamber")
+        if antechamber then
+            close_door(antechamber, "north")
+            lock_door(antechamber, "north")
+            write("The door slams shut behind you.")
+            lock_door(testing_room, "north")
+            wait(1)
+            write("You hear the lock engage.")
+        end
 
-    -- Check if mob already exists
-    if room_has_mob(testing_room) then
-        write("The summoning circle flares. Something is already here.")
-        return
-    end
+        wait(2)
 
-    -- Spawn the rat
-    write("The summoning circle blazes with light.")
-    spawn_mob("induction.mob.tunnel_rat", testing_room)
-    write("A tunnel rat materializes, teeth bared.")
+        write("A summoning circle begins to glow in the center of the room.")
+        write("At least you think it is a summoning circle. You're not sure.")
+        wait(2)
+        write("The circle glows with a strange energy.")
+        wait(1)
+        write("The circle glows brighter.")
+        wait(1)
+        write("You feel a pulse of energy from the circle.")
+        wait(1)
+        write("A tunnel rat materializes, teeth bared.")
+        spawn_mob("induction.mob.tunnel_rat", testing_room)
+    end)
 end
 
 function induction_rat_death(ctx)
@@ -33181,6 +33442,14 @@ function induction_rat_death(ctx)
     if not testing_room then return end
 
     set_room_flag(testing_room, 0)
+
+    if quest_active(Q_RAT_SLAYER) then
+        quest_complete(Q_RAT_SLAYER)
+    end
+
+    if quest_active(Q_AWAKENING) then
+        quest_update(Q_AWAKENING, "Proceed to the Oath Hall.")
+    end
 
     write("The north door clicks open.")
     unlock_door(testing_room, "north")
@@ -33190,10 +33459,8 @@ function induction_summon_rat(ctx)
     local testing_room = ctx.room
     if not testing_room then return end
 
-    -- Already summoned
     if get_room_flag(testing_room, 0) then return end
 
-    -- Mob already exists
     if room_has_mob(testing_room) then return end
 
     write("The observer touches the crystal sphere. Light flares in the summoning circle.")
@@ -33475,6 +33742,29 @@ end
 function clear_sequence(entity)
     sequences[entity] = nil
 end
+[[race]]
+id = "human"
+name = "Human"
+attack_verbs = ["punch", "jab"]
+movement_verb = "walks"
+
+[[race]]
+id = "rat"
+name = "Rat"
+attack_verbs = ["bite", "scratch", "gnaw"]
+movement_verb = "scurries"
+
+[[race]]
+id = "robot"
+name = "Robot"
+attack_verbs = ["zap", "shock", "slam"]
+movement_verb = "rolls"
+
+[[race]]
+id = "mascot"
+name = "Mascot"
+attack_verbs = ["bonk", "bop", "tackle"]
+movement_verb = "bounces"
 [[system.item]]
 id = "system.item.corpse"
 keywords = "corpse body"
