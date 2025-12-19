@@ -38,7 +38,7 @@ short = "a standard blade"
 long = "A standard-issue blade lies here."
 desc = "Military issue. Sharp enough. Balanced enough. Thousands like it in the armory."
 type = "weapon"
-slot = "weapon"
+slot = "main_hand"
 damage = 8
 speed = 30
 attack_verbs = ["slash", "cut"]
@@ -50,16 +50,58 @@ short = "a leather cuirass"
 long = "A leather cuirass lies here."
 desc = "Boiled leather, standard pattern. Fits well enough. Stops a glancing blow."
 type = "armor"
-slot = "body"
+slot = "chest"
 armor = 2
 
 [[area.item]]
-id = "induction.item.bloodmoss_poultice"
-keywords = "poultice bloodmoss moss"
-short = "a bloodmoss poultice"
-long = "A bloodmoss poultice lies here."
-desc = "Standard field medicine. Press to wound, bleeding slows. One use."
-type = "misc"
+id = "induction.item.canvas_hood"
+keywords = "hood canvas waxed"
+short = "a waxed canvas hood"
+long = "A waxed canvas hood lies here."
+desc = "Heavy canvas treated with beeswax. Keeps the rain off. Keeps your head warm. Does nothing else."
+type = "armor"
+slot = "head"
+armor = 0
+
+[[area.item]]
+id = "induction.item.canvas_coat"
+keywords = "coat canvas waxed"
+short = "a waxed canvas coat"
+long = "A waxed canvas coat lies here."
+desc = "Three layers of treated canvas, brass buttons, deep pockets. Working gear for rough country. Not armor, but better than bare skin."
+type = "armor"
+slot = "about_body"
+armor = 1
+
+[[area.item]]
+id = "induction.item.canvas_trousers"
+keywords = "trousers pants canvas waxed"
+short = "waxed canvas trousers"
+long = "Waxed canvas trousers lie here."
+desc = "Reinforced at the knees and seat. The wax keeps them from soaking through in the wet. Dozens of repairs say someone wore these hard."
+type = "armor"
+slot = "legs"
+armor = 1
+
+[[area.item]]
+id = "induction.item.canvas_gaiters"
+keywords = "gaiters boots canvas waxed"
+short = "waxed canvas gaiters"
+long = "Waxed canvas gaiters lie here."
+desc = "Tall gaiters that strap over your boots. Keep the mud and thorns out. Good for long walks, bad for running."
+type = "armor"
+slot = "feet"
+armor = 0
+
+[[area.item]]
+id = "induction.item.leather_gloves"
+keywords = "gloves leather work"
+short = "leather work gloves"
+long = "Leather work gloves lie here."
+desc = "Thick cowhide, double-stitched. The palms are calloused from whatever work they've seen. Good grip. Some protection."
+type = "armor"
+slot = "hands"
+armor = 1
 
 [[area.item]]
 id = "induction.item.initiate_medallion"
@@ -345,7 +387,11 @@ spawn = ["induction.mob.clerk", "induction.mob.qm_guard"]
 items = [
 	"induction.item.standard_blade",
 	"induction.item.leather_cuirass",
-	"induction.item.bloodmoss_poultice"
+	"induction.item.canvas_hood",
+	"induction.item.canvas_coat",
+	"induction.item.canvas_trousers",
+	"induction.item.canvas_gaiters",
+	"induction.item.leather_gloves"
 ]
 can_leave_prog = "induction_equipped_check"
 
@@ -32093,7 +32139,20 @@ See also: FROM, GET, DROP"""
 [[command]]
 id = "stats"
 keywords = ["stats", "score", "fragments"]
-desc = "Display your character's stats including HP, STR/DEX/INT, fragments, and equipment."
+desc = """
+Display your character sheet with stats, vitals, and equipment.
+
+Shows:
+- Name and fragment count
+- Stats (STR/DEX/INT) as descriptive words (poor, average, good, etc.)
+- HP condition (12 tiers: unharmed, scratched, lightly-wounded, wounded, badly-wounded, bloodied, mauled, severely-wounded, crippled, mortally-wounded, near-death, dead)
+- SP condition (12 tiers: rested, fresh, barely-winded, winded, tired, weary, fatigued, severely-winded, exhausted, severely-exhausted, barely-conscious, collapsed)
+- Armor/Damage descriptors
+- Current position and carry weight
+- Equipped items
+
+Stat descriptors range from 'abysmal' (0) through 'poor' (20), 'average' (30), \
+'good' (45), 'excellent' (60), up to 'mythic' (100)."""
 
 [[command]]
 id = "skills"
@@ -32191,10 +32250,12 @@ commands in that topic."""
 id = "prompt"
 keywords = ["prompt"]
 desc = """
-View or customize your command prompt. Usage: prompt [format|default]. \
-Without arguments, shows your current prompt. Use 'prompt default' to reset. \
-Format codes: %h (health condition), %s (stamina condition), %a (activity char), \
-%S (activity word), %r (room name), %e (exits), %f (fighting target), %% (literal %)."""
+View or customize your prompts. Two prompts: normal and combat (auto-switches when fighting). \
+Usage: prompt [format|default] for normal, prompt combat [format|default] for combat. \
+Without arguments, shows both current prompts. Format codes: %h (health), %s (stamina), \
+%a (activity char), %S (activity word), %r (room name), %e (exits), \
+%o (opponent name), %O (opponent condition), %% (literal %). \
+Combat-only codes (%o, %O) expand to empty when not fighting."""
 
 [[command]]
 id = "colors"
@@ -32281,7 +32342,7 @@ CHARACTER
 
 SYSTEM
   help          - Show help: help [topic|command]
-  prompt        - View or set command prompt: prompt [format|default]
+  prompt        - View or set prompts: prompt [format|default], prompt combat [format|default]
   colors        - Display color palette test
   save          - Save game: save [name]
   load          - Load game: load [name]
@@ -32300,9 +32361,6 @@ ABBREVIATIONS
   Parentheses above show common shortcuts."""
 local Q_AWAKENING = "induction.main.awakening"
 local Q_RAT_SLAYER = "induction.side.rat_slayer"
-
-local ORIENTATION_SECONDS = 5
-local HINT_DELAY_SECONDS = 10
 
 local function get_guard_state()
     if not quest_active(Q_AWAKENING) then return 0 end
@@ -32331,7 +32389,7 @@ function waking_cell_tick(ctx)
         if sequence_done(ctx.mob) then return end
 
         start_sequence(ctx.mob, function()
-            wait(ORIENTATION_SECONDS)
+            wait(5)
 
             write("The viewing slot slides open with a metallic scrape.")
             wait(1)
@@ -32369,7 +32427,7 @@ function waking_cell_tick(ctx)
     if state >= 1 and state <= 4 then
         data.seconds = (data.seconds or 0) + 1
 
-        if data.seconds >= HINT_DELAY_SECONDS then
+        if data.seconds >= 10 then
             data.seconds = 0
 
             if state == 1 then
@@ -32385,7 +32443,7 @@ function waking_cell_tick(ctx)
                 hint("Type 'say <your name>' to speak. Try 'help say' for more info.")
                 set_guard_state(4)
             elseif state == 4 then
-                data.seconds = HINT_DELAY_SECONDS * 2
+                data.seconds = 30
             end
         end
     end
@@ -32638,9 +32696,10 @@ function arena_guard_tick(ctx)
         emote(ctx.mob, "%s nods in greeting.")
         say(ctx.mob, "Welcome Awakened.")
         wait(2)
+        say(ctx.mob, "In the next room is an aggressive monster and you must kill it.")
+        wait(1)
         emote(ctx.mob, "%s grins broadly.")
-        say(ctx.mob, "In the next room is a monster.")
-        wait(2)
+        wait(1)
         say(ctx.mob, "Not to worry though, it's a summoned rat and not very strong.")
         wait(2)
         say(ctx.mob, "This is a brutal test, just waking up and all, but you are a weapon now. Fight well and to the death.")
@@ -32669,8 +32728,8 @@ function induction_equipped_check(ctx)
         return true
     end
 
-    local has_weapon = player_equipped("weapon")
-    local has_armor = player_equipped("body")
+    local has_weapon = player_equipped("main_hand")
+    local has_armor = player_equipped("chest")
 
     if not has_weapon or not has_armor then
         local guard = find_mob("induction.mob.qm_guard")
@@ -32707,8 +32766,9 @@ function arena_tick(ctx)
         wait(2)
 
         write("A summoning circle begins to glow in the center of the room.")
+        wait(1)
         write("At least you think it is a summoning circle. You're not sure.")
-        wait(2)
+        wait(1)
         write("The circle glows with a strange energy.")
         wait(1)
         write("The circle glows brighter.")
@@ -32772,8 +32832,6 @@ function sequence_done(entity)
     local seq = sequences[entity]
     return seq ~= nil and seq.done
 end
-
-local TICKS_PER_SECOND = 10
 
 function wait(seconds)
     local ticks = math.floor((seconds or 0.1) * TICKS_PER_SECOND + 0.5)
