@@ -34,7 +34,7 @@ title: "Games"
 </div>
 </div>
 <div class="game-card">
-<img src="/assets/img/voidstone_icon.jpg" alt="Voidstone">
+<img src="/assets/img/voidstone_icon.webp" alt="Voidstone">
 <div class="game-card-info">
 <h3><a href="/games/voidstone">Voidstone</a></h3>
 <p>A single-player text-based MUDlike. Weird. Cool.</p>
