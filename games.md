@@ -36,8 +36,8 @@ title: "Games"
 <div class="game-card">
 <img src="/assets/img/voidstone_icon.webp" alt="Voidstone">
 <div class="game-card-info">
-<h3><a href="/games/voidstone">Voidstone</a></h3>
-<p>A single-player text-based MUDlike. Weird. Cool.</p>
+<h3><a href="/games/voidstone">Voidstone</a>: <span class="game-subtitle">a world where the GPU is your imagination.</span></h3>
+<p>Voidstone is an RPG rendered entirely in text. Type commands. Read what happens. Your imagination renders the rest: the dungeons, the dread, the things that wait in the dark. No tutorials. No hand-holding. No mercy. Type or die.</p>
 </div>
 </div>
 </div>
