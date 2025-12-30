@@ -30,14 +30,14 @@ title: "Games"
 <img src="/assets/img/bb_icon.png" alt="Brinebound">
 <div class="game-card-info">
 <h3><a href="/games/brinebound">Brinebound</a></h3>
-<p>Coming soon.</p>
+<p>Guide a baby king salmon on an epic journey downstream from lake to ocean.</p>
 </div>
 </div>
 <div class="game-card">
 <img src="/assets/img/voidstone_icon.jpg" alt="Voidstone">
 <div class="game-card-info">
 <h3><a href="/games/voidstone">Voidstone</a></h3>
-<p>Coming soon.</p>
+<p>A single-player text-based MUDlike. Weird. Cool.</p>
 </div>
 </div>
 </div>

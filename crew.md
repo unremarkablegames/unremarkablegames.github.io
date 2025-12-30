@@ -3,7 +3,7 @@ title: "Crew"
 ---
 
 ## The Crew
-Right now, Unremarkable Games is an almost-solo crew. We recently brought on Roslyn as our Associate Producer.
+Unremarkable Games is a two-person team.
 
 <hr />
 <div class="profile">
