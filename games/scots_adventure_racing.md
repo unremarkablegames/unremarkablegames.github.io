@@ -3,14 +3,15 @@ title: "Scot's Adventure Racing"
 ---
 
 # Scot's Adventure Racing
-Scot's Adventure Racing is a pixelated one wheel arcade game reminicent of old-school Nintendo scollers. The game is available on the [iOS App Store](https://apps.apple.com/us/app/scots-adventure-racing/id1587810757) for iPhone and iPad. It's a free title, no adds or in app purchses, so give it a play.
 
-Click on an image to see the full size.
+A pixelated one-wheel arcade game reminiscent of old-school Nintendo scrollers.
 
-<div class="screenshot-row">
-  <img class="game-screenshot" src="/assets/img/sar_ss_1.webp" alt="Scot's Adventure Racing Screenshot 1">
-  <img class="game-screenshot" src="/assets/img/sar_ss_2.webp" alt="Scot's Adventure Racing Screenshot 2">
-  <img class="game-screenshot" src="/assets/img/sar_ss_3.webp" alt="Scot's Adventure Racing Screenshot 3">
+Race through obstacles on a single wheel. Completely free - no ads, no in-app purchases. Just pure arcade fun.
+
+Available for iPhone and iPad.
+
+<div class="cta-buttons" markdown="0">
+<a href="https://apps.apple.com/us/app/scots-adventure-racing/id1587810757" class="cta-button"><i class="fa-brands fa-apple"></i> Download Free on App Store</a>
 </div>
 
-If you're running into trouble, need support, or want to drop a bug report - please reach out to us at support@unremarkablegames.com.
+<img class="hero-screenshot" src="/assets/img/sar_ss_1.webp" alt="Scot's Adventure Racing gameplay">

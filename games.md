@@ -2,14 +2,42 @@
 title: "Games"
 ---
 
-## Released Titles
-<span><img class="game_tile" src="/assets/img/neon_labyrinth_icon.png" alt="Neon Labyrinth Icon"> [Neon Labyrinth](/games/neon_labyrinth)</span>
+## Released
 
-### Free!
-<span><img class="game_tile" src="/assets/img/sar_icon.png" alt="Scot's Adventure Racing Icon"> [Scot's Adventure Racing](/games/scots_adventure_racing)</span>
+<div class="game-list" markdown="0">
+<div class="game-card">
+<img src="/assets/img/neon_labyrinth_icon.png" alt="Neon Labyrinth">
+<div class="game-card-info">
+<h3><a href="/games/neon_labyrinth">Neon Labyrinth</a></h3>
+<p>Pixel-perfect arcade puzzler with a neon synthwave aesthetic.</p>
+<a href="https://apps.apple.com/us/app/neon-labyrinth/id6744569015" class="store-link"><i class="fa-brands fa-apple"></i> App Store</a>
+</div>
+</div>
+<div class="game-card">
+<img src="/assets/img/sar_icon.png" alt="Scot's Adventure Racing">
+<div class="game-card-info">
+<h3><a href="/games/scots_adventure_racing">Scot's Adventure Racing</a> <span class="game-tag">Free</span></h3>
+<p>Pixelated one-wheel arcade racing.</p>
+<a href="https://apps.apple.com/us/app/scots-adventure-racing/id1587810757" class="store-link"><i class="fa-brands fa-apple"></i> App Store</a>
+</div>
+</div>
+</div>
 
-## Currently in development
-<span><img class="game_tile" src="/assets/img/bb_icon.png" alt="Brinebound Icon"> [Brinebound](/games/brinebound)</span>
+## In Development
 
-### On hold (for now)
-* [Voidstone](/games/voidstone/voidstone) - it got too big to complete with a day job. Going to wait until I have more time.
+<div class="game-list" markdown="0">
+<div class="game-card">
+<img src="/assets/img/bb_icon.png" alt="Brinebound">
+<div class="game-card-info">
+<h3><a href="/games/brinebound">Brinebound</a></h3>
+<p>Coming soon.</p>
+</div>
+</div>
+<div class="game-card">
+<img src="/assets/img/voidstone_icon.jpg" alt="Voidstone">
+<div class="game-card-info">
+<h3><a href="/games/voidstone">Voidstone</a></h3>
+<p>Coming soon.</p>
+</div>
+</div>
+</div>
