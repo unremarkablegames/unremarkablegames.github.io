@@ -6,48 +6,86 @@
     <title>VOIDSTONE</title>
     <style>
         @font-face {
-            font-family: 'Web437 IBM VGA 9x16';
+            font-family: 'VGA';
             src: url('vga.woff') format('woff');
+        }
+        :root {
+            --glow: #33ff33;
+            --text: #33cc33;
+            --dim: #336633;
+            --faint: #224422;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
-            background: #0a0a0a;
-        }
-        footer {
-            margin-top: 16px;
-            font-family: 'Web437 IBM VGA 9x16';
-            font-size: 1em;
-            color: #252525;
-            letter-spacing: -1px;
+            background: #050505;
+            font-family: 'VGA', monospace;
         }
         .monitor {
-            padding: 12px 14px;
-            background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 50%, #141414 100%);
-            border-radius: 12px;
+            padding: 16px;
+            margin: 16px;
+            background: linear-gradient(145deg, #1a1a1a, #080808);
+            border-radius: 16px;
             box-shadow:
-                inset 0 1px 0 rgba(255,255,255,0.04),
-                inset 0 -1px 0 rgba(0,0,0,0.5),
-                0 8px 32px rgba(0,0,0,0.8),
-                0 2px 8px rgba(0,0,0,0.6);
+                inset 0 1px 0 rgba(255,255,255,0.05),
+                0 0 80px rgba(51,255,51,0.06),
+                0 12px 40px rgba(0,0,0,0.9);
         }
         .screen {
-            padding: 3px;
+            position: relative;
+            padding: 4px;
             background: #000;
-            border-radius: 2px;
-            box-shadow:
-                inset 0 0 8px rgba(0,0,0,0.9),
-                inset 0 0 2px rgba(0,0,0,1);
+            border-radius: 4px;
+            overflow: hidden;
+            animation: flicker 0.1s infinite;
+        }
+        .screen::before, .screen::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .screen::before {
+            background: repeating-linear-gradient(transparent, transparent 1px, rgba(0,0,0,0.2) 1px, rgba(0,0,0,0.2) 2px);
+            z-index: 10;
+        }
+        .screen::after {
+            background: radial-gradient(ellipse, transparent 60%, rgba(0,0,0,0.3) 100%);
+            z-index: 11;
         }
         canvas {
             display: block;
             image-rendering: pixelated;
-            image-rendering: crisp-edges;
+            box-shadow: 0 0 60px rgba(51,255,51,0.05);
         }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.98; }
+        }
+        .help {
+            margin-top: 32px;
+            max-width: 560px;
+            font-size: 0.8em;
+            line-height: 1.6;
+            color: var(--dim);
+        }
+        .help p { margin: 6px 0; }
+        .help b { color: var(--text); }
+        .help .ex {
+            color: #449944;
+            background: #081a08;
+            padding: 1px 4px;
+            border-radius: 2px;
+        }
+        .help .hook, .help .sep, .help .closing { text-align: center; }
+        .help .hook { color: #558855; margin-bottom: 8px; line-height: 1.4; }
+        .help .hook em { color: var(--text); font-style: normal; }
+        .help .sep { color: var(--faint); margin: 12px 0; letter-spacing: 2px; }
+        .help .closing { color: #447744; margin-top: 4px; }
     </style>
 </head>
 <body>
@@ -56,7 +94,28 @@
             <canvas id="canvas"></canvas>
         </div>
     </div>
-    <footer>╣ VOIDSTONE by Unremarkable Games╠</footer>
-    <script src="voidstone.js?v=1.0r135"></script>
+    <div class="help">
+        <p class="hook">
+            This is a <em>mudlike</em>.<br>
+            In this game, your imagination is the GPU.<br>
+            You type. You read. You think. You die.<br>
+            No tutorials. No minimap. No hand-holding.<br>
+            Just you, your wits, and a cursor.<br>
+        </p>
+        <p class="sep">───────────────  COMMANDS  ───────────────</p>
+        <p><b>move</b> ─ <span class="ex">north</span> <span class="ex">south</span> <span class="ex">east</span> <span class="ex">west</span> <span class="ex">up</span> <span class="ex">down</span> (or <span class="ex">n</span> <span class="ex">s</span> <span class="ex">e</span> <span class="ex">w</span> <span class="ex">u</span> <span class="ex">d</span>)</p>
+        <p><b>look</b> ─ <span class="ex">look</span> around, <span class="ex">look rat</span> to examine</p>
+        <p><b>fight</b> ─ <span class="ex">kill rat</span> to attack, <span class="ex">flee</span> to run</p>
+        <p><b>items</b> ─ <span class="ex">get</span>, <span class="ex">drop</span>, <span class="ex">inventory</span>, <span class="ex">equip</span></p>
+        <p><b>help</b> ─ <span class="ex">help</span> lists commands, <span class="ex">help kill</span> explains one</p>
+        <p class="sep">──────────  PROTIPS  ──────────</p>
+        <p>The game has a lot of commands and features. Use the help system.</p>
+        <p><span class="ex">Tab</span> autocompletes commands and targets</p>
+        <p><span class="ex">↑</span> <span class="ex">↓</span> recall command history</p>
+        <p>Abbreviate freely: <span class="ex">inv</span> <span class="ex">eq</span> <span class="ex">k rat</span> <span class="ex">l</span></p>
+        <p class="sep">───────────────  ☠  ───────────────</p>
+        <p class="closing">The game is hard. You will die. Learn why. Try again.</p>
+    </div>
+    <script src="voidstone.js?v=1.0r162"></script>
 </body>
 </html>
