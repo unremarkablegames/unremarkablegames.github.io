@@ -71,12 +71,44 @@
         @media (prefers-reduced-motion: reduce) {
             .screen { animation: none; }
         }
-        .manual { margin-top: 32px; margin-bottom: 64px; width: 720px; }
-        .tabs {
+        .manual-wrapper { margin-top: 32px; margin-bottom: 64px; }
+        .manual-open {
+            display: none;
+            font-family: 'VGA', monospace;
+            font-size: 0.9em;
+            padding: 8px 16px;
+            background: #0c0e12;
+            color: var(--dim);
+            border: 1px solid var(--faint);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .manual-open:hover { color: var(--text); background: #151520; }
+        .manual-open.visible { display: block; }
+        .manual-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 20;
+            font-family: 'VGA', monospace;
+            font-size: 0.8em;
+            padding: 4px 8px;
+            background: transparent;
+            color: var(--faint);
+            border: 1px solid var(--faint);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .manual-close:hover { color: var(--text); border-color: var(--dim); }
+        .manual { display: flex; gap: 0; }
+        .manual.hidden { display: none; }
+        .sidebar {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 2px;
-            margin-bottom: 0;
+            padding-right: 0;
         }
         .tab {
             font-family: 'VGA', monospace;
@@ -85,10 +117,11 @@
             background: #0c0e12;
             color: var(--dim);
             border: 1px solid var(--faint);
-            border-bottom: none;
-            border-radius: 4px 4px 0 0;
+            border-right: none;
+            border-radius: 4px 0 0 4px;
             cursor: pointer;
             transition: all 0.15s;
+            text-align: left;
         }
         .tab:hover { color: var(--text); background: #151520; }
         .tab.active {
@@ -101,8 +134,9 @@
             position: relative;
             background: #12141a;
             border: 1px solid var(--dim);
-            border-radius: 0 4px 4px 4px;
-            height: 480px;
+            border-radius: 0 4px 4px 0;
+            height: 640px;
+            width: 720px;
             overflow: hidden;
         }
         .page-container::before {
@@ -176,8 +210,10 @@
             <canvas id="canvas"></canvas>
         </div>
     </div>
-    <div class="manual">
-        <div class="tabs">
+    <div class="manual-wrapper">
+        <button class="manual-open visible" id="manual-open">MANUAL</button>
+        <div class="manual hidden" id="manual">
+            <div class="sidebar">
             <button class="tab active" data-tab="quickstart">QUICKSTART</button>
             <button class="tab" data-tab="commands">COMMANDS</button>
             <button class="tab" data-tab="combat">COMBAT</button>
@@ -185,12 +221,14 @@
             <button class="tab" data-tab="gameplay">GAMEPLAY</button>
             <button class="tab" data-tab="world">WORLD</button>
             <button class="tab" data-tab="lore">LORE</button>
-            <button class="tab" data-tab="wiz">WIZCOMMANDS</button>
+            <button class="tab" data-tab="origins">ORIGINS</button>
+            <button class="tab" data-tab="wiz">WIZ</button>
         </div>
         <div class="page-container">
+            <button class="manual-close" id="manual-close">X</button>
             <div id="quickstart" class="page active" data-title="QUICKSTART">
             <p class="hook">
-                This is a <em>mudlike</em>.<br>
+                This is a <em>MUDlike</em>.<br>
                 In this game, your imagination is the GPU.<br>
                 You type. You read. You think. You die.<br>
                 No tutorials. No minimap. No hand-holding.<br>
@@ -373,7 +411,7 @@
             <div id="lore" class="page" data-title="LORE">
             <p class="lore-text">Before life, there was only the barren world and the seed that fell upon it.</p>
 
-            <p class="lore-text">The seed carried within it the raw stuff of creation—<em>fragments</em> of pure potential. When it struck the stone, it shattered. Millions of fragments scattered across the world, and where they settled, life took root.</p>
+            <p class="lore-text">The seed carried within it the raw stuff of creation, <em>fragments</em> of pure potential. When it struck the stone, it shattered. Millions of fragments scattered across the world, and where they settled, life took root.</p>
 
             <p class="lore-text">Every living thing carries a fragment within it. But fragments are not souls. Souls are identity, memory, the shape of who you are. They form around fragments like pearls around grit, but they are separate things. When a creature dies, its soul departs. The fragment remains, drifting back to be claimed by new life.</p>
 
@@ -383,19 +421,19 @@
 
             <p class="lore-sep">─────────────────────────</p>
 
-            <p class="lore-text">Althenne was steady. Vigilant. She believed their role had sacred limits—they were stewards, not creators.</p>
+            <p class="lore-text">Althenne was steady. Vigilant. She believed their role had sacred limits: they were stewards, not creators.</p>
 
             <p class="lore-text">Ren was the warmth between them. Quick to laugh. The one who reminded her sisters that eternity was worth enjoying.</p>
 
-            <p class="lore-text">And Kalith was curious. She watched the dragons with their young. She felt something she could not name. The sisters were unique—parentless, childless, forever alone in their nature. Every other creature could create something that carried part of them forward. The sisters could not.</p>
+            <p class="lore-text">And Kalith was curious. She watched the dragons with their young. She felt something she could not name. The sisters were unique, parentless, childless, forever alone in their nature. Every other creature could create something that carried part of them forward. The sisters could not.</p>
 
             <p class="lore-text">Kalith wanted a child.</p>
 
-            <p class="lore-text">She tried to create life. The results were monstrous—twisted things that could not survive. She studied harder. The failures multiplied. Althenne watched in disapproving silence. Ren saw only her sister's grief.</p>
+            <p class="lore-text">She tried to create life. The results were monstrous,twisted things that could not survive. She studied harder. The failures multiplied. Althenne watched in disapproving silence. Ren saw only her sister's grief.</p>
 
             <p class="lore-sep">─────────────────────────</p>
 
-            <p class="lore-text">Ren went to Althenne. Not to condemn—to help. Together, perhaps they could ease Kalith's loneliness.</p>
+            <p class="lore-text">Ren went to Althenne. Not to condemn but to help. Together, perhaps they could ease Kalith's loneliness.</p>
 
             <p class="lore-text">Althenne agreed to speak with their sister. But she did not come to help. She came to end it.</p>
 
@@ -405,7 +443,7 @@
 
             <p class="lore-text">She broke apart. Her fragments scattered. Her soul departed to wherever souls go.</p>
 
-            <p class="lore-text">In her horror, Kalith reached out. She pulled Ren's fragments into herself, desperate to keep some part of her alive. But fragments are not souls. What she held was only power—raw, empty, meaningless without the identity that had shaped it.</p>
+            <p class="lore-text">In her horror, Kalith reached out. She pulled Ren's fragments into herself, desperate to keep some part of her alive. But fragments are not souls. What she held was only power. Raw, empty, meaningless without the identity that had shaped it.</p>
 
             <p class="lore-text">The warmth was gone. And it was her fault.</p>
 
@@ -415,7 +453,7 @@
 
             <p class="lore-text">She gathered more fragments. She harvested them from the living. The things she built were not Ren. They were monsters. But she kept trying. Every kill added to the weight of what she had become.</p>
 
-            <p class="lore-text">The war was long. The toll was catastrophic. At the end, Althenne's allies gave themselves willingly—releasing their souls, giving their fragments to fuel one final act. With their power, Althenne imprisoned Kalith in crystalline stone.</p>
+            <p class="lore-text">The war was long. The toll was catastrophic. At the end, Althenne's allies gave themselves willingly,releasing their souls, giving their fragments to fuel one final act. With their power, Althenne imprisoned Kalith in crystalline stone.</p>
 
             <p class="lore-text">The <em>Voidstone</em>.</p>
 
@@ -423,25 +461,46 @@
 
             <p class="lore-sep">─────────────────────────</p>
 
-            <p class="lore-text">One guardian refused to sacrifice himself. Ashenmor—now called the <em>Stonewatcher</em>. Whether from fear or hope that Kalith could be saved, he could not do it.</p>
+            <p class="lore-text">One guardian refused to sacrifice himself. Ashenmor, now called the <em>Stonewatcher</em>. Whether from fear or hope that Kalith could be saved, he could not do it.</p>
 
             <p class="lore-text">Althenne was not angry. She was disappointed. She gave him a burden: watch over the prison until the end of days.</p>
 
-            <p class="lore-text">Ages passed. The art of Awakening was lost. The Voidstone sank deep beneath a mountain. Miners found the riches surrounding it. They delved too deep. They found the prison and tried to move it—fools who saw a crystal and thought <em>wealth</em>.</p>
+            <p class="lore-text">Ages passed. The art of Awakening was lost. The Voidstone sank deep beneath a mountain. Miners found the riches surrounding it. They delved too deep. They found the prison and tried to move it... fools who saw a the voidstone and thought <em>wealth</em>.</p>
 
             <p class="lore-text">The first cracks appeared. From them, monsters spilled forth.</p>
 
             <p class="lore-sep">─────────────────────────</p>
 
-            <p class="lore-text">That was twenty years ago. The Stonewatcher recreated Awakening—forcing fragments into volunteers, granting them the power to absorb what they kill. Four in five die in the process. Those who survive owe eight years of service.</p>
+            <p class="lore-text">That was twenty years ago. The Stonewatcher recreated Awakening, forcing fragments into volunteers, granting them the power to absorb what they kill. Four in five die in the process. Those who survive owe eight years of service.</p>
 
             <p class="lore-text">You survived.</p>
 
-            <p class="lore-text">The cracks widen. The monsters multiply. Deep in the ruins, Kalith dreams—mindless, reaching for something she cannot remember. She has forgotten Ren's face. She has forgotten why she started any of this. Only the hunger remains.</p>
+            <p class="lore-text">The cracks widen. The monsters multiply. Deep in the ruins, Kalith dreams, mindless, reaching for something she cannot remember. She has forgotten Ren's face. She has forgotten why she started any of this. Only the hunger remains.</p>
 
             <p class="lore-text">The prison cannot be resealed. It must be shattered and Kalith ended. The Stonewatcher does not know how. He has not spoken to Althenne in centuries. He knows exactly where she is. He has never gone to her.</p>
 
             <p class="lore-text">He is afraid of what she might say.</p>
+            </div>
+
+            <div id="origins" class="page" data-title="ORIGINS">
+            <h3>What's a MUD?</h3>
+            <p class="lore-text">Before World of Warcraft, before EverQuest, before graphics cards could render a single goblin, there were MUDs. Multi-User Dungeons. Entirely text-based online games from the late '80s and '90s. No visuals at all. You'd connect to a server through a terminal and read something like:</p>
+            <p class="lore-text"><em>"You are standing in a dimly lit tavern. A grizzled bartender eyes you suspiciously. Exits: North, East."</em></p>
+            <p class="lore-text">And you'd type commands: <span class="ex">go north</span>, <span class="ex">attack goblin</span>, <span class="ex">take sword</span>. Your imagination did all the rendering. These were multiplayer worlds with dozens or hundreds of people exploring, fighting, and roleplaying together in pure text.</p>
+            <h3>What's a MUDlike?</h3>
+            <p class="lore-text">A MUDlike is a modern game that draws from that tradition. Text-heavy or fully text-based, with the same feel: typing commands, reading descriptions, building the world in your head. Think of it as a video game crossed with a novel.</p>
+            <h3>What's a single-player MUDlike?</h3>
+            <p class="lore-text">Strip out the multiplayer. It's just you, the text, and your imagination. The social layer is gone, but depth remains:exploration, combat, systems, atmosphere. A solitary journey through a world made of words.</p>
+            <h3>The lineage</h3>
+            <p class="lore-text">This game carries no old MUD code, it's built from scratch. But spiritually, it descends from Envy22 MUDs, a branch of the Merc/Diku family tree that flourished in the mid-'90s. Envy muds were scrappy, community-driven creations hosted on university servers and humming PCs in closets, each one hacked and tweaked into something unique. The feel of those worlds, the pacing, the mechanics, the texture - that's what this game is channeling.</p>
+            <p class="lore-text">More specifically, it pays homage to <em>Abandoned Reality</em>, a MUD founded in 1996 by Erwin Andreasen, known in-game as Drylock. Drylock wasn't just running a MUD, he was a pillar of the whole Merc/Envy development scene. He shared code freely, wrote documentation, built tools like mudFTP, and co-created the famous Bartle Test that categorized player types. Abandoned Reality had atmosphere and a devoted following, and Drylock's ethos of building, sharing, and nurturing worlds shaped a generation of developers. He'd probably appreciate seeing that spirit carried forward.</p>
+            <h3>Why play this one?</h3>
+            <p class="lore-text">Traditional MUDs were endless by design. You'd grind, explore, level, repeat forever. The world persisted; you just passed through it.</p>
+            <p class="lore-text">This game is different.</p>
+            <p class="lore-text">It's completely open, go wherever pulls you. But it has a real story with a real ending. You're not grinding into infinity. You're going somewhere. The writing is sharp and atmospheric, the kind that earns your attention rather than demanding it. You get the depth and discovery of a MUD: the systems, the texture, the imagination-driven experience, but shaped into something with narrative weight and closure.</p>
+            <p class="lore-text">It's what a MUD might have become if someone had asked: <em>what if this actually ended?</em></p>
+            <h3>If you need a modern comparison</h3>
+            <p class="lore-text">If you've played AI Dungeon, a text-based Discord RPG bot, or a choose-your-own-adventure game, you've touched something adjacent to this tradition. But those are usually loose, improvisational, engine-driven. This is authored. Crafted. There's a destination.</p>
             </div>
 
             <div id="wiz" class="page" data-title="WIZCOMMANDS">
@@ -471,6 +530,7 @@
             <p><b>!wipe</b></p>
             <p class="syn">Delete save, reload fresh (confirms)</p>
             </div>
+            </div>
         </div>
     </div>
 
@@ -485,7 +545,15 @@
                 page.scrollTop = 0;
             });
         });
+        document.getElementById('manual-close').addEventListener('click', () => {
+            document.getElementById('manual').classList.add('hidden');
+            document.getElementById('manual-open').classList.add('visible');
+        });
+        document.getElementById('manual-open').addEventListener('click', () => {
+            document.getElementById('manual').classList.remove('hidden');
+            document.getElementById('manual-open').classList.remove('visible');
+        });
     </script>
-    <script src="voidstone.js?v=1.0r168"></script>
+    <script src="voidstone.js?v=1.0r169"></script>
 </body>
 </html>
