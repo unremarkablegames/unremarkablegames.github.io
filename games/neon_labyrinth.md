@@ -10,6 +10,6 @@ Navigate glowing mazes. Avoid the traps. Find the exit. 50 hand-crafted levels t
 
 $0.99 on iPhone and iPad.
 
-<div class="cta-buttons" markdown="0">
-<a href="https://apps.apple.com/us/app/neon-labyrinth/id6744569015" class="cta-button"><i class="fa-brands fa-apple"></i> Download on App Store</a>
+<div class="d-flex gap-2 flex-wrap my-3" markdown="0">
+<a href="https://apps.apple.com/us/app/neon-labyrinth/id6744569015" class="btn btn-light fw-bold"><i class="fa-brands fa-apple"></i> Download on App Store</a>
 </div>
