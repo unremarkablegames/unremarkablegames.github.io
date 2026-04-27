@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+set -eu
+
+ruby_prefix="${HOMEBREW_RUBY_PREFIX:-}"
+
+if [ -z "$ruby_prefix" ] && command -v brew >/dev/null 2>&1; then
+  for formula in ruby@3.3 ruby@3.4 ruby; do
+    candidate="$(brew --prefix "$formula" 2>/dev/null || true)"
+    if [ -n "$candidate" ] && [ -x "$candidate/bin/ruby" ]; then
+      ruby_prefix="$candidate"
+      break
+    fi
+  done
+fi
+
+if [ -n "$ruby_prefix" ] && [ -d "$ruby_prefix/bin" ]; then
+  export PATH="$ruby_prefix/bin:$PATH"
+fi
+
+export BUNDLE_PATH="${BUNDLE_PATH:-vendor/bundle}"
+
+ruby_version="$(ruby -e 'print RUBY_VERSION' 2>/dev/null || true)"
+case "$ruby_version" in
+  4.*)
+    echo "GitHub Pages' github-pages gem does not support Ruby $ruby_version." >&2
+    echo "Install a Ruby 3.x formula, for example: brew install ruby@3.3" >&2
+    exit 1
+    ;;
+esac
+
+exec bundle exec jekyll "$@"
