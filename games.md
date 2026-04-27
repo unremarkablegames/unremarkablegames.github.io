@@ -40,6 +40,7 @@ title: "Games"
 <div>
 <h3><a href="/games/voidstone" class="stretched-link">Voidstone</a>: <span class="game-subtitle">a world where the GPU is your imagination.</span></h3>
 <p>Voidstone is an RPG rendered entirely in text. Type commands. Read what happens. Your imagination renders the rest: the dungeons, the dread, the things that wait in the dark. No tutorials. No hand-holding. No mercy. Type or die.</p>
+<a href="https://unremarkablegames.itch.io/voidstone" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-itch-io"></i> Demo on itch.io</a>
 </div>
 </div>
 </div>
