@@ -10,6 +10,7 @@ title: "Games"
 <div>
 <h3><a href="/games/brinebound" class="stretched-link">Brinebound</a></h3>
 <p>Guide a baby king salmon on an epic journey downstream from lake to ocean.</p>
+<a href="https://unremarkablegames.itch.io/brinebound" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-itch-io"></i> Demo on itch.io</a>
 </div>
 </div>
 <div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
@@ -18,6 +19,7 @@ title: "Games"
 <h3><a href="/games/neon_labyrinth" class="stretched-link">Neon Labyrinth</a></h3>
 <p>Pixel-perfect arcade puzzler with a neon synthwave aesthetic.</p>
 <a href="https://apps.apple.com/us/app/neon-labyrinth/id6744569015" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-apple"></i> App Store</a>
+<a href="https://unremarkablegames.itch.io/neon-labyrinth" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-itch-io"></i> Demo on itch.io</a>
 </div>
 </div>
 <div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
