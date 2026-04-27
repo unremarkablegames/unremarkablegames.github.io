@@ -6,6 +6,13 @@ title: "Games"
 
 <div markdown="0">
 <div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
+<img class="game-img" src="/assets/img/bb_icon.png" alt="Brinebound">
+<div>
+<h3><a href="/games/brinebound" class="stretched-link">Brinebound</a></h3>
+<p>Guide a baby king salmon on an epic journey downstream from lake to ocean.</p>
+</div>
+</div>
+<div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
 <img class="game-img" src="/assets/img/neon_labyrinth_icon.png" alt="Neon Labyrinth">
 <div>
 <h3><a href="/games/neon_labyrinth" class="stretched-link">Neon Labyrinth</a></h3>
@@ -26,13 +33,6 @@ title: "Games"
 ## In Development
 
 <div markdown="0">
-<div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
-<img class="game-img" src="/assets/img/bb_icon.png" alt="Brinebound">
-<div>
-<h3><a href="/games/brinebound" class="stretched-link">Brinebound</a></h3>
-<p>Guide a baby king salmon on an epic journey downstream from lake to ocean.</p>
-</div>
-</div>
 <div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
 <img class="game-img" src="/assets/img/voidstone_icon.webp" alt="Voidstone">
 <div>
