@@ -10,3 +10,4 @@ vendor
 .playwright-mcp
 .playwright/
 .playwright-cli/
+.claude/
