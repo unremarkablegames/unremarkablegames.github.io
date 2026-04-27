@@ -8,3 +8,5 @@ _site
 vendor
 .bundle
 .playwright-mcp
+.playwright/
+.playwright-cli/
