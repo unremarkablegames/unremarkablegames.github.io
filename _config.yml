@@ -1,2 +1,14 @@
 baseurl: ""
 url: "https://www.unremarkablegames.com"
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: default

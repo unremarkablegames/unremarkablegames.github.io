@@ -6,7 +6,7 @@ title: "Neon Labyrinth"
 
 A pixel-perfect arcade puzzler with a neon synthwave aesthetic.
 
-Navigate glowing mazes. Avoid the traps. Find the exit. 50 hand-crafted levels that respect your time - no ads, no timers, no nonsense.
+Navigate glowing mazes. Avoid the traps. Find the exit. 60 hand-crafted levels that respect your time - no ads, no timers, no nonsense.
 
 $0.99 on iPhone and iPad.
 
