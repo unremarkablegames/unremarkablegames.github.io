@@ -2,8 +2,20 @@
 <html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Unremarkable Games - {{ page.title }}. Thoughtful games that respect your time. No ads, no IAPs, no dark patterns.">
+    {% assign og_description = page.description | default: "Unremarkable Games - Thoughtful games that respect your time. No ads, no IAPs, no dark patterns." %}
+    {% assign og_image = page.thumbnail | default: "/assets/img/mehlogo-xl.png" %}
+    <meta name="description" content="{{ og_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="{{ page.title }} | Unremarkable Games">
+    <meta property="og:description" content="{{ og_description }}">
+    <meta property="og:image" content="{{ site.url }}{{ og_image }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="{% if page.collection == 'notes' %}article{% else %}website{% endif %}">
+    <meta property="og:site_name" content="Unremarkable Games">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | Unremarkable Games">
+    <meta name="twitter:description" content="{{ og_description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ og_image }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
