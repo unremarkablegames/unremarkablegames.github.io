@@ -76,6 +76,15 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px solid var(--tn-border);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
+.note-img {
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+    border: 2px solid var(--tn-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 .hero-screenshot {
     max-width: 50%;
 }
@@ -245,5 +254,10 @@ hr {
         width: 64px;
         height: 64px;
         border-radius: 16px;
+    }
+    .note-img {
+        width: 114px;
+        height: 64px;
+        border-radius: 10px;
     }
 }
