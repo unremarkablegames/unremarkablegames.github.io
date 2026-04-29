@@ -1,7 +1,7 @@
 ---
 title: "Adventures in Vibe Coding a Game in C"
 date: 2026-04-28
-thumbnail: /assets/img/2026-04-28-vibe-coding-a-game-in-c-thumb.jpg
+thumbnail: /assets/img/notes/2026-04-28-vibe-coding-a-game-in-c-thumb.jpg
 description: "How a 22,000-line vibe-coded C/SDL3 game forced me into multi-agent, principle-based code review."
 ---
 
