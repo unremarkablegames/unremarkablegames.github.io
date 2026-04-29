@@ -6,14 +6,19 @@
     {% assign og_image = page.thumbnail | default: "/assets/img/mehlogo-xl.png" %}
     <meta name="description" content="{{ og_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="{{ page.title }} | Unremarkable Games">
+    <meta name="author" content="{{ page.author | default: site.author }}">
+    <meta property="og:title" content="{{ page.title }}">
     <meta property="og:description" content="{{ og_description }}">
     <meta property="og:image" content="{{ site.url }}{{ og_image }}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:type" content="{% if page.collection == 'notes' %}article{% else %}website{% endif %}">
     <meta property="og:site_name" content="Unremarkable Games">
+    {% if page.collection == 'notes' %}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <meta property="article:author" content="{{ page.author | default: site.author }}">
+    {% endif %}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.title }} | Unremarkable Games">
+    <meta name="twitter:title" content="{{ page.title }}">
     <meta name="twitter:description" content="{{ og_description }}">
     <meta name="twitter:image" content="{{ site.url }}{{ og_image }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +42,9 @@
         {% include header.html %}
     </header>
     <main class="px-3 px-md-4 pb-4">
+        {% if page.collection == 'notes' %}
+        <p class="note-byline text-secondary mb-3"><small>{{ page.date | date: "%B %-d, %Y" }} · {{ page.author | default: site.author }}</small></p>
+        {% endif %}
         {{ content }}
     </main>
     <footer class="px-3 py-2">
