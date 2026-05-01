@@ -2,7 +2,7 @@
 title: "Building a Multi-Agent Code Review"
 date: 2026-04-30
 thumbnail: /assets/img/notes/2026-04-30-building-a-multi-agent-review-thumb.jpg
-description: "How a 22,000-line vibe-coded C/SDL3 game forced me into multi-agent, principle-based code review."
+description: "A practical workflow for using focused subagents, principle checks, challengers, and consolidation to make AI code review less noisy."
 ---
 
 # Building a Multi-Agent Code Review
@@ -62,7 +62,9 @@ This is a stripped-down version of the skill I use and a ChatGPT-generated set o
 
 I have tested this using Codex with ChatGPT 5.5 high and Claude Code with Sonnet. It works better in Claude Code as written, but my guess is that it could be adapted for Codex. I am just less familiar with that model's personality.
 
-```
+---
+
+```markdown
 Review the current directory's diff against the main branch. This is a review. Do not fix, change, or modify anything.
 
 ## Process
