@@ -57,7 +57,7 @@ In the prompt, there is wording that is non-obvious. It is there to accomplish t
 ## Give it a try
 Read the example prompt first, try it out, then write your own. It requires a surprisingly small amount of well-written prose to get a lot out of an agent, and you can tailor it to your specific workflow. Fair warning: this can be token-hungry. Use a strong enough model and reasoning setting for the number of agents and instructions. I have gotten OK-ish results with cheaper or lighter settings, but reliability drops as the workflow gets more complex. I think this can be resolved by using an agent SDK, as most of the instructions are workflow related, but I have not tried it yet.
 
-## Appendix: Full Coordinator Prompt
+## Appendix: Full Prompt
 This is a stripped-down version of the skill I use and a ChatGPT-generated set of principles. My full prompt has more configurability and a full set of principles across several domains covering good coding, good C code, good game code, good SDL usage, and a few others. But this is enough to get you started.
 
 I have tested this using Codex with ChatGPT 5.5 high and Claude Code with Sonnet. It works better in Claude Code as written, but my guess is that it could be adapted for Codex. I am just less familiar with that model's personality.

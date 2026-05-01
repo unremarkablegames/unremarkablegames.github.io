@@ -16,7 +16,7 @@
 
 /* Brand font */
 body {
-    font-family: "Kode Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     background-color: var(--tn-bg-dark);
     color: var(--tn-fg);
 }
@@ -202,7 +202,7 @@ hr {
     background-color: var(--tn-bg-dark) !important;
     border: 1px solid var(--tn-border) !important;
     color: var(--tn-fg) !important;
-    font-family: "Kode Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
 }
 #mc_embed_signup input[type="email"]:focus,
 #mc_embed_signup input[type="text"]:focus {
@@ -214,7 +214,7 @@ hr {
     background-color: var(--tn-bg-dark) !important;
     border: 1px solid var(--tn-border) !important;
     color: var(--tn-fg-bright) !important;
-    font-family: "Kode Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
 }
 #mc_embed_signup .button:hover {
     border-color: var(--tn-cyan) !important;
