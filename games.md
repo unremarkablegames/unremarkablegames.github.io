@@ -32,7 +32,7 @@ title: "Games"
 </div>
 </div>
 
-## In Development
+## Prototypes
 
 <div markdown="0">
 <div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">

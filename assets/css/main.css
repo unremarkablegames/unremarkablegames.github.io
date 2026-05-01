@@ -1,13 +1,14 @@
 /* Unremarkable Games - Tokyo Night Theme */
 
 :root {
-    --tn-bg-dark: #1a1b26;
-    --tn-bg-light: #24283b;
-    --tn-bg-highlight: #292e42;
+    --tn-bg-dark: #16161e;
+    --tn-bg-light: #1a1b26;
+    --tn-bg-highlight: #24283b;
+    --tn-bg-hover: #292e42;
     --tn-fg: #a9b1d6;
     --tn-fg-bright: #c0caf5;
     --tn-border: #414868;
-    --tn-comment: #565f89;
+    --tn-comment: #737aa2;
     --tn-cyan: #7dcfff;
     --tn-blue: #7aa2f7;
     --tn-purple: #bb9af7;
@@ -54,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
 }
 .card, .game-card {
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 .card:hover, .game-card:hover {
     transform: translateY(-2px);
@@ -121,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 .game-card:hover {
+    background: var(--tn-bg-hover);
     border-color: var(--tn-cyan);
 }
 .game-card h3 {
