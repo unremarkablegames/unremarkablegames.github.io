@@ -10,6 +10,7 @@ title: "Games"
 <div>
 <h3><a href="/games/brinebound" class="stretched-link">Brinebound</a></h3>
 <p>Guide a baby king salmon on an epic journey downstream from lake to ocean.</p>
+<a href="https://apps.apple.com/us/app/brinebound/id6754248903" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-apple"></i> App Store</a>
 <a href="https://unremarkablegames.itch.io/brinebound" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-itch-io"></i> Demo on itch.io</a>
 </div>
 </div>
