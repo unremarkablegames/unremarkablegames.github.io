@@ -26,7 +26,7 @@ title: "Games"
 <div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
 <img class="game-img" src="/assets/img/sar_icon.png" alt="Scot's Adventure Racing">
 <div>
-<h3><a href="/games/scots_adventure_racing" class="stretched-link">Scot's Adventure Racing</a> <span class="badge text-bg-secondary ms-2">Free</span></h3>
+<h3><a href="/games/scots_adventure_racing" class="stretched-link">Scot's Adventure Racing</a></h3>
 <p>Pixelated one-wheel arcade racing.</p>
 <a href="https://apps.apple.com/us/app/scots-adventure-racing/id1587810757" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-apple"></i> App Store</a>
 </div>
