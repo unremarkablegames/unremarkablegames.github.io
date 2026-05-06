@@ -6,7 +6,7 @@ title: "Contact"
 Here are a few ways to get our attention:
 
 * **email:** support@unremarkablegames.com
-* **snail mail:** Address snail mail to: Unremarkable Games, 8638 Deerwood Lane North, MN 55369
+* **snail mail:** Address snail mail to: Unremarkable Games, 11010 40th Pl N, Plymouth, MN 55441
 
 <div id="mc_embed_shell">
       <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
