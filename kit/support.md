@@ -11,7 +11,7 @@ permalink: /kit/support/
 ## Getting help
 
 If you have a question, run into a problem, or want to request a feature, email
-**karl@mcclendo.net** and I'll get back to you.
+**support@unremarkablegames.com** and I'll get back to you.
 
 ## Frequently asked questions
 
@@ -49,4 +49,4 @@ KiT does not collect, transmit, or sell any personal data. See the
 
 ## Contact
 
-Email: **karl@mcclendo.net**
+Email: **support@unremarkablegames.com**

@@ -55,4 +55,4 @@ If this policy changes, the updated version will be posted at this URL with a ne
 
 ## Contact
 
-Questions about this policy? Email karl@mcclendo.net.
+Questions about this policy? Email support@unremarkablegames.com.
