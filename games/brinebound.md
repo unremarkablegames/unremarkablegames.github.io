@@ -1,6 +1,9 @@
 ---
 title: "Brinebound"
+prose: true
 ---
+
+<div class="game-detail-heading"><img src="/assets/img/bb_icon.png" width="96" height="96" alt=""><p class="eyebrow">A long way to the ocean</p></div>
 
 # Brinebound
 

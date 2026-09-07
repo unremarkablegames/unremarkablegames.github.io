@@ -1,6 +1,7 @@
 ---
 title: "KiT Support"
 description: "Support and frequently asked questions for KiT, a minimalistic interval trainer for iPhone and Apple Watch."
+prose: true
 permalink: /kit/support/
 ---
 

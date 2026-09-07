@@ -1,12 +1,15 @@
 ---
 title: "Scot's Adventure Racing"
+prose: true
 ---
+
+<div class="game-detail-heading"><img src="/assets/img/sar_icon.png" width="96" height="96" alt=""><p class="eyebrow">One wheel. Keep going.</p></div>
 
 # Scot's Adventure Racing
 
 A pixelated one-wheel arcade game reminiscent of old-school Nintendo scrollers.
 
-Race through obstacles on a single wheel. Completely free - no ads, no in-app purchases. Just pure arcade fun.
+Race through obstacles on a single wheel. Completely free - no ads, no in-app purchases. Just you, the wheel, and whatever’s in the way.
 
 Available for iPhone and iPad.
 

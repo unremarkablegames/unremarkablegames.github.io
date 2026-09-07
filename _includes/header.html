@@ -1,22 +1,11 @@
-<nav class="navbar navbar-expand navbar-dark p-0 flex-column align-items-stretch">
-    <div class="px-3 py-3">
-        <a class="navbar-brand m-0" href="/">
-            <img src="/assets/img/mehlogo.png" width="48" height="48" alt="Unremarkable Games logo">
-            <span class="logo-text">Unremarkable Games</span>
-        </a>
-    </div>
-    <hr class="m-0" />
-    <div class="navbar-collapse px-3 px-md-4" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link{% if page.url == '/' %} active{% endif %}" href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
-            <li class="nav-item"><a class="nav-link{% if page.url contains '/games' %} active{% endif %}" href="/games"{% if page.url contains '/games' %} aria-current="page"{% endif %}>Games</a></li>
-            <li class="nav-item"><a class="nav-link{% if page.url == '/apps.html' or page.url contains '/kit/' %} active{% endif %}" href="/apps"{% if page.url == '/apps.html' or page.url contains '/kit/' %} aria-current="page"{% endif %}>Apps</a></li>
-            <li class="nav-item"><a class="nav-link{% if page.url contains '/notes' %} active{% endif %}" href="/notes"{% if page.url contains '/notes' %} aria-current="page"{% endif %}>Notes</a></li>
-            <li class="nav-item"><a class="nav-link{% if page.url == '/follow.html' %} active{% endif %}" href="/follow"{% if page.url == '/follow.html' %} aria-current="page"{% endif %}>Follow</a></li>
-            <li class="nav-item"><a class="nav-link{% if page.url == '/crew.html' %} active{% endif %}" href="/crew"{% if page.url == '/crew.html' %} aria-current="page"{% endif %}>Crew</a></li>
-            <li class="nav-item"><a class="nav-link{% if page.url == '/privacy.html' %} active{% endif %}" href="/privacy"{% if page.url == '/privacy.html' %} aria-current="page"{% endif %}>Privacy</a></li>
-            <li class="nav-item"><a class="nav-link{% if page.url == '/contact.html' %} active{% endif %}" href="/contact"{% if page.url == '/contact.html' %} aria-current="page"{% endif %}>Contact</a></li>
-        </ul>
-    </div>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand" href="/" aria-label="Unremarkable Games home"><img src="/assets/img/mehlogo.png" width="40" height="40" alt=""><span>unremarkable<span class="brand-second">games</span></span></a>
+  <div class="nav-menu">
+    {% assign destinations = "Games,Apps,Notes,Crew" | split: "," %}
+    {% for destination in destinations %}
+    {% assign route = destination | downcase | prepend: "/" %}
+    <a href="{{ route }}"{% if page.url contains route %} aria-current="page"{% endif %}>{{ destination }}</a>
+    {% endfor %}
+    <a href="/contact" class="nav-contact">Say hello <span aria-hidden="true">↗</span></a>
+  </div>
 </nav>
-<hr class="mt-0 mb-4" />

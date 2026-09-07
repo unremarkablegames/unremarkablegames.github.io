@@ -1,6 +1,7 @@
 ---
 title: "KiT Privacy Policy"
 description: "KiT does not collect, transmit, or sell any personal data. Everything stays on your device and in Apple Health."
+prose: true
 permalink: /kit/privacy/
 ---
 
