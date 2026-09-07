@@ -1,5 +1,6 @@
 ---
 title: "Scot's Adventure Racing"
+description: "One-wheel arcade racing for iPhone and iPad. Free, with no ads or in-app purchases."
 prose: true
 ---
 
