@@ -39,7 +39,7 @@
     <header>
         {% include header.html %}
     </header>
-    <main id="main" class="site-main{% if page.collection == 'notes' or page.prose %} prose-main{% endif %}">
+    <main id="main" class="site-main{% if page.collection == 'notes' or page.prose %} prose-main{% endif %}" tabindex="-1">
         {% if page.collection == 'notes' %}
         <p class="note-byline"><small>{{ page.date | date: "%B %-d, %Y" }} · {{ page.author | default: site.author }}</small></p>
         {% endif %}
