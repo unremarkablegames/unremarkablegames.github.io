@@ -11,6 +11,8 @@ prose: true
 Voidstone was a prototype for an RPG rendered entirely in text. You typed commands
 and read what happened. Your imagination handled the dungeons.
 
-[Read the development notes](/notes/2026-04-28-vibe-coding-a-game-in-c).
+<div class="game-actions" markdown="0">
+<a href="/demo/voidstone/" class="btn btn-light">Play the prototype</a>
+</div>
 
-[Back to the games](/games).
+The web build runs in your browser. A keyboard is required.
