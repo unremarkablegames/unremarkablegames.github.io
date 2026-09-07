@@ -41,7 +41,7 @@
     <header>
         {% include header.html %}
     </header>
-    <main class="px-3 px-md-4 pb-4">
+    <main class="site-main px-3 px-md-4 pb-4{% if page.collection == 'notes' or page.prose %} prose-main{% endif %}">
         {% if page.collection == 'notes' %}
         <p class="note-byline text-secondary mb-3"><small>{{ page.date | date: "%B %-d, %Y" }} · {{ page.author | default: site.author }}</small></p>
         {% endif %}

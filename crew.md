@@ -2,11 +2,11 @@
 title: "Crew"
 ---
 
-## The Crew
+# The Crew
 Unremarkable Games is a two-person team.
 
 <hr />
-<div class="profile d-flex align-items-center gap-3 py-3">
+<div class="profile d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 py-3">
   <img class="profile-img" src="/assets/img/karl-headshot.webp" alt="Karl's Headshot">
   <div>
     <h3>Karl</h3>
@@ -14,7 +14,7 @@ Unremarkable Games is a two-person team.
   </div>
 </div>
 <hr />
-<div class="profile d-flex align-items-center gap-3 py-3">
+<div class="profile d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 py-3">
   <img class="profile-img" src="/assets/img/roslyn-headshot.webp" alt="Roslyn's Headshot">
   <div>
     <h3>Roslyn</h3>

@@ -2,36 +2,50 @@
 title: "Home"
 ---
 
-Unremarkable Games is a 100% independent game studio based in Minnesota, United States.
+<section class="home-hero">
+  <p class="eyebrow">Independent games from Minnesota</p>
+  <h1>Thoughtful games that respect your time and your trust.</h1>
+  <p class="hero-copy">No ads. No in-app purchases. No dark patterns. Just honest craftsmanship and interactive stories worth telling.</p>
+  <div class="hero-actions d-flex flex-wrap gap-2">
+    <a href="/games" class="btn btn-light"><i class="fa-solid fa-gamepad"></i> View games</a>
+    <a href="/notes" class="btn btn-outline-light">Read the notes</a>
+  </div>
+</section>
 
-We make thoughtful games that respect your time and your trust. No ads. No IAPs. No dark patterns.
-Just honest craftsmanship and interactive stories worth telling.
+<section class="home-section" aria-labelledby="released-games">
+  <div class="section-heading d-flex justify-content-between align-items-baseline gap-3">
+    <h2 id="released-games">Released games</h2>
+    <a href="/games">See all games</a>
+  </div>
+  <div class="featured-grid">
+    <article class="featured-card position-relative">
+      <img class="featured-img" src="/assets/img/bb_icon.png" alt="">
+      <div>
+        <h3><a href="/games/brinebound" class="stretched-link">Brinebound</a></h3>
+        <p>Guide a baby king salmon downstream from lake to ocean.</p>
+      </div>
+    </article>
+    <article class="featured-card position-relative">
+      <img class="featured-img" src="/assets/img/neon_labyrinth_icon.png" alt="">
+      <div>
+        <h3><a href="/games/neon_labyrinth" class="stretched-link">Neon Labyrinth</a></h3>
+        <p>A pixel-perfect arcade puzzler with a neon synthwave aesthetic.</p>
+      </div>
+    </article>
+    <article class="featured-card position-relative">
+      <img class="featured-img" src="/assets/img/sar_icon.png" alt="">
+      <div>
+        <h3><a href="/games/scots_adventure_racing" class="stretched-link">Scot's Adventure Racing</a></h3>
+        <p>Pixelated one-wheel arcade racing.</p>
+      </div>
+    </article>
+  </div>
+</section>
 
-We believe parents and players alike should know what they're getting. We are transparent about
-content and respectful of tough topics. Right now, all of our games are appropriate for any age.
+<section class="studio-note">
+  <h2>Small studio. Clear deal.</h2>
+  <p>Unremarkable Games is a two-person independent studio. We are transparent about game content, respectful of tough topics, and currently make games appropriate for any age.</p>
+  <a href="/crew">Meet the crew <span aria-hidden="true">→</span></a>
+</section>
 
-<div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-<div id="mc_embed_signup">
-    <form action="https://unremarkablegames.us1.list-manage.com/subscribe/post?u=67895038db1b8e2b60f9ed1d5&amp;id=76b2bc8342&amp;f_id=00f772e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-        <div id="mc_embed_signup_scroll"><h2>Subscribe to our unremarkable mailing list!</h2>
-            <p>Get a useful email on the first Friday of every month - game launches and updates, unremarkable news, and maybe even a sneak peek at a game in development.</p>
-            <div class="mc-field-group"><label for="mce-EMAIL">Email Address </label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
-        <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
-        </div>
-    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-        <input type="text" name="b_67895038db1b8e2b60f9ed1d5_76b2bc8342" tabindex="-1" value="">
-    </div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-            </div>
-        </div>
-    </div>
-</form>
-</div>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
-
+{% include signup.html %}
