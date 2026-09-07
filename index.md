@@ -6,7 +6,7 @@ description: "Independent games from Karl McClendon in Minnesota. Play Brineboun
 <section class="home-hero">
   <div class="hero-text">
     <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Independent. Minnesota-made.</p>
-    <h1>Small studio.<br>Long nights.<br><span>Good games.</span></h1>
+    <h1>Small Studio.<br>Big Pixels.<br><span>Good Games.</span></h1>
     <p class="hero-copy">I make games I want to play. A little strange, a little nostalgic, and made with care.</p>
     <a href="/games" class="btn btn-light">Find your next game <span aria-hidden="true">→</span></a>
   </div>
