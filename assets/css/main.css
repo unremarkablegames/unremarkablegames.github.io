@@ -171,6 +171,10 @@ hr {
     font-size:1.4rem
 }
 
+.prose-main .signup-copy h2 {
+    margin-top:0
+}
+
 .text-secondary {
     color:var(--tn-comment)!important
 }
@@ -617,7 +621,13 @@ footer {
     border-color:var(--tn-purple)
 }
 
-.game-card h3 a {
+.game-card h2 {
+    font-family:"JetBrains Mono",monospace;
+    font-size:1.1rem;
+    font-weight:500
+}
+
+.game-card h2 a {
     color:var(--tn-fg-bright);
     text-decoration:none
 }
@@ -659,7 +669,7 @@ footer {
     filter:saturate(.7)
 }
 
-.profile h3 {
+.profile h2 {
     color:var(--tn-purple)
 }
 

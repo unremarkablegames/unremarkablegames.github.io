@@ -1,11 +1,15 @@
 <nav class="site-nav" aria-label="Main navigation">
   <a class="brand" href="/" aria-label="Unremarkable Games home"><img src="/assets/img/mehlogo.png" width="40" height="40" alt=""><span>unremarkable<span class="brand-second">games</span></span></a>
   <div class="nav-menu">
-    {% assign destinations = "Games,Apps,Notes,Crew" | split: "," %}
+    {% assign destinations = "Games:games,Apps:apps,Notes:notes,Studio:crew" | split: "," %}
     {% for destination in destinations %}
-    {% assign route = destination | downcase | prepend: "/" %}
-    <a href="{{ route }}"{% if page.url contains route %} aria-current="page"{% endif %}>{{ destination }}</a>
+    {% assign item = destination | split: ":" %}
+    {% assign route = item[1] | prepend: "/" %}
+    {% assign active = false %}
+    {% if page.url contains route %}{% assign active = true %}{% endif %}
+    {% if route == '/apps' and page.url contains '/kit/' %}{% assign active = true %}{% endif %}
+    <a href="{{ route }}"{% if active %} aria-current="{% if page.url contains '/kit/' or page.url contains '/games/' or page.collection == 'notes' %}true{% else %}page{% endif %}"{% endif %}>{{ item[0] }}</a>
     {% endfor %}
-    <a href="/contact" class="nav-contact">Say hello <span aria-hidden="true">↗</span></a>
+    <a href="/contact" class="nav-contact"{% if page.url contains '/contact' %} aria-current="page"{% endif %}>Say hello <span aria-hidden="true">↗</span></a>
   </div>
 </nav>

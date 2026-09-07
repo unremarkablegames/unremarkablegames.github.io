@@ -1,8 +1,8 @@
 ---
-title: "Follow"
+title: "Mailing list"
 prose: true
 ---
 
-# Follow
+# Mailing list
 
 {% include signup.html %}
