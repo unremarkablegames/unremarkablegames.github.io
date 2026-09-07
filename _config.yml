@@ -2,6 +2,9 @@ baseurl: ""
 url: "https://www.unremarkablegames.com"
 author: "Karl McClendon"
 
+plugins:
+  - jekyll-redirect-from
+
 collections:
   notes:
     output: true

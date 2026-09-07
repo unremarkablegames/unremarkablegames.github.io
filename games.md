@@ -2,10 +2,12 @@
 title: "Games"
 ---
 
+# Games
+
 ## Released
 
 <div markdown="0">
-<div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
+<div class="game-card d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 p-3 mb-3 rounded-3 position-relative">
 <img class="game-img" src="/assets/img/bb_icon.png" alt="Brinebound">
 <div>
 <h3><a href="/games/brinebound" class="stretched-link">Brinebound</a></h3>
@@ -14,7 +16,7 @@ title: "Games"
 <a href="https://unremarkablegames.itch.io/brinebound" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-itch-io"></i> Demo on itch.io</a>
 </div>
 </div>
-<div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
+<div class="game-card d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 p-3 mb-3 rounded-3 position-relative">
 <img class="game-img" src="/assets/img/neon_labyrinth_icon.png" alt="Neon Labyrinth">
 <div>
 <h3><a href="/games/neon_labyrinth" class="stretched-link">Neon Labyrinth</a></h3>
@@ -23,7 +25,7 @@ title: "Games"
 <a href="https://unremarkablegames.itch.io/neon-labyrinth" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-itch-io"></i> Demo on itch.io</a>
 </div>
 </div>
-<div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
+<div class="game-card d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 p-3 mb-3 rounded-3 position-relative">
 <img class="game-img" src="/assets/img/sar_icon.png" alt="Scot's Adventure Racing">
 <div>
 <h3><a href="/games/scots_adventure_racing" class="stretched-link">Scot's Adventure Racing</a></h3>
@@ -36,12 +38,11 @@ title: "Games"
 ## Prototypes
 
 <div markdown="0">
-<div class="game-card d-flex flex-row align-items-center gap-3 p-3 mb-3 rounded-3 position-relative">
+<div class="game-card d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 p-3 mb-3 rounded-3 position-relative">
 <img class="game-img" src="/assets/img/voidstone_icon.webp" alt="Voidstone">
 <div>
 <h3><a href="/games/voidstone" class="stretched-link">Voidstone</a>: <span class="game-subtitle">a world where the GPU is your imagination.</span></h3>
 <p>Voidstone is an RPG rendered entirely in text. Type commands. Read what happens. Your imagination renders the rest: the dungeons, the dread, the things that wait in the dark. No tutorials. No hand-holding. No mercy. Type or die.</p>
-<a href="https://unremarkablegames.itch.io/voidstone" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-itch-io"></i> Demo on itch.io</a>
 </div>
 </div>
 </div>

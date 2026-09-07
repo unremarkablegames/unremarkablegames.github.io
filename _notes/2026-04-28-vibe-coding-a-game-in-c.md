@@ -13,7 +13,7 @@ AI made it easy to generate a 22,000-line C/SDL3 game. More or less... It did no
 ### How did I get here?
 I started Voidstone as a no-IDE challenge: no IDE, no human code review, and no human inspection of the application code. Only vibes. I did create the base build environment by hand because AI could not get that even partially workable on its own. After that, the constraint was simple: agents did all of it, including writing, testing, reviewing, and fixing the game. I managed the process from the outside.
 
-Voidstone ended up at around 22,000 lines of C/SDL3, with TOML-driven world data, Lua scripting, save/load, real-time tick combat, mob AI, and a web export path. It is a single-player MUDlike: you type commands, read the result, move through rooms, fight enemies, die, and try again. If MUDlikes are your thing, a web-playable build is on itch: [Voidstone](https://unremarkablegames.itch.io/voidstone). It is not for everyone, but it gives a better sense of the project's scope than a line count can.
+Voidstone ended up at around 22,000 lines of C/SDL3, with TOML-driven world data, Lua scripting, save/load, real-time tick combat, mob AI, and a web export path. It is a single-player MUDlike: you type commands, read the result, move through rooms, fight enemies, die, and try again. It is not for everyone, but the playable build gave a better sense of the project's scope than a line count could.
 
 To be perfectly clear: this is _not_ a workflow recommendation.
 

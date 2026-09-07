@@ -1,6 +1,11 @@
 ---
 title: "Privacy"
+prose: true
+redirect_from:
+  - /sar/privacy.html
 ---
+# Privacy
+
 ## Games
 I don't need to spy on you to make a fun game. I don't want to spy on you either - it's weird.
 

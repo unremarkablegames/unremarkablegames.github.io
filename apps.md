@@ -13,6 +13,7 @@ Ok... we make more than games.
 <div>
 <h3><a href="/kit/support/" class="stretched-link">KiT</a>: <span class="game-subtitle">minimalistic interval training for iPhone and Apple Watch.</span></h3>
 <p>Build interval workouts, run them from the Lock Screen, mirror sessions on Apple Watch, and save completed workouts to Apple Health.</p>
+<a href="https://apps.apple.com/us/app/kit-karas-interval-trainer/id6787561511" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-apple"></i> App Store</a>
 <a href="/kit/support/" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-solid fa-circle-question"></i> Support</a>
 <a href="/kit/privacy/" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
 </div>
