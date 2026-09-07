@@ -2,6 +2,13 @@ baseurl: ""
 url: "https://www.unremarkablegames.com"
 author: "Karl McClendon"
 
+exclude:
+  - AGENT.md
+  - AGENTS.md
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+
 plugins:
   - jekyll-redirect-from
 
