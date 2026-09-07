@@ -13,11 +13,11 @@ Pick a direction and keep moving until something stops you. Work your way throug
 
 $0.99 on iPhone and iPad.
 
-<div class="d-flex gap-2 flex-wrap my-3" markdown="0">
-<a href="https://apps.apple.com/us/app/neon-labyrinth/id6744569015" class="btn btn-light fw-bold"><i class="fa-brands fa-apple"></i> Download on App Store</a>
+<div class="game-actions" markdown="0">
+<a href="https://apps.apple.com/us/app/neon-labyrinth/id6744569015" class="btn btn-light">Download on App Store</a>
 <a href="https://unremarkablegames.itch.io/neon-labyrinth" class="btn btn-outline-light">Play the demo on itch.io</a>
 </div>
 
 The demo includes the first ten levels.
 
-<img class="hero-screenshot img-fluid d-block mx-auto" src="/assets/img/nl_ss_1.webp" width="589" height="1278" alt="Neon Labyrinth gameplay: glowing corridors, traps, and directional tiles.">
+<img class="hero-screenshot" src="/assets/img/nl_ss_1.webp" width="589" height="1278" alt="Neon Labyrinth gameplay: glowing corridors, traps, and directional tiles.">

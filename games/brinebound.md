@@ -12,7 +12,7 @@ Tap to flap through Alaska's wild waters as a young Chinook salmon. Eat, ride cu
 
 $0.99 on iPhone and iPad.
 
-<div class="d-flex gap-2 flex-wrap my-3" markdown="0">
-<a href="https://apps.apple.com/us/app/brinebound/id6754248903" class="btn btn-light fw-bold"><i class="fa-brands fa-apple"></i> Download on App Store</a>
+<div class="game-actions" markdown="0">
+<a href="https://apps.apple.com/us/app/brinebound/id6754248903" class="btn btn-light">Download on App Store</a>
 <a href="https://unremarkablegames.itch.io/brinebound" class="btn btn-outline-light">Play the demo on itch.io</a>
 </div>

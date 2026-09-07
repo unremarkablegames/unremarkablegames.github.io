@@ -9,7 +9,7 @@ description: "Meet Karl McClendon, who runs Unremarkable Games in Minnesota, and
 <p>Unremarkable Games is my independent studio in Minnesota.</p>
 
 <hr>
-<div class="profile d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 py-3">
+<div class="profile">
   <img class="profile-img" src="/assets/img/karl-headshot.webp" width="144" height="144" alt="Karl McClendon">
   <div>
     <h2>Karl</h2>
@@ -19,7 +19,7 @@ description: "Meet Karl McClendon, who runs Unremarkable Games in Minnesota, and
   </div>
 </div>
 <hr>
-<div class="profile d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 py-3">
+<div class="profile">
   <img class="profile-img" src="/assets/img/roslyn-headshot.webp" width="144" height="144" alt="Roslyn">
   <div>
     <h2>Roslyn</h2>

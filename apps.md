@@ -8,14 +8,16 @@ description: "Apps from Unremarkable Games, including KiT for iPhone and Apple W
 Sometimes I make something other than a game.
 
 <div markdown="0">
-<div class="game-card d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 p-3 mb-3 rounded-3 position-relative">
-<img class="game-img" src="/assets/img/kit_icon.png" alt="KiT">
+<div class="game-card list-card">
+<img class="game-img" src="/assets/img/kit_icon.png" width="96" height="96" alt="KiT">
 <div>
 <h2><a href="/kit/support/" class="stretched-link">KiT</a>: <span class="game-subtitle">an interval trainer for iPhone and Apple Watch.</span></h2>
 <p>Build interval workouts, run them from the Lock Screen, mirror sessions on Apple Watch, and save completed workouts to Apple Health.</p>
-<a href="https://apps.apple.com/us/app/kit-karas-interval-trainer/id6787561511" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-brands fa-apple"></i> App Store</a>
-<a href="/kit/support/" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-solid fa-circle-question"></i> Support</a>
-<a href="/kit/privacy/" class="btn btn-sm btn-light mt-2 position-relative"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+<div class="card-actions">
+<a href="https://apps.apple.com/us/app/kit-karas-interval-trainer/id6787561511" class="btn btn-light">App Store</a>
+<a href="/kit/support/" class="btn btn-light">Support</a>
+<a href="/kit/privacy/" class="btn btn-light">Privacy</a>
+</div>
 </div>
 </div>
 </div>
