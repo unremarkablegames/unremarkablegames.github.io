@@ -25,7 +25,6 @@ description: "Independent games from Karl McClendon in Minnesota. Play Brineboun
     <p class="eyebrow">Behind the games</p>
     <h2 id="about-karl">Hi. I'm Karl.</h2>
     <p>I'm the unremarkable part. I run the studio in Minnesota, with help from my daughter Roslyn.</p>
-    <p>I'm a Christian. That's inseparable from how I see the world and what I make.</p>
     <p>Alongside the arcade games, I'm working on <a href="/games/cybertank2k">CyberTank2K</a>, my first game with a story running through it.</p>
     <a href="/crew">More about the studio <span aria-hidden="true">↗</span></a>
   </div>
