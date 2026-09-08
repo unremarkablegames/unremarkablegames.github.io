@@ -2,7 +2,7 @@
 title: "My Three Picks"
 date: 2026-09-07
 thumbnail: /assets/img/notes/2026-09-07-my-three-picks-thumb.jpg
-published: false
+published: true
 description: "Why I picked mobile, the App Store, and the U.S., and where I'm intentionally breaking my own rule."
 ---
 
