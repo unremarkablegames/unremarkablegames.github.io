@@ -10,6 +10,9 @@ description: "Independent games from Karl McClendon in Minnesota. Play Brineboun
     <p class="hero-copy">I make games I want to play. A little strange, a little nostalgic, and made with care.</p>
     <a href="/games" class="btn btn-light">Find your next game <span aria-hidden="true">→</span></a>
   </div>
+  <figure class="hero-scene">
+    <img src="/assets/img/home-hero-studio-v2.png" width="200" height="240" alt="Pixel art view of Karl's studio desk, with dual monitors, laptop, controller, and blue nighttime lighting.">
+  </figure>
 </section>
 
 <div class="studio-promise"><span>No ads.</span><span>No in-app purchases.</span><span>Just play.</span><span class="promise-decoration" aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</span></div>

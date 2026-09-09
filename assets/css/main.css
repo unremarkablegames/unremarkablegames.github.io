@@ -269,10 +269,13 @@ hr {
 .hero-scene {
     margin:0;
     position:relative;
-    padding:12px;
+    width:100%;
+    max-width:380px;
+    justify-self:end;
+    padding:10px;
     border:1px solid var(--tn-border);
     background:#1a1b26;
-    box-shadow:8px 8px 0 #101017
+    box-shadow:5px 5px 0 #101017
 }
 
 .hero-scene:before,.hero-scene:after {
