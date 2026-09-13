@@ -1,0 +1,14 @@
+---
+layout: null
+---
+{% assign release = site.data.cybertank2k_releases.first %}{
+  "product": "CyberTank2K Editor",
+  "version": {{ release.version | jsonify }},
+  "publishedAt": {{ release.date | date_to_xmlschema | jsonify }},
+  "releaseNotes": {{ release.notes | jsonify }},
+  "sourceCommit": {{ release.source_commit | jsonify }},
+  "minimumSystemVersion": {{ release.minimum_macos | jsonify }},
+  "downloadURL": {% if release.available %}{{ release.download_url | absolute_url | jsonify }}{% else %}null{% endif %},
+  "downloadBytes": {{ release.download_bytes | jsonify }},
+  "sha256": {{ release.sha256 | jsonify }}
+}

@@ -729,6 +729,118 @@ footer {
     font-weight:700
 }
 
+.release-heading {
+    margin-bottom:36px
+}
+
+.release-heading .page-intro {
+    max-width:none
+}
+
+.release-card {
+    border:1px solid var(--tn-border);
+    background:var(--tn-bg-light);
+    padding:clamp(24px,4vw,40px);
+    margin-bottom:32px
+}
+
+.release-latest {
+    box-shadow:5px 5px 0 #101017
+}
+
+.release-title {
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    align-items:start;
+    margin-bottom:20px
+}
+
+.release-title h2 {
+    margin:0
+}
+
+.release-title time,.release-row time {
+    color:var(--tn-comment);
+    font-size:11px;
+    white-space:nowrap
+}
+
+.release-meta {
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px 40px;
+    padding:18px 0;
+    margin:22px 0;
+    border-block:1px solid var(--tn-border)
+}
+
+.release-meta div {
+    display:flex;
+    gap:12px
+}
+
+.release-meta dt {
+    color:var(--tn-comment)
+}
+
+.release-meta dd {
+    margin:0;
+    color:var(--tn-fg-bright)
+}
+
+.release-pending {
+    display:inline-block;
+    border:1px solid var(--tn-border);
+    color:var(--tn-comment);
+    padding:11px 18px;
+    font-size:12px
+}
+
+.release-download img {
+    display:block
+}
+
+.release-checksum {
+    color:var(--tn-comment);
+    font-size:9px;
+    margin:18px 0 0;
+    overflow-wrap:anywhere
+}
+
+.release-contact {
+    font-size:12px;
+    margin:22px 0 0
+}
+
+.release-history {
+    margin-top:48px
+}
+
+.release-row {
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    padding:22px 0;
+    border-top:1px solid var(--tn-border)
+}
+
+.release-row h3,.release-row p {
+    margin-bottom:4px
+}
+
+.release-archive {
+    border-top:1px solid var(--tn-border);
+    margin-top:36px;
+    padding-top:20px
+}
+
+.release-archive summary {
+    color:var(--tn-comment);
+    font-size:11px;
+    cursor:pointer
+}
+
 .note-description {
     margin-top:.5rem!important
 }
@@ -1029,6 +1141,13 @@ code {
     .game-img {
         width:80px;
         height:80px
+    }
+    .release-title,.release-row {
+        flex-direction:column;
+        gap:10px
+    }
+    .release-meta {
+        display:grid
     }
     .site-main h1 {
         overflow-wrap:anywhere

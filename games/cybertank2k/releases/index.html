@@ -1,0 +1,60 @@
+---
+layout: default
+title: "CyberTank2K releases"
+description: "Download the CyberTank2K editor and follow new releases."
+---
+{% assign releases = site.data.cybertank2k_releases %}
+{% assign latest = releases | first %}
+
+<div class="release-heading">
+  <p class="eyebrow"><span class="status-dot"></span>CyberTank2K editor</p>
+  <h1>Releases</h1>
+  <p class="page-intro">The editor includes the game and its WAD. Subscribe to the <a href="/games/cybertank2k/releases/feed.xml">Atom feed</a> to follow new builds.</p>
+</div>
+
+<article class="release-card release-latest" id="{{ latest.version }}">
+  <div class="release-title">
+    <div>
+      <p class="eyebrow">Latest release</p>
+      <h2>CyberTank2K Editor {{ latest.version }}</h2>
+    </div>
+    <time datetime="{{ latest.date }}">{{ latest.date | date: "%B %-d, %Y" }}</time>
+  </div>
+  <p>{{ latest.notes }}</p>
+  <dl class="release-meta">
+    <div><dt>Requires</dt><dd>macOS {{ latest.minimum_macos }}+</dd></div>
+    <div><dt>Download</dt><dd>{{ latest.download_size }}</dd></div>
+    <div><dt>Source</dt><dd><code>{{ latest.source_commit | slice: 0, 12 }}</code></dd></div>
+  </dl>
+  {% if latest.available %}
+  <a class="btn btn-light release-download" href="{{ latest.download_url }}"><img src="/assets/img/apple.svg" width="16" height="16" alt="">Download for macOS</a>
+  {% else %}
+  <span class="release-pending">Download pending signed archive</span>
+  {% endif %}
+  <p class="release-contact">Send bug reports and ideas to <a href="mailto:support@unremarkablegames.com">support@unremarkablegames.com</a>.</p>
+  {% if latest.sha256 %}<p class="release-checksum">SHA-256 <code>{{ latest.sha256 }}</code></p>{% endif %}
+</article>
+
+{% if releases.size > 1 %}
+<section class="release-history">
+  <h2>Earlier releases</h2>
+  {% for release in releases offset: 1 limit: 4 %}
+  <article class="release-row" id="{{ release.version }}">
+    <div><h3>{{ release.version }}</h3><p>{{ release.notes }}</p></div>
+    <time datetime="{{ release.date }}">{{ release.date | date: "%B %-d, %Y" }}</time>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if releases.size > 5 %}
+<details class="release-archive">
+  <summary>Complete release archive</summary>
+  {% for release in releases offset: 5 %}
+  <article class="release-row" id="{{ release.version }}">
+    <div><h3>{{ release.version }}</h3><p>{{ release.notes }}</p></div>
+    <time datetime="{{ release.date }}">{{ release.date | date: "%B %-d, %Y" }}</time>
+  </article>
+  {% endfor %}
+</details>
+{% endif %}

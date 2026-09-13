@@ -1,0 +1,10 @@
+- version: "1.0"
+  date: 2026-09-12
+  notes: "Initial release."
+  source_commit: "e3f4d500be94c2949b44b7f9bb2aab706b0fab54"
+  minimum_macos: "26.5"
+  download_url: "/games/cybertank2k/downloads/CyberTank2K-Editor-1.0-macOS.zip"
+  download_size: "17 MB"
+  download_bytes: 17690868
+  sha256: "d220a245f96e30ce0aaef20ec42332fe8012b62ba150b0fe335cc3008d0e432f"
+  available: true

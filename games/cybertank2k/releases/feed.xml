@@ -1,0 +1,22 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CyberTank2K releases</title>
+  <id>{{ '/games/cybertank2k/releases/' | absolute_url }}</id>
+  <link href="{{ '/games/cybertank2k/releases/feed.xml' | absolute_url }}" rel="self"/>
+  <link href="{{ '/games/cybertank2k/releases/' | absolute_url }}"/>
+  <updated>{{ site.data.cybertank2k_releases.first.date | date_to_xmlschema }}</updated>
+  <author><name>Karl McClendon</name></author>
+  {% for release in site.data.cybertank2k_releases %}
+  <entry>
+    <title>CyberTank2K Editor {{ release.version }}</title>
+    <id>{{ '/games/cybertank2k/releases/' | absolute_url }}#{{ release.version }}</id>
+    <link href="{{ '/games/cybertank2k/releases/' | absolute_url }}#{{ release.version }}"/>
+    <updated>{{ release.date | date_to_xmlschema }}</updated>
+    <summary>{{ release.notes | xml_escape }}</summary>
+    <category term="source-commit:{{ release.source_commit }}"/>
+  </entry>
+  {% endfor %}
+</feed>
