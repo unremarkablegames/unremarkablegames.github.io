@@ -4,7 +4,7 @@ title: "CyberTank2K releases"
 description: "Download the CyberTank2K editor and follow new releases."
 ---
 {% assign releases = site.data.cybertank2k_releases %}
-{% assign latest = releases | first %}
+{% assign latest = releases | where: "available", true | first %}
 
 <div class="release-heading">
   <p class="eyebrow"><span class="status-dot"></span>CyberTank2K editor</p>
@@ -35,10 +35,11 @@ description: "Download the CyberTank2K editor and follow new releases."
   {% if latest.sha256 %}<p class="release-checksum">SHA-256 <code>{{ latest.sha256 }}</code></p>{% endif %}
 </article>
 
-{% if releases.size > 1 %}
+{% assign earlier_releases = releases | where_exp: "release", "release.version != latest.version" %}
+{% if earlier_releases.size > 0 %}
 <section class="release-history">
   <h2>Earlier releases</h2>
-  {% for release in releases offset: 1 limit: 4 %}
+  {% for release in earlier_releases limit: 4 %}
   <article class="release-row" id="{{ release.version }}">
     <div><h3>{{ release.version }}</h3><p>{{ release.notes }}</p></div>
     <time datetime="{{ release.date }}">{{ release.date | date: "%B %-d, %Y" }}</time>
@@ -47,10 +48,10 @@ description: "Download the CyberTank2K editor and follow new releases."
 </section>
 {% endif %}
 
-{% if releases.size > 5 %}
+{% if earlier_releases.size > 4 %}
 <details class="release-archive">
   <summary>Complete release archive</summary>
-  {% for release in releases offset: 5 %}
+  {% for release in earlier_releases offset: 4 %}
   <article class="release-row" id="{{ release.version }}">
     <div><h3>{{ release.version }}</h3><p>{{ release.notes }}</p></div>
     <time datetime="{{ release.date }}">{{ release.date | date: "%B %-d, %Y" }}</time>

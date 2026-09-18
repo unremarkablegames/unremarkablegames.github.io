@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-{% assign release = site.data.cybertank2k_releases.first %}{
+{% assign release = site.data.cybertank2k_releases | where: "available", true | first %}{
   "product": "CyberTank2K Editor",
   "version": {{ release.version | jsonify }},
   "publishedAt": {{ release.date | date_to_xmlschema | jsonify }},
