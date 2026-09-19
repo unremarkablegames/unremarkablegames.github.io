@@ -20,4 +20,4 @@ There's a lot of work ahead.
 
 **Estimated release: June 2027.**
 
-[Download the editor and follow releases](/games/cybertank2k/releases/).
+[Download the editor](/games/cybertank2k/releases/).
