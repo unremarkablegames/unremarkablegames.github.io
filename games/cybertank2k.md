@@ -1,5 +1,6 @@
 ---
 title: "CyberTank2K"
+thumbnail: "/assets/img/cybertank2k-social.png"
 description: "A pixel-art tank arena game set on December 31, 1999. In development, with an estimated June 2027 release."
 prose: true
 ---
