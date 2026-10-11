@@ -24,14 +24,8 @@ description: "Independent games from Karl McClendon in Minnesota. Play Brineboun
 
 <section class="home-section" aria-labelledby="prototypes">
   <div class="section-heading"><div><p class="eyebrow">On the workbench</p><h2 id="prototypes">Prototypes</h2></div></div>
-  <article class="prototype prototype-songweaver">
-    <a class="prototype-preview" href="/prototypes/songweaver/" tabindex="-1" aria-hidden="true"><img src="/assets/img/songweaver-preview.jpg" width="144" height="96" alt="" loading="lazy"></a>
-    <div><h3><a href="/prototypes/songweaver/">Songweaver <span aria-hidden="true">↗</span></a></h3><p>Walk through an oil-pastel village. An experiment in painted environments, lighting, and animated 3D characters.</p><a class="btn btn-light" href="/prototypes/songweaver/">Open prototype →</a><p class="platform">Browser · Visual prototype · Click or tap to walk</p></div>
-  </article>
-  <article class="prototype">
-    <img src="/assets/img/voidstone_icon.webp" width="96" height="96" alt="" loading="lazy">
-    <div><h3><a href="/games/voidstone">Voidstone <span aria-hidden="true">↗</span></a></h3><p>A prototype for an RPG rendered entirely in text.</p><span class="platform">Past prototype</span></div>
-  </article>
+  <p>Small experiments in visuals, movement, and game ideas, grouped by project.</p>
+  <a class="btn btn-light" href="/prototypes/">Browse prototypes →</a>
 </section>
 
 <section class="studio-note" aria-labelledby="about-karl">
