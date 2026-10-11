@@ -1175,3 +1175,27 @@ code {
 .game-detail-heading .eyebrow {
     margin:0
 }
+
+.prototype-songweaver {
+    grid-template-columns:minmax(0, 240px) minmax(0, 1fr);
+    align-items:start;
+    margin-bottom:20px;
+}
+.prototype-songweaver > * { min-width:0; }
+.prototype-songweaver .prototype-preview { display:block; border:0; }
+.prototype-songweaver img {
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:3/2;
+    object-fit:cover;
+    image-rendering:auto;
+}
+.prototype-songweaver h3 { margin:0 0 12px; }
+.prototype-songweaver p { margin:0 0 16px; }
+.prototype-songweaver .platform { margin:16px 0 0; line-height:1.6; }
+@media(max-width:700px) {
+    .prototype-songweaver { grid-template-columns:minmax(0, 1fr); gap:20px; padding:20px; }
+    .prototype-songweaver .prototype-preview { max-width:360px; }
+    .prototype-songweaver .btn { white-space:normal; }
+}
