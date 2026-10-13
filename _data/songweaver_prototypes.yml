@@ -3,3 +3,8 @@
   url: /prototypes/songweaver/oil-pastel-village/
   image: /assets/img/songweaver-preview.jpg
   description: A painted village with an animated 3D mannequin. Testing fixed-camera projection, painted lighting, and character shadows.
+- title: The traveling fair
+  type: Scene-blocking prototype
+  url: /prototypes/songweaver/traveling-fair/
+  image: /assets/img/songweaver-fair-preview.jpg
+  description: Walk through a painted fairground with tents, stalls, and a small stage. Testing scene layout, uneven terrain, and character occlusion. Use the mouse wheel to zoom.
