@@ -8,3 +8,10 @@
   url: /prototypes/songweaver/traveling-fair/
   image: /assets/img/songweaver-fair-preview.jpg
   description: Walk through a painted fairground with tents, stalls, and a small stage. Testing scene layout, uneven terrain, and character occlusion. Use the mouse wheel to zoom.
+- title: Graveyard combat
+  type: Combat prototype
+  url: /prototypes/songweaver/graveyard-combat/
+  image: /assets/img/songweaver-graveyard-preview.png
+  description: Explore a painted graveyard with Elias and Emma, then face ten wisps and their warden. Testing party turns, action points, spell previews, animation, and voiced encounters.
+  controls: "Browser · Mouse and keyboard · Drag to move · Wheel to zoom"
+  link_label: Play combat prototype
