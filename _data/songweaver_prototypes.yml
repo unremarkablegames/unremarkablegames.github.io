@@ -1,13 +1,10 @@
-- title: Oil-pastel village
-  type: Visual prototype
-  url: /prototypes/songweaver/oil-pastel-village/
-  image: /assets/img/songweaver-preview.jpg
-  description: A painted village with an animated 3D mannequin. Testing fixed-camera projection, painted lighting, and character shadows.
-- title: The traveling fair
-  type: Scene-blocking prototype
-  url: /prototypes/songweaver/traveling-fair/
-  image: /assets/img/songweaver-fair-preview.jpg
-  description: Walk through a painted fairground with tents, stalls, and a small stage. Testing scene layout, uneven terrain, and character occlusion. Use the mouse wheel to zoom.
+- title: Character progression
+  type: Character-building prototype
+  url: /prototypes/songweaver/character-progression/
+  image: /prototypes/songweaver/character-progression/assets/portraits/emma-square.png
+  description: Explore skill schools, upgrade abilities, and combine actions with modifiers. Build separate loadouts for Elias, Emma, and Oswin within their slot and action-point limits.
+  controls: "Browser · Mouse and keyboard · Drag skills to equip"
+  link_label: Open character prototype
 - title: Graveyard combat
   type: Combat prototype
   url: /prototypes/songweaver/graveyard-combat/
@@ -15,3 +12,13 @@
   description: Explore a painted graveyard with Elias and Emma, then face ten wisps and their warden. Testing party turns, action points, spell previews, animation, and voiced encounters.
   controls: "Browser · Mouse and keyboard · Drag to move · Wheel to zoom"
   link_label: Play combat prototype
+- title: The traveling fair
+  type: Scene-blocking prototype
+  url: /prototypes/songweaver/traveling-fair/
+  image: /assets/img/songweaver-fair-preview.jpg
+  description: Walk through a painted fairground with tents, stalls, and a small stage. Testing scene layout, uneven terrain, and character occlusion. Use the mouse wheel to zoom.
+- title: Oil-pastel village
+  type: Visual prototype
+  url: /prototypes/songweaver/oil-pastel-village/
+  image: /assets/img/songweaver-preview.jpg
+  description: A painted village with an animated 3D mannequin. Testing fixed-camera projection, painted lighting, and character shadows.

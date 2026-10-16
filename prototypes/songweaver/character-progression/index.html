@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>p06 · Character progression</title>  <script type="module" crossorigin src="./assets/index-Ckm3ACWU.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CvB38y-T.css">
+</head><body>
+<div id="songweaver-skills" aria-label="Songweaver character progression prototype">
+
+<div class="sw-party" id="sw-party"></div>
+<div class="sw-tabs" role="tablist" aria-label="Character screens"><button type="button" role="tab" id="sw-tab-sheet" aria-selected="false" aria-controls="sw-screen" data-screen="sheet">Character Sheet</button><button type="button" role="tab" id="sw-tab-growth" aria-selected="true" aria-controls="sw-screen" data-screen="growth">Progression</button><button type="button" role="tab" id="sw-tab-loadout" aria-selected="false" aria-controls="sw-screen" data-screen="loadout">Loadout</button></div>
+<section id="sw-capacity" class="sw-capacity" aria-label="Skill capacity" hidden></section>
+<div id="sw-screen" role="tabpanel" aria-labelledby="sw-tab-growth" class="sw-layout"><div id="sw-main" class="sw-main"></div><aside id="sw-detail" class="sw-detail" aria-label="Selected skill"></aside></div>
+<div id="sw-status" class="sw-status" role="status" aria-live="polite"></div>
+<div class="sw-footer"><span class="sw-muted">Prototype · all purchases cost 1 point · changes apply immediately</span><div class="sw-footer-actions"><button type="button" data-action="grant">+10 points</button><button type="button" data-action="undo" id="sw-undo">Undo</button><button type="button" data-action="reset">Reset character</button></div></div>
+
+</div>
+</body></html>
