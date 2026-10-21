@@ -1,3 +1,10 @@
+- title: Big rock
+  type: Movement and painted-scene prototype
+  url: /prototypes/songweaver/big-rock/
+  image: /prototypes/songweaver/big-rock/paintings/grasslands-v2/overview.png
+  description: Walk through rolling grasslands and investigate a very large boulder with Elias, Emma, and Bruno. Testing terrain movement, painted scenery, and a voiced encounter, with birds and breeze in the background.
+  controls: "Browser · Click to move · Scroll to zoom · Select ? to investigate"
+  link_label: Play Big rock
 - title: Character progression
   type: Character-building prototype
   url: /prototypes/songweaver/character-progression/
